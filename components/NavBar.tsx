@@ -15,7 +15,10 @@ const Navbar = () => {
                 <div className="flex space-x-4">
                     {/* logo */}
                     <div>
-                        <a href="/" className="flex items-center py-5 px-2 text-gray-700">
+                        <Link
+                            href={"/"}
+                            className="flex items-center py-5 px-2 text-gray-700"
+                        >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5 mr-2 text-blue-400"
@@ -29,7 +32,7 @@ const Navbar = () => {
                                 />
                             </svg>
                             <span className="font-bold">Home</span>
-                        </a>
+                        </Link>
                     </div>
 
                     {/* primary nav */}
