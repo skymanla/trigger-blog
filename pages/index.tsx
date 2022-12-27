@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Welcome Trigger.kr</title>
         <meta name="description" content="트리거 홈페이지에 오신 걸 환영합니다" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="w-full flex justify-between">
