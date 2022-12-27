@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import KeenSlider from '../components/keenSlider'
 
 const Home: NextPage = () => {
   return (
@@ -9,19 +9,15 @@ const Home: NextPage = () => {
       <Head>
         <title>Welcome Trigger.kr</title>
         <meta name="description" content="트리거 홈페이지에 오신 걸 환영합니다" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to trigger.kr
-        </h1>
+      <div className="w-full flex justify-between">
+          <h1 className="">Welcome Trigger</h1>
+          <div>1depth div</div>
+      </div>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-      </main>      
+        <KeenSlider />
     </div>
   )
 }
