@@ -1,7 +1,7 @@
 const siteMetadata = {
     title: 'welcome trigger',
     author: 'ryan-dev',
-    headerTitle: '트리거 블로그',
+    headerTitle: 'Welcome Trigger',
     description: '블로그 설명',
     language: 'ko-KR',
     theme: 'system', // system, dark or light

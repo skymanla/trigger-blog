@@ -16,7 +16,6 @@ const Home: NextPage = () => {
           <h1 className="">Welcome Trigger</h1>
           <div>1depth div</div>
       </div>
-
         <KeenSlider />
     </div>
   )
