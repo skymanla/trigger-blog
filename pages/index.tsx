@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import KeenSlider from '../components/keenSlider'
 
 const Home: NextPage = () => {
-  return (
+    return (
     <div className={styles.container}>
       <Head>
         <title>Welcome Trigger.kr</title>
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       </div>
         <KeenSlider />
     </div>
-  )
+    )
 }
 
 export default Home
