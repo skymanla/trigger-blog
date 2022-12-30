@@ -45,12 +45,11 @@ const KeenSlider = () => {
             <div className={keenSliderStyle.navigationWrapper}>
                 <div ref={sliderRef} className={`keen-slider h-52 text-center`}>
                     <div className={`keen-slider__slide ${keenSliderStyle.numberSlide1}`}>
-                        <div className="justify-items-center">Slide 1st</div>
                     </div>
-                    <div className={`keen-slider__slide ${keenSliderStyle.numberSlide2}`}>Slide 2rd</div>
-                    <div className={`keen-slider__slide ${keenSliderStyle.numberSlide3}`}>Slide 3th</div>
-                    <div className={`keen-slider__slide ${keenSliderStyle.numberSlide4}`}>Slide 4th</div>
-                    <div className={`keen-slider__slide ${keenSliderStyle.numberSlide5}`}>Slide 5th</div>
+                    <div className={`keen-slider__slide ${keenSliderStyle.numberSlide2}`}></div>
+                    <div className={`keen-slider__slide ${keenSliderStyle.numberSlide3}`}></div>
+                    <div className={`keen-slider__slide ${keenSliderStyle.numberSlide4}`}></div>
+                    <div className={`keen-slider__slide ${keenSliderStyle.numberSlide5}`}></div>
                 </div>
                 {loaded && instanceRef.current && (
                     <>
