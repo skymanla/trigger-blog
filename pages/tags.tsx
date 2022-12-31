@@ -1,13 +1,19 @@
-import { PageSEO } from "../components/SEO"
-import siteMetadata from "../data/siteMetaData"
+import * as React from 'react';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+import {PageSEO} from "../components/SEO";
+import siteMetadata from "../data/siteMetaData";
 
-const Tags = () => {
+export default function PaginationOutlined() {
     return (
         <>
-            <PageSEO title="Tags 메인" description={siteMetadata.description} />
-            <div>Tags page</div>
+            <PageSEO title={"mui pagination"} description={siteMetadata.description} />
+            <Stack spacing={2}>
+                <Pagination count={10} variant="outlined" />
+                <Pagination count={10} variant="outlined" color="primary" />
+                <Pagination count={10} variant="outlined" color="secondary" />
+                <Pagination count={10} variant="outlined" disabled />
+            </Stack>
         </>
-    )
+    );
 }
-
-export default Tags
