@@ -22,8 +22,8 @@ const Blog = ({ posts }: IndexProps) => {
                     </p>
                     <h1 className="mb-2 text-xl">
                         <Link
-                            as={`/posts/${post.slug}`}
-                            href={`/posts/[slug]`}
+                            as={`/blog/${post.slug}`}
+                            href={`/blog/[slug]`}
                             className="text-gray-900 dark:text-white dark:hover:text-blue-400"
                         >
                             {post.title}
@@ -31,7 +31,7 @@ const Blog = ({ posts }: IndexProps) => {
                     </h1>
                     <p className="mb-3">{post.description}</p>
                     <p>
-                        <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
+                        <Link as={`/blog/${post.slug}`} href={`/blog/[slug]`}>
                             <span>Read More</span>
                         </Link>
                     </p>
