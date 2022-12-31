@@ -1,0 +1,54 @@
+---
+title: pm2를 사용한 Node 무중단 배포
+description: frontend 초보를 위한 Node 무중단 배포
+date: '2023-01-01'
+---
+# PM2?
+pm2는 npm으로 설치하는 Node 서버 관리 어플리케이션이다.
+
+# 설치 방법
+```bash
+npm -g pm2
+```
+설치는 글로벌 옵션으로 설치한다. 그래야 어떤 프로젝트에서든지 사용 가능하다.
+
+
+# 사용 방법
+```bash
+cd /path/to/node/project
+```
+node 프로젝트 폴더로 이동하자.
+
+```bash
+npm run build
+```
+pm2로 실행 전에 build를 해줘야한다. `npm run start` 를 하기 전에 build를 하는 것과 같다.
+
+```bash
+pm2 start npm --name "project name" -- start
+```
+프로젝트 이동 후 위의 명렁어로 프로젝트를 pm2에 등록하여 `npm run start`를 pm2로 올린다.
+
+
+## 무중단 배포
+이제는 무중단 배포를 알아보자
+
+`pm2 list` 로 현재 올라가져 있는 node service를 확인해본다.
+<Image
+    src={"/images/pm2_list.png"}
+    width={1440}
+    height={960}
+    priority
+/>
+
+위 이미지처럼 보여질 것이다.
+
+0번 id의 프로젝트가 현재 npm run start 로 구동되어 있다는 내용이다.
+
+즉, 현재 background에서 해당 프로젝트가 구동 중인 상태인 것이다.
+
+이제 변경점에 대한 무중단 배포는 간단하다.
+
+해당 프로젝트 폴더에서 `npm run build` 만 해주면 된다.
+
+그러면 pm2 가 build를 감지해서 변경된 build 파일을 로드하게 된다.

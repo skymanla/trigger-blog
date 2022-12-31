@@ -22,6 +22,11 @@ const Home: NextPage = () => {
                     slug="hello-world"
                     gradient="from-[#D8B4FE] to-[#818CF8]"
                 />
+                <BlogPostCard
+                    title="pm2를 사용한 Node 무중단 배포 - frontend 초보의 쉬운 node 서버 배포기"
+                    slug="pm2를-사용한-node-무중단배포"
+                    gradient="from-[#D8B4FE] to-[#818CF8]"
+                />
                 {/*<BlogPostCard*/}
                 {/*    title="Rust Is The Future of JavaScript Infrastructure"*/}
                 {/*    slug="rust"*/}
