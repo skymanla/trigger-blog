@@ -27,6 +27,11 @@ const Home: NextPage = () => {
                     slug="pm2를-사용한-node-무중단배포"
                     gradient="from-[#D8B4FE] to-[#818CF8]"
                 />
+                <BlogPostCard
+                    title="Low Server에서 npm build 하기 - RAM 1GB에서 node 사용해보자"
+                    slug="low-server에서-npm-build"
+                    gradient="from-[#D8B4FE] to-[#818CF8]"
+                />
             </div>
             <Link
                 href="/blog"
