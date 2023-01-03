@@ -10,6 +10,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider attribute='class' defaultTheme={siteMetadata.theme}>
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+          <script async
+                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1586372003132738"
+                  crossOrigin="anonymous"></script>
       </Head>
       <Layout>
         <Component {...pageProps} />
