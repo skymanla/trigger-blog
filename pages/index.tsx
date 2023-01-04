@@ -3,6 +3,7 @@ import Head from 'next/head'
 import BlogPostCard from "../components/BlogPostCard";
 import React from "react";
 import Link from 'next/link'
+import axios from "axios";
 
 
 const Home: NextPage = () => {
