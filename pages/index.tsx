@@ -4,16 +4,13 @@ import BlogPostCard from "../components/BlogPostCard";
 import React from "react";
 import Link from 'next/link'
 import axios from "axios";
+import {PageSEO} from "../components/SEO";
 
 
 const Home: NextPage = () => {
     return (
         <>
-            <Head>
-                <title>Welcome Trigger.kr</title>
-                <meta name="description" content="트리거 홈페이지에 오신 걸 환영합니다" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <PageSEO title={"Welcome Trigger.kr"} description={"트리거에 오신 것을 환영합니다"} />
             <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
                 Featured Posts
             </h3>

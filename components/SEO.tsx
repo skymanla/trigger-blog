@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import siteMetadata from '../data/siteMetaData'
 import Script from "next/script";
+import React from "react";
 
 type Seo = {
     title: string,
@@ -39,6 +40,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
                 rel="canonical"
                 href={canonicalUrl ? canonicalUrl : `${siteMetadata.siteUrl}${router.asPath}`}
             />
+            <link rel="icon" href="/favicon.ico" />
         </Head>
         <Script
             id="Adsense-id"
