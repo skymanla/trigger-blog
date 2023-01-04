@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import siteMetadata from "../data/siteMetaData";
+import Script from 'next/script'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,11 +12,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
           {/* google adsense */}
-          <script async
-                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1586372003132738"
-                  crossOrigin="anonymous"></script>
       </Head>
       <Layout>
+          {/*<script async*/}
+          {/*        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1586372003132738"*/}
+          {/*        crossOrigin="anonymous"></script>*/}
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>    
