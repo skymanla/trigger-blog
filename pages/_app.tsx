@@ -14,9 +14,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           {/* google adsense */}
       </Head>
       <Layout>
-          {/*<script async*/}
-          {/*        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1586372003132738"*/}
-          {/*        crossOrigin="anonymous"></script>*/}
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>    
