@@ -12,7 +12,6 @@ export default function profile() {
     return (
         <>
             <PageSEO title={"profile"} description={siteMetadata.description} />
-            경력: {get_working_day()}
         </>
     )
 }
