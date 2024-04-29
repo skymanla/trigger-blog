@@ -43,7 +43,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
             />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <GoogleAdsense />
+        { process.env.NODE_ENV === 'production' ? <GoogleAdsense /> : ''}
     </>
   )
 }
