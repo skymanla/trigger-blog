@@ -4,7 +4,6 @@ import Layout from '../components/Layout'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import siteMetadata from "../data/siteMetaData";
-import Script from 'next/script'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -16,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </ThemeProvider>    
+    </ThemeProvider>
   )
 }
 
