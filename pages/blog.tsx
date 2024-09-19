@@ -7,11 +7,11 @@ import { GetStaticProps } from "next"
 import { PostType } from "../data/post"
 import { format, parseISO } from 'date-fns'
 
-type IndexProps = {
+type BlogProps = {
     posts: PostType[]
 }
 
-const Blog = ({ posts }: IndexProps) => {
+const Blog = ({ posts }: BlogProps) => {
     return (
         <>
             <PageSEO title="블로그 메인" description={siteMetadata.description} />

@@ -50,5 +50,5 @@ export function getLatestPosts(fields: string[] = []): PostItems[] {
         .map((slug) => getPostBySlug(slug, fields))
         // sort posts by date in descending order
         .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
-    return posts
+    return posts.slice(0, 3)
 }

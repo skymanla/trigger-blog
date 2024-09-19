@@ -1,13 +1,17 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import BlogPostCard from "../components/BlogPostCard"
+import { GetStaticProps } from "next"
 import React from "react"
 import Link from 'next/link'
-import axios from "axios"
 import {PageSEO} from "../components/SEO"
+import { getLatestPosts } from "../lib/blog-api"
+import BlogPostCard from "../components/BlogPostCard"
+import { PostType } from "../data/post"
 
+type IndexProps = {
+    posts: PostType[]
+}
 
-const Home: NextPage = () => {
+const Home: NextPage<IndexProps> = ({ posts }: IndexProps) => {
     return (
         <>
             <PageSEO title={"Welcome Trigger.kr"} description={"트리거에 오신 것을 환영합니다"} />
@@ -15,7 +19,15 @@ const Home: NextPage = () => {
                 Featured Posts
             </h3>
             <div className="flex gap-6 flex-col md:flex-row">
-                <BlogPostCard
+                {posts.map((post) => (
+                    <BlogPostCard
+                        key={post.slug}
+                        title={post.title}
+                        slug={post.slug}
+                        gradient="from-[#D8B4FE] to-[#818CF8]"
+                    />
+                ))}
+                {/* <BlogPostCard
                     title="pm2를 사용한 Node 무중단 배포 - frontend 초보의 쉬운 node 서버 배포기"
                     slug="pm2를-사용한-node-무중단배포"
                     gradient="from-[#D8B4FE] to-[#818CF8]"
@@ -24,7 +36,7 @@ const Home: NextPage = () => {
                     title="Low Server에서 npm build 하기 - RAM 1GB에서 node 사용해보자"
                     slug="low-server에서-npm-build"
                     gradient="from-[#D8B4FE] to-[#818CF8]"
-                />
+                /> */}
             </div>
             <Link
                 href="/blog"
@@ -50,6 +62,14 @@ const Home: NextPage = () => {
             </Link>
         </>
     )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+    const posts = getLatestPosts(['date', 'description', 'slug', 'title'])
+
+    return {
+        props: { posts },
+    }
 }
 
 export default Home
