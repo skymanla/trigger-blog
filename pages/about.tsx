@@ -1,19 +1,19 @@
-import * as React from 'react';
+import * as React from 'react'
 import { PageSEO } from "../components/SEO"
 import siteMetadata from "../data/siteMetaData"
-import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Accordion from '@mui/material/Accordion'
+import AccordionDetails from '@mui/material/AccordionDetails'
+import AccordionSummary from '@mui/material/AccordionSummary'
+import Typography from '@mui/material/Typography'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
 const About = (): JSX.Element => {
-    const [expanded, setExpanded] = React.useState<string | false>(false);
+    const [expanded, setExpanded] = React.useState<string | false>(false)
 
     const handleChange =
         (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-            setExpanded(isExpanded ? panel : false);
-        };
+            setExpanded(isExpanded ? panel : false)
+        }
 
     return (
         <>
@@ -93,7 +93,7 @@ const About = (): JSX.Element => {
                 </Accordion>
             </div>
         </>
-    );
+    )
 }
 
 export default About

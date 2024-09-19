@@ -1,13 +1,13 @@
-import Link from 'next/link';
-import useSWR from 'swr';
-import cn from 'classnames';
+import Link from 'next/link'
+import useSWR from 'swr'
+import cn from 'classnames'
 
-import fetcher from '../lib/fetcher';
-import { Views } from '../lib/types';
+import fetcher from '../lib/fetcher'
+import { Views } from '../lib/types'
 
 export default function BlogPostCard({ title, slug, gradient }: any) {
-    // const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
-    // const views = data?.total;
+    // const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher)
+    // const views = data?.total
 
     return (
         <Link
@@ -52,5 +52,5 @@ export default function BlogPostCard({ title, slug, gradient }: any) {
                 </div>
             </div>
         </Link>
-    );
+    )
 }

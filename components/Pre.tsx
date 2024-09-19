@@ -1,5 +1,5 @@
 import {useRef, useState} from 'react'
-import {hasProperty} from "hast-util-has-property";
+import {hasProperty} from "hast-util-has-property"
 
 const Pre = (props: any) => {
     const textInput = useRef(null)

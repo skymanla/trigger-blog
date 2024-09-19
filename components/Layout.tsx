@@ -1,11 +1,11 @@
-import React from "react";
-import Footer from "./Footer";
-import NavBar from "./NavBar";
-import SectionContainer from "./SectionContainer";
+import React from "react"
+import Footer from "./Footer"
+import NavBar from "./NavBar"
+import SectionContainer from "./SectionContainer"
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 const Layout = (props: Props) => {
     return (
@@ -16,7 +16,7 @@ const Layout = (props: Props) => {
                 <Footer />
             </div>
         </SectionContainer>
-      );
+      )
 }
 
 export default Layout

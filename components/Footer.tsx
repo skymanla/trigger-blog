@@ -1,5 +1,5 @@
-import siteMetadata from "../data/siteMetaData";
-import Link from "next/link";
+import siteMetadata from "../data/siteMetaData"
+import Link from "next/link"
 
 export default function Footer() {
     return (

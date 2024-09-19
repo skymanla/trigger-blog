@@ -1,32 +1,32 @@
-import * as React from 'react';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert, { AlertProps } from '@mui/material/Alert';
-import {PageSEO} from "../components/SEO";
-import siteMetadata from "../data/siteMetaData";
+import * as React from 'react'
+import Stack from '@mui/material/Stack'
+import Button from '@mui/material/Button'
+import Snackbar from '@mui/material/Snackbar'
+import MuiAlert, { AlertProps } from '@mui/material/Alert'
+import {PageSEO} from "../components/SEO"
+import siteMetadata from "../data/siteMetaData"
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
     ref,
 ) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
+})
 
 export default function CustomizedSnackbars() {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(false)
 
     const handleClick = () => {
-        setOpen(true);
-    };
+        setOpen(true)
+    }
 
     const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
-            return;
+            return
         }
 
-        setOpen(false);
-    };
+        setOpen(false)
+    }
 
     return (
         <>
@@ -46,5 +46,5 @@ export default function CustomizedSnackbars() {
                 <Alert severity="success">This is a success message!</Alert>
             </Stack>
         </>
-    );
+    )
 }

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import headerNavLinks from "../data/headerNaviLinks";
-import Link from "next/link";
-import ThemeSwitch from "./ThemeSwitch";
-import siteMetadata from "../data/siteMetaData";
-import Image from "next/image";
+import React, { useState } from "react"
+import headerNavLinks from "../data/headerNaviLinks"
+import Link from "next/link"
+import ThemeSwitch from "./ThemeSwitch"
+import siteMetadata from "../data/siteMetaData"
+import Image from "next/image"
 import MobileNav from './MobileNav'
 
 const Navbar = () => {
-  const [menuToggle, setMenuToggle] = useState(false);
+  const [menuToggle, setMenuToggle] = useState(false)
 
   return (
     //   navbar goes here
@@ -18,7 +18,7 @@ const Navbar = () => {
                     <div className="flex items-center justify-between">
                         {/* logo */}
                         <div className="mr-3">
-                            <Image src={"/logo.svg"} alt={siteMetadata.headerTitle} width={64} height={64} />
+                            <Image src={"/logo_transparent.png"} alt={siteMetadata.headerTitle} width={64} height={64} />
                         </div>
                         {typeof siteMetadata.headerTitle === 'string' ? (
                             <div className="hidden h-6 text-2xl font-semibold sm:block">
@@ -47,7 +47,7 @@ const Navbar = () => {
             </div>
         </nav>
     </header>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

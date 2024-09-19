@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import BlogPostCard from "../components/BlogPostCard";
-import React from "react";
+import BlogPostCard from "../components/BlogPostCard"
+import React from "react"
 import Link from 'next/link'
-import axios from "axios";
-import {PageSEO} from "../components/SEO";
+import axios from "axios"
+import {PageSEO} from "../components/SEO"
 
 
 const Home: NextPage = () => {

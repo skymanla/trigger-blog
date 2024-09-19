@@ -1,15 +1,15 @@
-import { PageSEO } from "../components/SEO"
+import Link from 'next/link'
+import React from 'react'
 import siteMetadata from "../data/siteMetaData"
-import { getAllPosts } from "../lib/blog-api";
-import { GetStaticProps } from "next";
-import {PostType} from "../data/post";
-import { format, parseISO } from 'date-fns';
-import Link from 'next/link';
-import React from 'react';
+import { PageSEO } from "../components/SEO"
+import { getAllPosts } from "../lib/blog-api"
+import { GetStaticProps } from "next"
+import { PostType } from "../data/post"
+import { format, parseISO } from 'date-fns'
 
 type IndexProps = {
-    posts: PostType[];
-};
+    posts: PostType[]
+}
 
 const Blog = ({ posts }: IndexProps) => {
     return (
@@ -42,11 +42,11 @@ const Blog = ({ posts }: IndexProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const posts = getAllPosts(['date', 'description', 'slug', 'title']);
+    const posts = getAllPosts(['date', 'description', 'slug', 'title'])
 
     return {
         props: { posts },
-    };
-};
+    }
+}
 
 export default Blog
