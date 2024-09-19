@@ -22,7 +22,7 @@ const Home: NextPage<IndexProps> = ({ posts }: IndexProps) => {
                 {posts.map((post) => (
                     <BlogPostCard
                         key={post.slug}
-                        title={post.title}
+                        title={post.description}
                         slug={post.slug}
                         gradient="from-[#D8B4FE] to-[#818CF8]"
                     />
