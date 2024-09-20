@@ -14,7 +14,7 @@ type IndexProps = {
 const Home: NextPage<IndexProps> = ({ posts }: IndexProps) => {
     return (
         <>
-            <PageSEO title="트리거" description="일상의 트리거" />
+            <PageSEO title="Trigger" description="일상을 TRIGGER" />
             <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
                 Featured Posts
             </h3>

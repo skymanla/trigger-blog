@@ -1,7 +1,7 @@
 const siteMetadata = {
     title: '일상에 방아쇠를 당기다',
     author: 'ryan-dev',
-    headerTitle: '방아쇠를 당겨봐요',
+    headerTitle: '일상을 TRIGGER',
     description: '블로그 설명',
     language: 'ko-KR',
     theme: 'system', // system, dark or light
