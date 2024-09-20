@@ -1,7 +1,7 @@
 const siteMetadata = {
-    title: 'welcome trigger',
+    title: '일상에 방아쇠를 당기다',
     author: 'ryan-dev',
-    headerTitle: 'Welcome Trigger',
+    headerTitle: '방아쇠를 당겨봐요',
     description: '블로그 설명',
     language: 'ko-KR',
     theme: 'system', // system, dark or light
@@ -81,6 +81,5 @@ const siteMetadata = {
       },
     },
   }
-  
+
   export default siteMetadata
-  

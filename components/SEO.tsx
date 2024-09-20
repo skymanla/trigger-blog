@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import siteMetadata from '../data/siteMetaData'
-import Script from "next/script"
 import React from "react"
 import GoogleAdsense from "./GoogleAdsense"
 
@@ -43,7 +42,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
             />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        { process.env.NODE_ENV === 'production' ? <GoogleAdsense /> : ''}
+        {process.env.NODE_ENV === 'production' ? <GoogleAdsense /> : ''}
     </>
   )
 }
