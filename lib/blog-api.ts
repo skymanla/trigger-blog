@@ -3,12 +3,12 @@ import matter from 'gray-matter'
 import { join } from 'path'
 import { POSTS_PATH } from "./mdx-util"
 
-export function getPostSlugs(): string[] {
-    return fs.readdirSync(POSTS_PATH)
-}
-
 type PostItems = {
     [key: string]: string
+}
+
+export function getPostSlugs(): string[] {
+    return fs.readdirSync(POSTS_PATH)
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []): PostItems {
