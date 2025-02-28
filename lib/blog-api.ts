@@ -44,11 +44,7 @@ export function getAllPosts(fields: string[] = []): PostItems[] {
     return posts
 }
 
-export function getLatestPosts(fields: string[] = []): PostItems[] {
-    const slugs = getPostSlugs()
-    const posts = slugs
-        .map((slug) => getPostBySlug(slug, fields))
-        // sort posts by date in descending order
-        .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
-    return posts.slice(0, 3)
+export function getLatestPosts(fields: string[] = [], limit = 3): PostItems[] {
+    const posts = getAllPosts(fields)
+    return posts.slice(0, limit)
 }
