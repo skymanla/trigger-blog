@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3.3.0
 
-      - name: execute remote ssh & deploy backend server
+      - name: execute remote ssh & deploy frontend server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -18,8 +18,9 @@ jobs:
           script: |
             whoami
             cd www/trigger-blog
+            echo pwd
             git pull origin master
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            npm i
+            npm i && npm run build
             pm2 restart trigger-blog
