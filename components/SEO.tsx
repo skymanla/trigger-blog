@@ -31,10 +31,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
             ) : (
                 <meta property="og:image" content={ogImage} key={ogImage} />
             )}
-            <meta name="github:card" content="summary_large_image" />
-            <meta name="github:site" content={siteMetadata.github} />
-            <meta name="github:title" content={title} />
-            <meta name="github:description" content={description} />
+            <meta name="site.github" content={siteMetadata.github} />
             <link
                 rel="canonical"
                 href={canonicalUrl ? canonicalUrl : `${siteMetadata.siteUrl}${router.asPath}`}
