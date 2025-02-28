@@ -31,11 +31,10 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
             ) : (
                 <meta property="og:image" content={ogImage} key={ogImage} />
             )}
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:site" content={siteMetadata.twitter} />
-            <meta name="twitter:title" content={title} />
-            <meta name="twitter:description" content={description} />
-            <meta name="twitter:image" content={twImage} />
+            <meta name="github:card" content="summary_large_image" />
+            <meta name="github:site" content={siteMetadata.github} />
+            <meta name="github:title" content={title} />
+            <meta name="github:description" content={description} />
             <link
                 rel="canonical"
                 href={canonicalUrl ? canonicalUrl : `${siteMetadata.siteUrl}${router.asPath}`}
