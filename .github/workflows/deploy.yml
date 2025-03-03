@@ -18,7 +18,7 @@ jobs:
           script: |
             whoami
             cd www/trigger-blog
-            git pull origin master
+            git pull origin main
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             npm i && npm run build
