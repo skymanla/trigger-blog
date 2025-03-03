@@ -1,8 +1,8 @@
 import * as React from 'react'
 import Pagination from '@mui/material/Pagination'
 import Stack from '@mui/material/Stack'
-import {PageSEO} from "../components/SEO"
-import siteMetadata from "../data/siteMetaData"
+import {PageSEO} from "@/components/SEO"
+import siteMetadata from "@/interfaces/siteMetaData"
 
 export default function PaginationOutlined() {
     return (

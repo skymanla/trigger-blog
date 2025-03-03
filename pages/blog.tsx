@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
-import siteMetadata from "../data/siteMetaData"
-import { PageSEO } from "../components/SEO"
-import { getAllPosts } from "../lib/blog-api"
+import siteMetadata from "@/interfaces/siteMetaData"
+import { PageSEO } from "@/components/SEO"
+import { getAllPosts } from "@/lib/blog-api"
 import { GetStaticProps } from "next"
-import { PostType } from "../data/post"
+import { PostType } from "@/interfaces/post"
 import { format, parseISO } from 'date-fns'
 
 type BlogProps = {

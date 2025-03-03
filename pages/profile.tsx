@@ -1,7 +1,7 @@
 import * as React from 'react'
-import {PageSEO} from "../components/SEO"
-import siteMetadata from "../data/siteMetaData"
-import {toStringByFormatting} from "../lib/date-format"
+import {PageSEO} from "@/components/SEO"
+import siteMetadata from "@/interfaces/siteMetaData"
+import {toStringByFormatting} from "@/lib/date-format"
 
 function get_working_day() {
     const startWork: Date = new Date("2013-05-01")

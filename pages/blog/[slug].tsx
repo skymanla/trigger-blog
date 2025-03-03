@@ -15,10 +15,10 @@ import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
 import { postFilePaths, POSTS_PATH } from "../../lib/mdx-util"
-import { MetaProps } from "../../data/layout"
-import { PostType } from "../../data/post"
+import { MetaProps } from "../../interfaces/layout"
+import { PostType } from "../../interfaces/post"
 import { PageSEO } from "../../components/SEO"
-import siteMetadata from "../../data/siteMetaData"
+import siteMetadata from "../../interfaces/siteMetaData"
 
 const components = {
     Head,

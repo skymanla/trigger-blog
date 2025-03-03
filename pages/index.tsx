@@ -1,10 +1,10 @@
 import type { GetServerSideProps, NextPage, GetStaticProps } from 'next'
 import React from "react"
 import Link from 'next/link'
-import BlogPostCard from "../components/BlogPostCard"
-import { PageSEO } from "../components/SEO"
-import { getLatestPosts } from "../lib/blog-api"
-import { PostType } from "../data/post"
+import BlogPostCard from "@/components/BlogPostCard"
+import { PageSEO } from "@/components/SEO"
+import { getLatestPosts } from "@/lib/blog-api"
+import { PostType } from "@/interfaces/post"
 
 type IndexProps = {
     posts: PostType[]

@@ -1,0 +1,17 @@
+{
+    "quizTitle": "기술 퀴즈",
+    "quizContext": [
+        {
+          "question": "React에서 컴포넌트의 상태를 관리하는 Hooks는 무엇인가요?",
+          "options": ["useState", "useEffect", "useContext", "useReducer"],
+          "answer": "useState",
+          "explanation": "useState는 React에서 상태를 관리하는 가장 기본적인 Hook입니다. 컴포넌트 내에서 변화하는 값을 관리하고 UI를 업데이트할 때 사용됩니다."
+        },
+        {
+          "question": "Next.js에서 서버 사이드 렌더링(SSR)을 구현하는 함수는 무엇인가요?",
+          "options": ["getStaticProps", "getServerSideProps", "getStaticPaths", "getInitialProps"],
+          "answer": "getServerSideProps",
+          "explanation": "getServerSideProps는 요청 시마다 서버에서 페이지를 렌더링하는 SSR을 구현할 때 사용됩니다. 데이터 페칭 로직을 서버 사이드에서 처리할 수 있습니다."
+        }
+    ]
+}

@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import headerNavLinks from "../data/headerNaviLinks"
+import headerNavLinks from "@/interfaces/headerNaviLinks"
 import Link from "next/link"
 import ThemeSwitch from "./ThemeSwitch"
-import siteMetadata from "../data/siteMetaData"
+import siteMetadata from "@/interfaces/siteMetaData"
 import Image from "next/image"
 import MobileNav from './MobileNav'
 

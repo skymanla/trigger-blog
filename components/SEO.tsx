@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import siteMetadata from '../data/siteMetaData'
+import siteMetadata from '@/interfaces/siteMetaData'
 import React from "react"
 import GoogleAdsense from "./GoogleAdsense"
 

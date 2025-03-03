@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { PageSEO } from "../components/SEO"
-import siteMetadata from "../data/siteMetaData"
+import { PageSEO } from "@/components/SEO"
+import siteMetadata from "@/interfaces/siteMetaData"
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'

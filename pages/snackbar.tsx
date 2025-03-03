@@ -3,8 +3,8 @@ import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import Snackbar from '@mui/material/Snackbar'
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
-import {PageSEO} from "../components/SEO"
-import siteMetadata from "../data/siteMetaData"
+import {PageSEO} from "@/components/SEO"
+import siteMetadata from "@/interfaces/siteMetaData"
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
