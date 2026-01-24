@@ -53,7 +53,7 @@ const Home: NextPage<IndexProps> = ({ posts }: IndexProps) => {
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
     let posts = getLatestPosts(['date', 'description', 'slug', 'title', 'image'])
     posts = posts.map((post) => {
         return {

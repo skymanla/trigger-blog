@@ -14,6 +14,24 @@ const About = (): JSX.Element => {
                     </h1>
                     <div className="border-b-4 border-black dark:border-gray-700 w-24 mb-10"></div>
                 </div>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Person",
+                            "name": "Kim Nam-tae",
+                            "alternateName": "김남태",
+                            "jobTitle": "Backend Developer",
+                            "url": "https://trigger.kr/about",
+                            "image": "https://trigger.kr/static/images/avatar.png",
+                            "sameAs": [
+                                "https://github.com/skymanla",
+                                "https://www.linkedin.com"
+                            ]
+                        })
+                    }}
+                />
 
                 {/* Profile Section */}
                 <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
@@ -45,8 +63,8 @@ const About = (): JSX.Element => {
                         {/* Intro */}
                         <div className="mb-12 border-l-4 border-primary-500 pl-6">
                             <h2 className="text-3xl font-bold mb-4 font-display">
-                                "비즈니스 목표를 현실로 만드는<br/>
-                                <span className="text-primary-500">카멜레온</span> 개발자"
+                                &quot;비즈니스 목표를 현실로 만드는<br/>
+                                <span className="text-primary-500">Backend</span> 개발자&quot;
                             </h2>
                             <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                                 12년 차, 다양한 언어(Java, Python, PHP)와 환경을 넘나들며 회사의 이익을 최우선으로 하는 개발을 지향합니다.

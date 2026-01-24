@@ -10,7 +10,7 @@ type Props = {
 const Layout = (props: Props) => {
     return (
         <SectionContainer>
-            <div className="flex h-screen flex-col justify-between">
+            <div className="flex min-h-screen flex-col justify-between">
                 <NavBar />
                 <main className="mb-auto">{props.children}</main>
                 <Footer />

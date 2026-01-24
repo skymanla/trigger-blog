@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://trigger.kr
+
+# Sitemaps
+Sitemap: https://trigger.kr/sitemap.xml
