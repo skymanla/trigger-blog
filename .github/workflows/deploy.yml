@@ -17,7 +17,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             whoami
-            cd www/trigger-kr
+            cd www/trigger-blog
             git pull origin main
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
