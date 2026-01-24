@@ -3,39 +3,50 @@
 @tailwind utilities;
 
 .task-list-item::before {
-    @apply hidden;
-  }
-  
-  .task-list-item {
-    @apply list-none;
-  }
-  
-  .footnotes {
-    @apply pt-8 mt-12 border-t border-gray-200 dark:border-gray-700;
-  }
-  
-  .csl-entry {
-    @apply my-5;
-  }
-  
-  /* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
-  input:-webkit-autofill,
-  input:-webkit-autofill:focus {
-    transition: background-color 600000s 0s, color 600000s 0s;
-  }
+  @apply hidden;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
+.footnotes {
+  @apply pt-8 mt-12 border-t border-gray-200 dark:border-gray-700;
+}
+
+.csl-entry {
+  @apply my-5;
+}
+
+/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition:
+    background-color 600000s 0s,
+    color 600000s 0s;
+}
 
 @layer base {
+  html {
+    @apply font-sans text-dark-900 bg-white dark:bg-dark-900 dark:text-dark-50 antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
   h1 {
-    @apply mb-6 text-3xl font-semibold;
+    @apply mb-6 text-4xl lg:text-5xl;
   }
   h2 {
-    @apply text-2xl font-semibold;
+    @apply mb-4 text-3xl lg:text-4xl;
   }
   p {
-    @apply mb-4;
+    @apply mb-4 leading-relaxed;
   }
   a {
-    @apply text-blue-500 hover:text-blue-400 dark:text-blue-400 dark:hover:text-blue-300;
+    @apply text-dark-900 transition-colors duration-200 hover:text-primary-700 dark:text-dark-100 dark:hover:text-primary-400 decoration-primary-400 decoration-2 underline-offset-2 hover:underline;
+  }
+  ::selection {
+    @apply bg-primary-400 text-black;
   }
 }
 
@@ -61,7 +72,7 @@
 
 .prose .anchor:after {
   @apply text-gray-300 dark:text-gray-700;
-  content: '#';
+  content: "#";
 }
 
 .prose *:hover > .anchor {
@@ -148,8 +159,8 @@
   @apply text-yellow-500;
 }
 
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   @apply text-gray-800 dark:text-gray-50;
 }
 

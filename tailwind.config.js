@@ -10,28 +10,45 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#fffff9',
-          100: '#ffffad',
-          200: '#fffe75',
-          300: '#fffe2d',
-          400: '#fffe0f',
-          500: '#efee00',
-          600: '#d0d000',
-          700: '#b2b100',
-          800: '#939300',
-          900: '#757400',
+          50: '#fdffe5',
+          100: '#f9ffc2',
+          200: '#f2ff85',
+          300: '#e8ff47',
+          400: '#e1f505', // Electric Lemon (Brand)
+          500: '#c2d600',
+          600: '#99aa00',
+          700: '#738000',
+          800: '#525c00',
+          900: '#383d00',
         },
-        black: {
-          50: '#707070',
-          100: '#424242',
-          200: '#323232',
-          300: '#242424',
-          400: '#181818',
-          500: '#0a0a0a',
-          600: '#040404',
-          700: '#000',
+        dark: {
+          50: '#f4f4f5',
+          100: '#e4e4e7',
+          200: '#d4d4d8',
+          300: '#a1a1aa',
+          400: '#71717a',
+          500: '#52525b',
+          600: '#3f3f46',
+          700: '#27272a',
+          800: '#18181b', // Soft Gray
+          900: '#111111', // Deep Charcoal
         },
       },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Syne', 'sans-serif'],
+        mono: ['Fira Code', 'monospace'],
+        serif: ['Bitter', 'serif'], // Keeping for legacy support if needed
+      },
+      boxShadow: {
+        'neo': '4px 4px 0px 0px rgba(0,0,0,1)',
+        'neo-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
+        'neo-lg': '6px 6px 0px 0px rgba(0,0,0,1)',
+        'neo-dark': '4px 4px 0px 0px rgba(255,255,255,1)', // For dark mode
+      },
+      borderWidth: {
+        '3': '3px',
+      }
     },
     container: {
       center: true,
@@ -39,19 +56,6 @@ module.exports = {
         DEFAULT: '1rem',
         sm: '2rem',
       },
-    },
-    fontFamily: {
-      serif: ['Bitter', 'serif'],
-      sans: [
-        'SF Pro Text',
-        'Inter',
-        'system-ui',
-        'BlinkMacSystemFont',
-        'Segoe UI',
-        'Roboto',
-        'Ubuntu',
-      ],
-      monospace: [`SF Mono`, `ui-monospace`, `Monaco`, 'Monospace'],
     },
   },
   plugins: [customContainerPlugin, plugin(ellipisfyPlugin)],
@@ -76,7 +80,7 @@ function customContainerPlugin({ addComponents }) {
         maxWidth: '1024px',
       },
       '@screen xl': {
-        maxWidth: '1166px',
+        maxWidth: '1280px', // Standardized wide container
       },
     },
   });
