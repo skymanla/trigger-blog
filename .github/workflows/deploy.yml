@@ -19,5 +19,7 @@ jobs:
             whoami
             cd www/trigger-kr
             git pull origin main
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
             npm i && npm run build
             rm -rf node_modules
