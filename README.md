@@ -13,3 +13,4 @@
 
 ## 배포 파이프라인
 - github action
+- shell script
