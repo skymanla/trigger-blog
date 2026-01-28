@@ -17,17 +17,6 @@ const Home: NextPage<IndexProps> = ({ posts }: IndexProps) => {
         <>
             <PageSEO title="Trigger" description="일상을 TRIGGER" />
 
-            {/* Hero Section */}
-            <section className="mb-10 text-center md:text-left">
-                <h1 className="mb-4 text-5xl font-extrabold tracking-tighter md:text-7xl">
-                    <span className="bg-primary-400 px-2 text-black shadow-neo-sm dark:shadow-neo-dark">TRIGGER</span> YOUR LIFE
-                </h1>
-                <p className="mx-auto max-w-2xl text-lg text-dark-400 dark:text-dark-300 md:mx-0 md:text-xl">
-                    프론트엔드 기술과 일상의 영감을 기록하는 블로그입니다.<br/>
-                    매일의 작은 변화가 큰 차이를 만듭니다.
-                </p>
-            </section>
-
             {/* Featured Posts Grid */}
             <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:h-[500px]">
                 {/* Main Hero Post */}
