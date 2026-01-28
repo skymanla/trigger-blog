@@ -21,8 +21,9 @@ const FeaturedPostSidebar = ({ posts }: Props) => {
             <p className="line-clamp-2 font-sans text-sm text-dark-400 dark:text-dark-300">
               {post.description}
             </p>
-            <div className="mt-4 font-mono text-xs font-bold text-dark-300 group-hover:text-primary-700 dark:group-hover:text-primary-400">
-              {post.date}
+            <div className="mt-4 flex items-center justify-between font-mono text-xs font-bold text-dark-300">
+              <span className="group-hover:text-primary-700 dark:group-hover:text-primary-400">{post.date}</span>
+              <span className="opacity-0 transition-opacity group-hover:opacity-100 group-hover:text-primary-700 dark:group-hover:text-primary-400">READ MORE &rarr;</span>
             </div>
           </div>
         </Link>

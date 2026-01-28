@@ -16,28 +16,44 @@ const Home: NextPage<IndexProps> = ({ posts }: IndexProps) => {
     return (
         <>
             <PageSEO title="Trigger" description="일상을 TRIGGER" />
-            <div className="grid grid-cols-1 gap-6 md:h-[450px] md:grid-cols-3">
-                {/* Hero Post (Left 2 columns) */}
-                <div className="md:col-span-2 h-full">
+
+            {/* Hero Section */}
+            <section className="mb-10 text-center md:text-left">
+                <h1 className="mb-4 text-5xl font-extrabold tracking-tighter md:text-7xl">
+                    <span className="bg-primary-400 px-2 text-black shadow-neo-sm dark:shadow-neo-dark">TRIGGER</span> YOUR LIFE
+                </h1>
+                <p className="mx-auto max-w-2xl text-lg text-dark-400 dark:text-dark-300 md:mx-0 md:text-xl">
+                    프론트엔드 기술과 일상의 영감을 기록하는 블로그입니다.<br/>
+                    매일의 작은 변화가 큰 차이를 만듭니다.
+                </p>
+            </section>
+
+            {/* Featured Posts Grid */}
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:h-[500px]">
+                {/* Main Hero Post */}
+                <div className="md:col-span-8 h-[400px] md:h-full">
                     {posts[0] && <FeaturedPostHero post={posts[0]} />}
                 </div>
 
-                {/* Sidebar Posts (Right 1 column) */}
-                <div className="md:col-span-1 h-full">
+                {/* Secondary Posts */}
+                <div className="md:col-span-4 h-full">
                      <FeaturedPostSidebar posts={posts.slice(1, 3)} />
                 </div>
             </div>
-            <div className="mt-12 flex justify-center">
+
+            {/* Bottom Call to Action */}
+            <div className="mt-20 flex flex-col items-center justify-center border-t-3 border-black py-12 dark:border-dark-100">
+                <h3 className="mb-6 font-display text-2xl font-bold">더 많은 이야기가 궁금하신가요?</h3>
                 <Link
                     href="/blog"
-                    className="group inline-flex items-center gap-2 border-3 border-black bg-white px-8 py-3 font-mono text-sm font-bold text-black shadow-neo transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none dark:border-dark-100 dark:bg-dark-800 dark:text-white dark:shadow-neo-dark"
+                    className="group inline-flex items-center gap-3 border-3 border-black bg-primary-400 px-10 py-4 font-mono text-base font-bold text-black shadow-neo transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none dark:border-white"
                 >
-                    <span>VIEW ALL POSTS</span>
+                    <span>EXPLORE ALL POSTS</span>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                        className="h-6 w-6 transition-transform group-hover:translate-x-1"
                     >
                         <path
                             stroke="currentColor"

@@ -39,14 +39,17 @@ const MobileNav = () => {
                 </svg>
             </button>
             <div
-                className={`fixed top-0 left-0 z-10 h-full w-full transform bg-gray-200 opacity-95 duration-300 ease-in-out dark:bg-gray-800 ${
-                    navShow ? 'translate-x-0' : 'translate-x-full'
+                className={`fixed top-0 left-0 z-[100] h-screen w-screen transform bg-white transition-all duration-300 ease-in-out dark:bg-dark-900 ${
+                    navShow ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
                 }`}
             >
-                <div className="flex justify-end">
+                <div className="flex justify-between items-center p-4 border-b border-gray-100 dark:border-dark-800">
+                    <div className="flex h-10 w-10 items-center justify-center border-2 border-black bg-primary-400 font-display text-xl font-bold text-black dark:border-white">
+                        Tr
+                    </div>
                     <button
                         type="button"
-                        className="mr-5 mt-11 h-8 w-8 rounded"
+                        className="h-8 w-8 rounded"
                         aria-label="Toggle Menu"
                         onClick={onToggleNav}
                     >
@@ -64,12 +67,12 @@ const MobileNav = () => {
                         </svg>
                     </button>
                 </div>
-                <nav className="fixed mt-8 h-full">
+                <nav className="mt-4 h-[calc(100vh-80px)] overflow-y-auto flex flex-col items-center px-4 pb-20">
                     {headerNavLinks.map((link) => (
-                        <div key={link.title} className="px-12 py-4">
+                        <div key={link.title} className="w-full border-b border-gray-50 dark:border-dark-800 last:border-b-0">
                             <Link
                                 href={link.href}
-                                className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
+                                className="block py-6 text-center text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
                                 onClick={onToggleNav}
                             >
                                 {link.title}
