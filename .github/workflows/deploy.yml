@@ -17,10 +17,10 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             whoami
-            cd www/trigger-blog
-            git add . && git stash && git stash clear
+            cd www/trigger-blog            
             git pull origin main
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             npm i && npm run build
             rm -rf node_modules
+            git add . && git stash && git stash clear
