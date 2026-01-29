@@ -35,7 +35,7 @@ const Home: NextPage<IndexProps> = ({ posts }: IndexProps) => {
                 <h3 className="mb-6 font-display text-2xl font-bold">더 많은 이야기가 궁금하신가요?</h3>
                 <Link
                     href="/blog"
-                    className="group inline-flex items-center gap-3 border-3 border-black bg-primary-400 px-10 py-4 font-mono text-base font-bold text-black shadow-neo transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none dark:border-white"
+                    className="group inline-flex items-center gap-3 border-3 border-black bg-primary-400 px-10 py-4 font-mono text-base font-bold text-black shadow-neo transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none dark:border-white dark:text-black"
                 >
                     <span>EXPLORE ALL POSTS</span>
                     <svg
