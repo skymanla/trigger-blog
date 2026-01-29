@@ -18,6 +18,7 @@ jobs:
           script: |
             whoami
             cd www/trigger-blog
+            git add . && git stash && git stash clear
             git pull origin main
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
