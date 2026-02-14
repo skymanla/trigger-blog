@@ -2,8 +2,8 @@ import Head from 'next/head'
 import { ThemeProvider } from 'next-themes'
 import '@/styles/tailwind.css'
 import type { AppProps } from 'next/app'
-import Layout from '@/components/Layout'
-import siteMetadata from "@/interfaces/siteMetaData"
+import Layout from '@/components/layout/Layout'
+import siteMetadata from "@/data/siteMetadata"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

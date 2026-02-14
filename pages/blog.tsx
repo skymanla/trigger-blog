@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
-import siteMetadata from "@/interfaces/siteMetaData"
-import { PageSEO } from "@/components/SEO"
+import siteMetadata from "@/data/siteMetadata"
+import { PageSEO } from "@/components/common/SEO"
+import BlogPostCard from "@/components/blog/BlogPostCard"
 import { getAllPosts } from "@/lib/blog-api"
 import { GetStaticProps } from "next"
 import { PostType } from "@/interfaces/post"
@@ -15,28 +16,25 @@ const Blog = ({ posts }: BlogProps) => {
     return (
         <>
             <PageSEO title="블로그 메인" description={siteMetadata.description} />
-            {posts.map((post) => (
-                <article key={post.slug} className="mt-12">
-                    <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
-                        {format(parseISO(post.date as string), 'MMMM dd, yyyy')}
-                    </p>
-                    <h1 className="mb-2 text-xl">
-                        <Link
-                            as={`/blog/${post.slug}`}
-                            href={`/blog/[slug]`}
-                            className="text-gray-900 dark:text-white dark:hover:text-blue-400"
-                        >
-                            {post.title}
-                        </Link>
-                    </h1>
-                    <p className="mb-3">{post.description}</p>
-                    <p>
-                        <Link as={`/blog/${post.slug}`} href={`/blog/[slug]`}>
-                            <span>Read More</span>
-                        </Link>
-                    </p>
-                </article>
-            ))}
+            <div className="py-12">
+                <h1 className="mb-4 font-display text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl">
+                    Articles
+                </h1>
+                <p className="mb-12 text-lg text-slate-500 dark:text-slate-400">
+                    기술과 일상에 관한 다양한 생각들을 기록합니다.
+                </p>
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {posts.map((post) => (
+                        <BlogPostCard
+                            key={post.slug}
+                            title={post.title}
+                            slug={post.slug}
+                            description={post.description}
+                            date={post.date ? format(parseISO(post.date), 'MMMM dd, yyyy') : undefined}
+                        />
+                    ))}
+                </div>
+            </div>
         </>
     )
 }

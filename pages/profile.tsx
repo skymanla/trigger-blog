@@ -1,6 +1,6 @@
 import * as React from 'react'
-import {PageSEO} from "@/components/SEO"
-import siteMetadata from "@/interfaces/siteMetaData"
+import {PageSEO} from "@/components/common/SEO"
+import siteMetadata from "@/data/siteMetadata"
 import {toStringByFormatting} from "@/lib/date-format"
 
 function get_working_day() {

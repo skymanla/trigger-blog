@@ -1,16 +1,16 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import siteMetadata from '@/interfaces/siteMetaData'
+import siteMetadata from '@/data/siteMetadata'
 import React from "react"
 import GoogleAdsense from "./GoogleAdsense"
 
 type Seo = {
     title: string,
     description?: string,
-    ogType?: any,
-    ogImage?: any,
-    twImage?: any,
-    canonicalUrl?: any
+    ogType?: string,
+    ogImage?: string | string[] | { url: string }[],
+    twImage?: string,
+    canonicalUrl?: string
 }
 
 const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl }: Seo) => {
@@ -26,10 +26,13 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
             <meta property="og:site_name" content={siteMetadata.title} />
             <meta property="og:description" content={description} />
             <meta property="og:title" content={title} />
-            {ogImage.constructor.name === 'Array' ? (
-                ogImage.map(({ url }: any) => <meta property="og:image" content={url} key={url} />)
+            {Array.isArray(ogImage) ? (
+                ogImage.map((img: any) => {
+                    const url = typeof img === 'string' ? img : img.url
+                    return <meta property="og:image" content={url} key={url} />
+                })
             ) : (
-                <meta property="og:image" content={ogImage} key={ogImage} />
+                <meta property="og:image" content={ogImage as string} key={ogImage as string} />
             )}
             <meta name="site.github" content={siteMetadata.github} />
             <link
@@ -43,7 +46,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
   )
 }
 
-export const PageSEO = ({ title, description }: Seo) => {
+export const PageSEO = ({ title, description }: { title: string, description: string }) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   return (
@@ -57,7 +60,7 @@ export const PageSEO = ({ title, description }: Seo) => {
   )
 }
 
-export const TagSEO = ({ title, description }: Seo) => {
+export const TagSEO = ({ title, description }: { title: string, description: string }) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const router = useRouter()
@@ -82,6 +85,17 @@ export const TagSEO = ({ title, description }: Seo) => {
   )
 }
 
+interface BlogSeoProps {
+    authorDetails?: { name: string }[]
+    title: string
+    summary: string
+    date: string
+    lastmod?: string
+    url: string
+    images?: string[] | string
+    canonicalUrl?: string
+}
+
 export const BlogSEO = ({
   authorDetails,
   title,
@@ -91,7 +105,7 @@ export const BlogSEO = ({
   url,
   images = [],
   canonicalUrl,
-}: any) => {
+}: BlogSeoProps) => {
   const router = useRouter()
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
