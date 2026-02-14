@@ -1,0 +1,652 @@
+warning: in the working copy of 'public/robots.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'public/sitemap-0.xml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'public/sitemap.xml', LF will be replaced by CRLF the next time Git touches it
+diff --git a/components/BlogPostCard.tsx b/components/blog/BlogPostCard.tsx
+similarity index 100%
+rename from components/BlogPostCard.tsx
+rename to components/blog/BlogPostCard.tsx
+diff --git a/components/FeaturedPostHero.tsx b/components/blog/FeaturedPostHero.tsx
+similarity index 100%
+rename from components/FeaturedPostHero.tsx
+rename to components/blog/FeaturedPostHero.tsx
+diff --git a/components/FeaturedPostSidebar.tsx b/components/blog/FeaturedPostSidebar.tsx
+similarity index 100%
+rename from components/FeaturedPostSidebar.tsx
+rename to components/blog/FeaturedPostSidebar.tsx
+diff --git a/components/TOCInline.tsx b/components/blog/TOCInline.tsx
+similarity index 100%
+rename from components/TOCInline.tsx
+rename to components/blog/TOCInline.tsx
+diff --git a/components/GoogleAdsense.tsx b/components/common/GoogleAdsense.tsx
+similarity index 100%
+rename from components/GoogleAdsense.tsx
+rename to components/common/GoogleAdsense.tsx
+diff --git a/components/PageTitle.tsx b/components/common/PageTitle.tsx
+similarity index 100%
+rename from components/PageTitle.tsx
+rename to components/common/PageTitle.tsx
+diff --git a/components/Pagination.tsx b/components/common/Pagination.tsx
+similarity index 100%
+rename from components/Pagination.tsx
+rename to components/common/Pagination.tsx
+diff --git a/components/SEO.tsx b/components/common/SEO.tsx
+similarity index 81%
+rename from components/SEO.tsx
+rename to components/common/SEO.tsx
+index a1945f8..94c81fc 100644
+--- a/components/SEO.tsx
++++ b/components/common/SEO.tsx
+@@ -1,16 +1,16 @@
+ import Head from 'next/head'
+ import { useRouter } from 'next/router'
+-import siteMetadata from '@/interfaces/siteMetaData'
++import siteMetadata from '@/data/siteMetadata'
+ import React from "react"
+ import GoogleAdsense from "./GoogleAdsense"
+
+ type Seo = {
+     title: string,
+     description?: string,
+-    ogType?: any,
+-    ogImage?: any,
+-    twImage?: any,
+-    canonicalUrl?: any
++    ogType?: string,
++    ogImage?: string | string[] | { url: string }[],
++    twImage?: string,
++    canonicalUrl?: string
+ }
+
+ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl }: Seo) => {
+@@ -26,10 +26,13 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl
+             <meta property="og:site_name" content={siteMetadata.title} />
+             <meta property="og:description" content={description} />
+             <meta property="og:title" content={title} />
+-            {ogImage.constructor.name === 'Array' ? (
+-                ogImage.map(({ url }: any) => <meta property="og:image" content={url} key={url} />)
++            {Array.isArray(ogImage) ? (
++                ogImage.map((img: any) => {
++                    const url = typeof img === 'string' ? img : img.url
++                    return <meta property="og:image" content={url} key={url} />
++                })
+             ) : (
+-                <meta property="og:image" content={ogImage} key={ogImage} />
++                <meta property="og:image" content={ogImage as string} key={ogImage as string} />
+             )}
+             <meta name="site.github" content={siteMetadata.github} />
+             <link
+@@ -43,7 +46,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl
+   )
+ }
+
+-export const PageSEO = ({ title, description }: Seo) => {
++export const PageSEO = ({ title, description }: { title: string, description: string }) => {
+   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+   return (
+@@ -57,7 +60,7 @@ export const PageSEO = ({ title, description }: Seo) => {
+   )
+ }
+
+-export const TagSEO = ({ title, description }: Seo) => {
++export const TagSEO = ({ title, description }: { title: string, description: string }) => {
+   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+   const router = useRouter()
+@@ -82,6 +85,17 @@ export const TagSEO = ({ title, description }: Seo) => {
+   )
+ }
+
++interface BlogSeoProps {
++    authorDetails?: { name: string }[]
++    title: string
++    summary: string
++    date: string
++    lastmod?: string
++    url: string
++    images?: string[] | string
++    canonicalUrl?: string
++}
++
+ export const BlogSEO = ({
+   authorDetails,
+   title,
+@@ -91,7 +105,7 @@ export const BlogSEO = ({
+   url,
+   images = [],
+   canonicalUrl,
+-}: any) => {
++}: BlogSeoProps) => {
+   const router = useRouter()
+   const publishedAt = new Date(date).toISOString()
+   const modifiedAt = new Date(lastmod || date).toISOString()
+diff --git a/components/SectionContainer.tsx b/components/common/SectionContainer.tsx
+similarity index 100%
+rename from components/SectionContainer.tsx
+rename to components/common/SectionContainer.tsx
+diff --git a/components/ThemeSwitch.tsx b/components/common/ThemeSwitch.tsx
+similarity index 100%
+rename from components/ThemeSwitch.tsx
+rename to components/common/ThemeSwitch.tsx
+diff --git a/components/Footer.tsx b/components/layout/Footer.tsx
+similarity index 96%
+rename from components/Footer.tsx
+rename to components/layout/Footer.tsx
+index 49553f1..48e9b4a 100644
+--- a/components/Footer.tsx
++++ b/components/layout/Footer.tsx
+@@ -1,4 +1,4 @@
+-import siteMetadata from "@/interfaces/siteMetaData"
++import siteMetadata from "@/data/siteMetadata"
+ import Link from "next/link"
+
+ export default function Footer() {
+diff --git a/components/Layout.tsx b/components/layout/Layout.tsx
+similarity index 85%
+rename from components/Layout.tsx
+rename to components/layout/Layout.tsx
+index 1d9b739..8c04917 100644
+--- a/components/Layout.tsx
++++ b/components/layout/Layout.tsx
+@@ -1,7 +1,7 @@
+ import React from "react"
+ import Footer from "./Footer"
+ import NavBar from "./NavBar"
+-import SectionContainer from "./SectionContainer"
++import SectionContainer from "../common/SectionContainer"
+
+ type Props = {
+   children: React.ReactNode
+diff --git a/components/MobileNav.tsx b/components/layout/MobileNav.tsx
+similarity index 100%
+rename from components/MobileNav.tsx
+rename to components/layout/MobileNav.tsx
+diff --git a/components/NavBar.tsx b/components/layout/NavBar.tsx
+similarity index 94%
+rename from components/NavBar.tsx
+rename to components/layout/NavBar.tsx
+index 454bd0c..7f3da4b 100644
+--- a/components/NavBar.tsx
++++ b/components/layout/NavBar.tsx
+@@ -1,8 +1,8 @@
+ import React, { useState } from "react"
+ import headerNavLinks from "@/interfaces/headerNaviLinks"
+ import Link from "next/link"
+-import ThemeSwitch from "./ThemeSwitch"
+-import siteMetadata from "@/interfaces/siteMetaData"
++import ThemeSwitch from "../common/ThemeSwitch"
++import siteMetadata from "@/data/siteMetadata"
+ import MobileNav from './MobileNav'
+
+ const Navbar = () => {
+diff --git a/components/QuizQuestion.tsx b/components/quiz/QuizQuestion.tsx
+similarity index 100%
+rename from components/QuizQuestion.tsx
+rename to components/quiz/QuizQuestion.tsx
+diff --git a/components/QuizResult.tsx b/components/quiz/QuizResult.tsx
+similarity index 100%
+rename from components/QuizResult.tsx
+rename to components/quiz/QuizResult.tsx
+diff --git a/data/siteMetadata.ts b/data/siteMetadata.ts
+new file mode 100644
+index 0000000..5a4741d
+--- /dev/null
++++ b/data/siteMetadata.ts
+@@ -0,0 +1,59 @@
++const siteMetadata = {
++    title: 'Trigger - 일상의 변화를 만드는 방아쇠',
++    author: 'Kim Nam-tae',
++    headerTitle: 'TRIGGER.KR',
++    description: '12년차 백엔드 개발자 김남태의 기술 블로그. 비즈니스 가치를 창출하는 개발 이야기.',
++    language: 'ko-KR',
++    theme: 'system', // system, dark or light
++    siteUrl: 'https://trigger.kr',
++    siteRepo: 'https://github.com/skymanla/trigger-blog',
++    siteLogo: '/static/images/logo.png',
++    image: '/static/images/avatar.png',
++    socialBanner: '/static/images/twitter-card.png',
++    email: 'skymanla@naver.com',
++    github: 'https://github.com/skymanla',
++    twitter: 'https://twitter.com/Twitter',
++    facebook: 'https://facebook.com',
++    youtube: 'https://youtube.com',
++    linkedin: 'https://www.linkedin.com',
++    locale: 'ko-KR',
++    analytics: {
++      plausibleDataDomain: '',
++      simpleAnalytics: false,
++      umamiWebsiteId: '',
++      googleAnalyticsId: '',
++      posthogAnalyticsId: '',
++    },
++    newsletter: {
++      provider: 'buttondown',
++    },
++    comment: {
++      provider: 'giscus',
++      giscusConfig: {
++        repo: process.env.NEXT_PUBLIC_GISCUS_REPO,
++        repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID,
++        category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY,
++        categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
++        mapping: 'pathname',
++        reactions: '1',
++        metadata: '0',
++        theme: 'light',
++        inputPosition: 'bottom',
++        lang: 'en',
++        darkTheme: 'transparent_dark',
++        themeURL: '',
++      },
++      utterancesConfig: {
++        repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO,
++        issueTerm: '',
++        label: '',
++        theme: '',
++        darkTheme: '',
++      },
++      disqusConfig: {
++        shortname: process.env.NEXT_PUBLIC_DISQUS_SHORTNAME,
++      },
++    },
++  }
++
++  export default siteMetadata
+diff --git a/hooks/useQuiz.ts b/hooks/useQuiz.ts
+new file mode 100644
+index 0000000..f973ce1
+--- /dev/null
++++ b/hooks/useQuiz.ts
+@@ -0,0 +1,67 @@
++import { useState, useEffect } from 'react'
++
++interface QuizContextItem {
++  question: string
++  options: string[]
++  answer: string
++}
++
++export const useQuiz = (quizeContext: QuizContextItem[]) => {
++  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
++  const [userAnswers, setUserAnswers] = useState<(string | null)[]>(Array(quizeContext.length).fill(null))
++  const [quizCompleted, setQuizCompleted] = useState(false)
++  const [score, setScore] = useState(0)
++
++  const handleSelectAnswer = (selectedAnswer: string) => {
++    const updatedAnswers = [...userAnswers]
++    updatedAnswers[currentQuestionIndex] = selectedAnswer
++    setUserAnswers(updatedAnswers)
++  }
++
++  const calculateScore = () => {
++    let correctAnswers = 0
++    quizeContext.forEach((quizItem, index) => {
++      if (quizItem.answer === userAnswers[index]) {
++        correctAnswers++
++      }
++    })
++    setScore(correctAnswers)
++  }
++
++  const handleNextQuestion = () => {
++    if (currentQuestionIndex < quizeContext.length - 1) {
++      setCurrentQuestionIndex(currentQuestionIndex + 1)
++    } else {
++      setQuizCompleted(true)
++      calculateScore()
++    }
++  }
++
++  const handleResetQuiz = () => {
++    setCurrentQuestionIndex(0)
++    setUserAnswers(Array(quizeContext.length).fill(null))
++    setQuizCompleted(false)
++    setScore(0)
++  }
++
++  useEffect(() => {
++    if (!quizCompleted && currentQuestionIndex < quizeContext.length) {
++      if (userAnswers[currentQuestionIndex]) {
++        const timer = setTimeout(handleNextQuestion, 500)
++        return () => clearTimeout(timer)
++      }
++    }
++  }, [currentQuestionIndex, userAnswers, quizCompleted])
++
++  return {
++    currentQuestionIndex,
++    userAnswers,
++    quizCompleted,
++    score,
++    handleSelectAnswer,
++    handleNextQuestion,
++    handleResetQuiz,
++    setQuizCompleted,
++    calculateScore
++  }
++}
+diff --git a/lib/blog-api.ts b/lib/blog-api.ts
+index adda5a2..d642317 100644
+--- a/lib/blog-api.ts
++++ b/lib/blog-api.ts
+@@ -1,23 +1,20 @@
++import { PostType } from "@/interfaces/post"
+ import fs from 'fs'
+ import matter from 'gray-matter'
+ import { join } from 'path'
+ import { POSTS_PATH } from "./mdx-util"
+
+-type PostItems = {
+-    [key: string]: string
+-}
+-
+ export function getPostSlugs(): string[] {
+     return fs.readdirSync(POSTS_PATH)
+ }
+
+-export function getPostBySlug(slug: string, fields: string[] = []): PostItems {
++export function getPostBySlug(slug: string, fields: string[] = []): PostType {
+     const realSlug = slug.replace(/\.mdx$/, '')
+     const fullPath = join(POSTS_PATH, `${realSlug}.mdx`)
+     const fileContents = fs.readFileSync(fullPath, 'utf8')
+     const { data, content } = matter(fileContents)
+
+-    const items: PostItems = {}
++    const items: any = {}
+
+     // Ensure only the minimal needed data is exposed
+     fields.forEach((field) => {
+@@ -32,19 +29,19 @@ export function getPostBySlug(slug: string, fields: string[] = []): PostItems {
+         }
+     })
+
+-    return items
++    return items as PostType
+ }
+
+-export function getAllPosts(fields: string[] = []): PostItems[] {
++export function getAllPosts(fields: string[] = []): PostType[] {
+     const slugs = getPostSlugs()
+     const posts = slugs
+         .map((slug) => getPostBySlug(slug, fields))
+         // sort posts by date in descending order
+-        .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
++        .sort((post1, post2) => ((post1.date || '') > (post2.date || '') ? -1 : 1))
+     return posts
+ }
+
+-export function getLatestPosts(fields: string[] = [], limit = 3): PostItems[] {
++export function getLatestPosts(fields: string[] = [], limit = 3): PostType[] {
+     const posts = getAllPosts(fields)
+     return posts.slice(0, limit)
+ }
+\ No newline at end of file
+diff --git a/pages/_app.tsx b/pages/_app.tsx
+index c18f63f..4744811 100644
+--- a/pages/_app.tsx
++++ b/pages/_app.tsx
+@@ -2,8 +2,8 @@ import Head from 'next/head'
+ import { ThemeProvider } from 'next-themes'
+ import '@/styles/tailwind.css'
+ import type { AppProps } from 'next/app'
+-import Layout from '@/components/Layout'
+-import siteMetadata from "@/interfaces/siteMetaData"
++import Layout from '@/components/layout/Layout'
++import siteMetadata from "@/data/siteMetadata"
+
+ function MyApp({ Component, pageProps }: AppProps) {
+   return (
+diff --git a/pages/about.tsx b/pages/about.tsx
+index 47fa0c2..6ae6951 100644
+--- a/pages/about.tsx
++++ b/pages/about.tsx
+@@ -1,4 +1,4 @@
+-import { PageSEO } from "@/components/SEO"
++import { PageSEO } from "@/components/common/SEO"
+ import siteMetadata from "@/interfaces/siteMetaData"
+
+ const About = (): JSX.Element => {
+diff --git a/pages/blog.tsx b/pages/blog.tsx
+index b106855..9563e7b 100644
+--- a/pages/blog.tsx
++++ b/pages/blog.tsx
+@@ -1,7 +1,7 @@
+ import Link from 'next/link'
+ import React from 'react'
+-import siteMetadata from "@/interfaces/siteMetaData"
+-import { PageSEO } from "@/components/SEO"
++import siteMetadata from "@/data/siteMetadata"
++import { PageSEO } from "@/components/common/SEO"
+ import { getAllPosts } from "@/lib/blog-api"
+ import { GetStaticProps } from "next"
+ import { PostType } from "@/interfaces/post"
+diff --git a/pages/blog/[slug].tsx b/pages/blog/[slug].tsx
+index 68b59c3..7872e6c 100644
+--- a/pages/blog/[slug].tsx
++++ b/pages/blog/[slug].tsx
+@@ -17,8 +17,8 @@ import remarkGfm from 'remark-gfm'
+ import { postFilePaths, POSTS_PATH } from "../../lib/mdx-util"
+ import { MetaProps } from "../../interfaces/layout"
+ import { PostType } from "../../interfaces/post"
+-import { PageSEO } from "../../components/SEO"
+-import siteMetadata from "../../interfaces/siteMetaData"
++import { PageSEO } from "../../components/common/SEO"
++import siteMetadata from "../../data/siteMetadata"
+
+ const components = {
+     Head,
+@@ -42,7 +42,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
+
+     return (
+         <>
+-            <PageSEO title={customMeta.title} description={customMeta.description} />
++            <PageSEO title={customMeta.title} description={customMeta.description || ''} />
+             <article>
+                 <h1 className="mb-3 text-gray-900 dark:text-white">
+                     {frontMatter.title}
+diff --git a/pages/index.tsx b/pages/index.tsx
+index 22a5cb7..cf1846a 100644
+--- a/pages/index.tsx
++++ b/pages/index.tsx
+@@ -1,12 +1,12 @@
+ import type { GetServerSideProps, NextPage, GetStaticProps } from 'next'
+ import React from "react"
+ import Link from 'next/link'
+-import BlogPostCard from "@/components/BlogPostCard"
+-import { PageSEO } from "@/components/SEO"
++import BlogPostCard from "@/components/blog/BlogPostCard"
++import { PageSEO } from "@/components/common/SEO"
+ import { getLatestPosts } from "@/lib/blog-api"
+ import { PostType } from "@/interfaces/post"
+-import FeaturedPostHero from "@/components/FeaturedPostHero"
+-import FeaturedPostSidebar from "@/components/FeaturedPostSidebar"
++import FeaturedPostHero from "@/components/blog/FeaturedPostHero"
++import FeaturedPostSidebar from "@/components/blog/FeaturedPostSidebar"
+
+ type IndexProps = {
+     posts: PostType[]
+diff --git a/pages/profile.tsx b/pages/profile.tsx
+index ca20d48..96e9046 100644
+--- a/pages/profile.tsx
++++ b/pages/profile.tsx
+@@ -1,5 +1,5 @@
+ import * as React from 'react'
+-import {PageSEO} from "@/components/SEO"
++import {PageSEO} from "@/components/common/SEO"
+ import siteMetadata from "@/interfaces/siteMetaData"
+ import {toStringByFormatting} from "@/lib/date-format"
+
+diff --git a/pages/quiz.tsx b/pages/quiz.tsx
+index 0fc5688..01c5b63 100644
+--- a/pages/quiz.tsx
++++ b/pages/quiz.tsx
+@@ -1,62 +1,26 @@
+ // pages/index.tsx
+-import React, { useState, useEffect } from 'react'
++import React from 'react'
+ import type { NextPage } from 'next'
+-import QuizQuestion from '@/components/QuizQuestion'
+-import QuizResult from '@/components/QuizResult'
+-import { QuizItem } from '@/interfaces/quiz'
+-import quizData from '@/data/quiz-data.json' // 퀴즈 데이터 임포트
+-import { PageSEO } from "@/components/SEO"
+-import siteMetadata from "@/interfaces/siteMetaData"
++import QuizQuestion from '@/components/quiz/QuizQuestion'
++import QuizResult from '@/components/quiz/QuizResult'
++import quizData from '@/data/quiz-data.json'
++import { PageSEO } from "@/components/common/SEO"
++import siteMetadata from "@/data/siteMetadata"
++import { useQuiz } from '@/hooks/useQuiz'
+
+ const QuizMain: NextPage = () => {
+-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
+   const quizeContext = quizData.quizContext
+-  const [userAnswers, setUserAnswers] = useState<string[]>(Array(quizeContext.length).fill(null))
+-  const [quizCompleted, setQuizCompleted] = useState(false)
+-  const [score, setScore] = useState(0)
+-
+-  const handleSelectAnswer = (selectedAnswer: string) => {
+-    const updatedAnswers = [...userAnswers]
+-    updatedAnswers[currentQuestionIndex] = selectedAnswer
+-    setUserAnswers(updatedAnswers)
+-  }
+-
+-  const handleNextQuestion = () => {
+-    if (currentQuestionIndex < quizeContext.length - 1) {
+-      setCurrentQuestionIndex(currentQuestionIndex + 1)
+-    } else {
+-      // 퀴즈 종료
+-      setQuizCompleted(true)
+-      calculateScore()
+-    }
+-  }
+-
+-  const calculateScore = () => {
+-    let correctAnswers = 0
+-    quizeContext.forEach((quizItem, index) => {
+-      if (quizItem.answer === userAnswers[index]) {
+-        correctAnswers++
+-      }
+-    })
+-    setScore(correctAnswers)
+-  }
+-
+-  const handleResetQuiz = () => {
+-    setCurrentQuestionIndex(0)
+-    setUserAnswers(Array(quizeContext.length).fill(null))
+-    setQuizCompleted(false)
+-    setScore(0)
+-  }
+-
+-  useEffect(() => {
+-    if (!quizCompleted && currentQuestionIndex < quizeContext.length) {
+-      // 현재 문제에 대한 답변이 있으면 자동으로 다음 문제로 넘어가도록 (선택  사항)
+-      if (userAnswers[currentQuestionIndex]) {
+-        setTimeout(handleNextQuestion, 500) // 0.5초 후 자동 진행 (선택 사항)
+-      }
+-    }
+-  }, [currentQuestionIndex, userAnswers, quizCompleted])
+-
++  const {
++    currentQuestionIndex,
++    userAnswers,
++    quizCompleted,
++    score,
++    handleSelectAnswer,
++    handleNextQuestion,
++    handleResetQuiz,
++    setQuizCompleted,
++    calculateScore
++  } = useQuiz(quizeContext)
+
+   return (
+     <>
+@@ -77,7 +41,7 @@ const QuizMain: NextPage = () => {
+                 <button
+                   className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded"
+                   onClick={handleNextQuestion}
+-                  disabled={!userAnswers[currentQuestionIndex]} // 답변이 있어 야 활성화 (선택 사항)
++                  disabled={!userAnswers[currentQuestionIndex]}
+                 >
+                   다음 문제
+                 </button>
+@@ -86,7 +50,7 @@ const QuizMain: NextPage = () => {
+                 <button
+                   className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded"
+                   onClick={() => { setQuizCompleted(true); calculateScore() }}
+-                  disabled={!userAnswers[currentQuestionIndex]} // 답변이 있어 야 활성화 (선택 사항)
++                  disabled={!userAnswers[currentQuestionIndex]}
+                 >
+                   결과 보기
+                 </button>
+diff --git a/pages/snackbar.tsx b/pages/snackbar.tsx
+index a4193ea..d99f2ee 100644
+--- a/pages/snackbar.tsx
++++ b/pages/snackbar.tsx
+@@ -3,7 +3,7 @@ import Stack from '@mui/material/Stack'
+ import Button from '@mui/material/Button'
+ import Snackbar from '@mui/material/Snackbar'
+ import MuiAlert, { AlertProps } from '@mui/material/Alert'
+-import {PageSEO} from "@/components/SEO"
++import {PageSEO} from "@/components/common/SEO"
+ import siteMetadata from "@/interfaces/siteMetaData"
+
+ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+diff --git a/pages/tags.tsx b/pages/tags.tsx
+index 191650b..0396972 100644
+--- a/pages/tags.tsx
++++ b/pages/tags.tsx
+@@ -1,7 +1,7 @@
+ import * as React from 'react'
+ import Pagination from '@mui/material/Pagination'
+ import Stack from '@mui/material/Stack'
+-import {PageSEO} from "@/components/SEO"
++import {PageSEO} from "@/components/common/SEO"
+ import siteMetadata from "@/interfaces/siteMetaData"
+
+ export default function PaginationOutlined() {
+diff --git a/public/sitemap-0.xml b/public/sitemap-0.xml
+index 8175db5..317dc3a 100644
+--- a/public/sitemap-0.xml
++++ b/public/sitemap-0.xml
+@@ -1,20 +1,22 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+-<url><loc>https://trigger.kr</loc><lastmod>2026-01-28T07:47:38.144Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/about</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/blog</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/profile</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/quiz</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/snackbar</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/tags</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/blog/2022년-마지막날-회고록</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/blog/creative-rest</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/blog/deep-work</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/blog/digital-minimalism</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/blog/failure-as-data</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/blog/finding-your-daily-trigger</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/blog/low-server에서-npm-build</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/blog/pm2를-사용한-node-무중단배포</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/blog/system-over-goal</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+-<url><loc>https://trigger.kr/blog/동탄라크몽-디스커버리-네이쳐스페이스</loc><lastmod>2026-01-28T07:47:38.145Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/about</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/profile</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/quiz</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/snackbar</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/tags</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog/2022년-마지막날-회고록</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog/creative-rest</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog/deep-work</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog/digital-minimalism</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog/failure-as-data</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog/finding-your-daily-trigger</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog/intentional-rest-for-growth</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog/low-server에서-npm-build</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog/pm2를-사용한-node-무중단배포</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog/system-over-goal</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog/the-power-of-micro-habits</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
++<url><loc>https://trigger.kr/blog/동탄라크몽-디스커버리-네이쳐스페이스</loc><lastmod>2026-02-14T12:35:58.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+ </urlset>
+\ No newline at end of file

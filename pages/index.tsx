@@ -1,12 +1,12 @@
 import type { GetServerSideProps, NextPage, GetStaticProps } from 'next'
 import React from "react"
 import Link from 'next/link'
-import BlogPostCard from "@/components/BlogPostCard"
-import { PageSEO } from "@/components/SEO"
+import BlogPostCard from "@/components/blog/BlogPostCard"
+import { PageSEO } from "@/components/common/SEO"
 import { getLatestPosts } from "@/lib/blog-api"
 import { PostType } from "@/interfaces/post"
-import FeaturedPostHero from "@/components/FeaturedPostHero"
-import FeaturedPostSidebar from "@/components/FeaturedPostSidebar"
+import FeaturedPostHero from "@/components/blog/FeaturedPostHero"
+import FeaturedPostSidebar from "@/components/blog/FeaturedPostSidebar"
 
 type IndexProps = {
     posts: PostType[]
@@ -31,26 +31,25 @@ const Home: NextPage<IndexProps> = ({ posts }: IndexProps) => {
             </div>
 
             {/* Bottom Call to Action */}
-            <div className="mt-20 flex flex-col items-center justify-center border-t-3 border-black py-12 dark:border-dark-100">
-                <h3 className="mb-6 font-display text-2xl font-bold">더 많은 이야기가 궁금하신가요?</h3>
+            <div className="mt-24 flex flex-col items-center justify-center rounded-3xl bg-slate-50 py-16 px-8 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                <h3 className="mb-2 font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white text-center">더 많은 이야기가 궁금하신가요?</h3>
+                <p className="mb-10 text-slate-500 dark:text-slate-400 text-center max-w-md">
+                    기술 블로그의 다양한 포스트를 통해 일상의 변화를 만드는 트리거를 찾아보세요.
+                </p>
                 <Link
                     href="/blog"
-                    className="group inline-flex items-center gap-3 border-3 border-black bg-primary-400 px-10 py-4 font-mono text-base font-bold text-black shadow-neo transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none dark:border-white dark:text-black"
+                    className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-slate-900 px-10 py-4 font-bold text-white transition-all hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-500 shadow-modern-lg"
                 >
-                    <span>EXPLORE ALL POSTS</span>
+                    <span className="relative z-10 uppercase tracking-wider text-sm">Explore All Posts</span>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        className="h-6 w-6 transition-transform group-hover:translate-x-1"
+                        stroke="currentColor"
+                        className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                        strokeWidth={2.5}
                     >
-                        <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={3}
-                            d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
-                        />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                 </Link>
             </div>

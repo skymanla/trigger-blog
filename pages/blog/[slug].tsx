@@ -17,8 +17,8 @@ import remarkGfm from 'remark-gfm'
 import { postFilePaths, POSTS_PATH } from "../../lib/mdx-util"
 import { MetaProps } from "../../interfaces/layout"
 import { PostType } from "../../interfaces/post"
-import { PageSEO } from "../../components/SEO"
-import siteMetadata from "../../interfaces/siteMetaData"
+import { PageSEO } from "../../components/common/SEO"
+import siteMetadata from "../../data/siteMetadata"
 
 const components = {
     Head,
@@ -42,7 +42,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 
     return (
         <>
-            <PageSEO title={customMeta.title} description={customMeta.description} />
+            <PageSEO title={customMeta.title} description={customMeta.description || ''} />
             <article>
                 <h1 className="mb-3 text-gray-900 dark:text-white">
                     {frontMatter.title}

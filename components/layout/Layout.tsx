@@ -1,7 +1,7 @@
 import React from "react"
 import Footer from "./Footer"
 import NavBar from "./NavBar"
-import SectionContainer from "./SectionContainer"
+import SectionContainer from "../common/SectionContainer"
 
 type Props = {
   children: React.ReactNode
@@ -9,13 +9,13 @@ type Props = {
 
 const Layout = (props: Props) => {
     return (
-        <SectionContainer>
-            <div className="flex min-h-screen flex-col justify-between">
-                <NavBar />
+        <div className="flex min-h-screen flex-col justify-between dark:bg-slate-950">
+            <NavBar />
+            <SectionContainer>
                 <main className="mb-auto pt-20 md:pt-0">{props.children}</main>
-                <Footer />
-            </div>
-        </SectionContainer>
+            </SectionContainer>
+            <Footer />
+        </div>
       )
 }
 
