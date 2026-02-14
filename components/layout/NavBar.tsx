@@ -8,7 +8,7 @@ import MobileNav from './MobileNav'
 const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/70 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/70 transition-colors">
-        <nav className="container flex items-center justify-between py-3">
+        <nav className="container mx-auto flex items-center justify-between py-3 px-6 sm:px-0">
             <div>
                 <Link href={"/"} aria-label={siteMetadata.headerTitle} className="group flex items-center gap-2 no-underline hover:no-underline">
                     <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-600 font-display text-lg font-bold text-white shadow-modern transition-all group-hover:scale-105 dark:bg-primary-500">

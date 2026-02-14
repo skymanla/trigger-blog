@@ -10,7 +10,20 @@ import siteMetadata from "@/data/siteMetadata"
 import { useQuiz } from '@/hooks/useQuiz'
 
 const QuizMain: NextPage = () => {
-  const quizeContext = quizData.quizContext
+  const [shuffledQuiz, setShuffledQuiz] = useState<QuizItem[]>([])
+
+  useEffect(() => {
+    const shuffleArray = (array: any[]) => {
+      const shuffled = [...array]
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+      }
+      return shuffled
+    }
+    setShuffledQuiz(shuffleArray(quizData.quizContext))
+  }, [])
+
   const {
     currentQuestionIndex,
     userAnswers,
@@ -21,7 +34,11 @@ const QuizMain: NextPage = () => {
     handleResetQuiz,
     setQuizCompleted,
     calculateScore
-  } = useQuiz(quizeContext)
+  } = useQuiz(shuffledQuiz)
+
+  if (shuffledQuiz.length === 0) {
+    return <div className="container mx-auto p-4 text-center">로딩 중...</div>
+  }
 
   return (
     <>
@@ -30,15 +47,15 @@ const QuizMain: NextPage = () => {
         <h1 className="text-3xl font-bold text-center mb-8">{ quizData.quizTitle }</h1>
         {!quizCompleted ? (
           <>
-            {quizeContext.length > 0 && (
+            {shuffledQuiz.length > 0 && (
               <QuizQuestion
-                quizItem={quizeContext[currentQuestionIndex]}
+                quizItem={shuffledQuiz[currentQuestionIndex]}
                 onSelectAnswer={handleSelectAnswer}
               />
             )}
             <div className="flex justify-between">
-              <p>문제 {currentQuestionIndex + 1} / {quizeContext.length}</p>
-              {currentQuestionIndex < quizeContext.length - 1 && (
+              <p>문제 {currentQuestionIndex + 1} / {shuffledQuiz.length}</p>
+              {currentQuestionIndex < shuffledQuiz.length - 1 && (
                 <button
                   className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded"
                   onClick={handleNextQuestion}
@@ -47,7 +64,7 @@ const QuizMain: NextPage = () => {
                   다음 문제
                 </button>
               )}
-              {currentQuestionIndex === quizeContext.length - 1 && (
+              {currentQuestionIndex === shuffledQuiz.length - 1 && (
                 <button
                   className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded"
                   onClick={() => { setQuizCompleted(true); calculateScore() }}
@@ -59,7 +76,7 @@ const QuizMain: NextPage = () => {
             </div>
           </>
         ) : (
-          <QuizResult score={score} totalQuestions={quizeContext.length} onResetQuiz={handleResetQuiz} />
+          <QuizResult score={score} totalQuestions={shuffledQuiz.length} onResetQuiz={handleResetQuiz} />
         )}
       </div>
     </>
