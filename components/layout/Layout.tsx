@@ -12,7 +12,7 @@ const Layout = (props: Props) => {
         <div className="flex min-h-screen flex-col justify-between dark:bg-slate-950">
             <NavBar />
             <SectionContainer>
-                <main className="mb-auto pt-20 md:pt-0">{props.children}</main>
+                <main className="mb-auto pt-14 pb-12">{props.children}</main>
             </SectionContainer>
             <Footer />
         </div>
