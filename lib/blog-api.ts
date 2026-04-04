@@ -45,3 +45,22 @@ export function getLatestPosts(fields: string[] = [], limit = 3): PostType[] {
     const posts = getAllPosts(fields)
     return posts.slice(0, limit)
 }
+
+export function getAllTags(posts: PostType[]): Record<string, number> {
+    return posts.reduce((acc, post) => {
+        post.tags?.forEach((tag) => {
+            acc[tag] = (acc[tag] ?? 0) + 1
+        })
+        return acc
+    }, {} as Record<string, number>)
+}
+
+export function getPostsByCategory(category: string): PostType[] {
+    return getAllPosts(['slug', 'title', 'date', 'description', 'image', 'category', 'tags'])
+        .filter((p) => p.category === category)
+}
+
+export function getPostsByTag(tag: string): PostType[] {
+    return getAllPosts(['slug', 'title', 'date', 'description', 'image', 'category', 'tags'])
+        .filter((p) => p.tags?.includes(tag))
+}
