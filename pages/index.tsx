@@ -58,12 +58,7 @@ const Home: NextPage<IndexProps> = ({ posts }: IndexProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    let posts = getLatestPosts(['date', 'description', 'slug', 'title', 'image'])
-    posts = posts.map((post) => {
-        return {
-            ...post,
-        }
-    })
+    const posts = getLatestPosts()
     return {
         props: { posts },
     }

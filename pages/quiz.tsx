@@ -1,10 +1,8 @@
-// pages/index.tsx
 import React, { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
 import QuizQuestion from '@/components/QuizQuestion'
 import QuizResult from '@/components/QuizResult'
-import { QuizItem } from '@/interfaces/quiz'
-import quizData from '@/data/quiz-data.json' // 퀴즈 데이터 임포트
+import quizData from '@/data/quiz-data.json'
 import { PageSEO } from "@/components/SEO"
 import siteMetadata from "@/interfaces/siteMetaData"
 

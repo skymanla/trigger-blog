@@ -13,50 +13,26 @@ import { PostType } from '../interfaces/post'
 
 export const POSTS_PATH = join(process.cwd(), 'posts')
 
-type PostItems = {
-    [key: string]: string
-}
-
 export function getPostSlugs(): string[] {
     return fs.readdirSync(POSTS_PATH).filter((path) => /\.mdx?$/.test(path))
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []): PostItems {
+function readPostFrontMatter(slug: string): PostType {
     const realSlug = slug.replace(/\.mdx$/, '')
     const fullPath = join(POSTS_PATH, `${realSlug}.mdx`)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
-    const { data, content } = matter(fileContents)
-
-    const items: PostItems = {}
-
-    // Ensure only the minimal needed data is exposed
-    fields.forEach((field) => {
-        if (field === 'slug') {
-            items[field] = realSlug
-        }
-        if (field === 'content') {
-            items[field] = content
-        }
-        if (data[field]) {
-            items[field] = data[field]
-        }
-    })
-
-    return items
+    const { data } = matter(fileContents)
+    return { ...(data as Omit<PostType, 'slug'>), slug: realSlug }
 }
 
-export function getAllPosts(fields: string[] = []): PostItems[] {
-    const slugs = getPostSlugs()
-    const posts = slugs
-        .map((slug) => getPostBySlug(slug, fields))
-        // sort posts by date in descending order
-        .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
-    return posts
+export function getAllPosts(): PostType[] {
+    return getPostSlugs()
+        .map(readPostFrontMatter)
+        .sort((a, b) => ((a.date ?? '') > (b.date ?? '') ? -1 : 1))
 }
 
-export function getLatestPosts(fields: string[] = [], limit = 3): PostItems[] {
-    const posts = getAllPosts(fields)
-    return posts.slice(0, limit)
+export function getLatestPosts(limit = 3): PostType[] {
+    return getAllPosts().slice(0, limit)
 }
 
 export async function getPostSource(slug: string): Promise<{
@@ -90,5 +66,5 @@ export async function getPostSource(slug: string): Promise<{
         scope: data,
     })
 
-    return { source, frontMatter: data as PostType }
+    return { source, frontMatter: { ...(data as Omit<PostType, 'slug'>), slug: realSlug } }
 }

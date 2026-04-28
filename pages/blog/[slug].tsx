@@ -50,7 +50,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const { source, frontMatter } = await getPostSource(params!.slug as string)
+    const { source, frontMatter } = await getPostSource(params?.slug as string)
     return {
         props: {
             source,
