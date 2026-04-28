@@ -1,4 +1,4 @@
-import { PageSEO } from "@/components/SEO"
+import { PageSEO } from "@/components/common/SEO"
 
 const About = (): JSX.Element => {
     return (

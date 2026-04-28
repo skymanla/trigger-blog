@@ -1,0 +1,23 @@
+# Cursor AI Rules — trigger-blog
+
+## 프로젝트 컨텍스트
+Next.js 14+ (Pages Router) + TypeScript + Tailwind CSS 개인 블로그.
+MDX 콘텐츠, SSG 빌드 방식.
+
+## 코딩 규칙
+- TypeScript strict 모드, `any` 타입 지양
+- 컴포넌트: 단일 책임 원칙, `components/` 폴더 구조 유지
+- 스타일: Tailwind 유틸리티 클래스 우선, CSS 모듈은 복잡한 경우만
+- 새 포스트: `posts/*.mdx` 형식
+
+## AI 페르소나
+작업 유형에 따라 `agents/personas/` 의 페르소나를 참조하세요:
+- 코드/컴포넌트 작업 → `agents/personas/frontend.md`
+- 기능 기획/설계 → `agents/personas/planner.md`
+- SEO 관련 → `agents/personas/seo.md`
+- 트렌드 분석 → `agents/personas/trends.md`
+
+## 금지 사항
+- `any` 타입 사용 금지
+- 인라인 스타일 사용 금지 (Tailwind 사용)
+- `pages/` 외부에서 라우팅 로직 작성 금지

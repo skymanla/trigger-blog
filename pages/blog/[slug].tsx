@@ -8,8 +8,8 @@ import Link from 'next/link'
 import { getPostSlugs, getPostSource } from "../../lib/blog-api"
 import { MetaProps } from "../../types/layout"
 import { PostType } from "../../types/post"
-import { PageSEO } from "../../components/SEO"
-import siteMetadata from "../../config/siteMetadata"
+import { PageSEO } from "../../components/common/SEO"
+import siteMetadata from "../../data/siteMetadata"
 
 const components = {
     Head,

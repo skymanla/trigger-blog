@@ -39,17 +39,17 @@ const MobileNav = () => {
                 </svg>
             </button>
             <div
-                className={`fixed top-0 left-0 z-[100] h-screen w-screen transform bg-white transition-all duration-300 ease-in-out dark:bg-dark-900 ${
+                className={`fixed top-0 left-0 z-[100] h-screen w-screen transform bg-white transition-all duration-300 ease-in-out dark:bg-slate-950 ${
                     navShow ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
                 }`}
             >
-                <div className="flex justify-between items-center p-4 border-b border-gray-100 dark:border-dark-800">
-                    <div className="flex h-10 w-10 items-center justify-center border-2 border-black bg-primary-400 font-display text-xl font-bold text-black dark:border-white">
+                <div className="flex justify-between items-center p-4 border-b border-slate-100 dark:border-slate-800">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-600 font-display text-xl font-bold text-white shadow-modern dark:bg-primary-500">
                         Tr
                     </div>
                     <button
                         type="button"
-                        className="h-8 w-8 rounded"
+                        className="h-8 w-8 rounded text-slate-900 dark:text-slate-100"
                         aria-label="Toggle Menu"
                         onClick={onToggleNav}
                     >
@@ -57,7 +57,6 @@ const MobileNav = () => {
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20"
                             fill="currentColor"
-                            className="text-gray-900 dark:text-gray-100"
                         >
                             <path
                                 fillRule="evenodd"
@@ -69,10 +68,10 @@ const MobileNav = () => {
                 </div>
                 <nav className="mt-4 h-[calc(100vh-80px)] overflow-y-auto flex flex-col items-center px-4 pb-20">
                     {headerNavLinks.map((link) => (
-                        <div key={link.title} className="w-full border-b border-gray-50 dark:border-dark-800 last:border-b-0">
+                        <div key={link.title} className="w-full border-b border-slate-50 dark:border-slate-800 last:border-b-0">
                             <Link
                                 href={link.href}
-                                className="block py-6 text-center text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
+                                className="block py-6 text-center text-2xl font-bold tracking-widest text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                                 onClick={onToggleNav}
                             >
                                 {link.title}

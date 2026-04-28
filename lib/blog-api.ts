@@ -35,6 +35,23 @@ export function getLatestPosts(limit = 3): PostType[] {
     return getAllPosts().slice(0, limit)
 }
 
+export function getAllTags(posts: PostType[] = getAllPosts()): Record<string, number> {
+    return posts.reduce((acc, post) => {
+        post.tags?.forEach((tag) => {
+            acc[tag] = (acc[tag] ?? 0) + 1
+        })
+        return acc
+    }, {} as Record<string, number>)
+}
+
+export function getPostsByCategory(category: string): PostType[] {
+    return getAllPosts().filter((p) => p.category === category)
+}
+
+export function getPostsByTag(tag: string): PostType[] {
+    return getAllPosts().filter((p) => p.tags?.includes(tag))
+}
+
 export async function getPostSource(slug: string): Promise<{
     source: MDXRemoteSerializeResult
     frontMatter: PostType

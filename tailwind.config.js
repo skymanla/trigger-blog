@@ -10,41 +10,45 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#fdffe5',
-          100: '#f9ffc2',
-          200: '#f2ff85',
-          300: '#e8ff47',
-          400: '#e1f505', // Electric Lemon (Brand)
-          500: '#c2d600',
-          600: '#99aa00',
-          700: '#738000',
-          800: '#525c00',
-          900: '#383d00',
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
         },
-        dark: {
-          50: '#f4f4f5',
-          100: '#e4e4e7',
-          200: '#d4d4d8',
-          300: '#a1a1aa',
-          400: '#71717a',
-          500: '#52525b',
-          600: '#3f3f46',
-          700: '#27272a',
-          800: '#18181b', // Soft Gray
-          900: '#111111', // Deep Charcoal
+        slate: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+          950: '#020617',
         },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Syne', 'sans-serif'],
-        mono: ['Fira Code', 'monospace'],
-        serif: ['Bitter', 'serif'], // Keeping for legacy support if needed
+        display: ['Cal Sans', 'Inter', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
       boxShadow: {
-        'neo': '4px 4px 0px 0px rgba(0,0,0,1)',
-        'neo-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
-        'neo-lg': '6px 6px 0px 0px rgba(0,0,0,1)',
-        'neo-dark': '4px 4px 0px 0px rgba(255,255,255,1)', // For dark mode
+        'modern-sm': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+        'modern': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+        'modern-lg': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+      },
+      borderRadius: {
+        '2xl': '1rem',
+        '3xl': '1.5rem',
       },
       borderWidth: {
         '3': '3px',

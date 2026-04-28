@@ -1,60 +1,44 @@
+
 import React, { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
-import QuizQuestion from '@/components/QuizQuestion'
-import QuizResult from '@/components/QuizResult'
+import QuizQuestion from '@/components/quiz/QuizQuestion'
+import QuizResult from '@/components/quiz/QuizResult'
+import { QuizItem } from '@/types/quiz'
 import quizData from '@/data/quiz-data.json'
-import { PageSEO } from "@/components/SEO"
-import siteMetadata from "@/config/siteMetadata"
+import { PageSEO } from "@/components/common/SEO"
+import siteMetadata from "@/data/siteMetadata"
+import { useQuiz } from '@/hooks/useQuiz'
 
 const QuizMain: NextPage = () => {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
-  const quizeContext = quizData.quizContext
-  const [userAnswers, setUserAnswers] = useState<string[]>(Array(quizeContext.length).fill(null))
-  const [quizCompleted, setQuizCompleted] = useState(false)
-  const [score, setScore] = useState(0)
-
-  const handleSelectAnswer = (selectedAnswer: string) => {
-    const updatedAnswers = [...userAnswers]
-    updatedAnswers[currentQuestionIndex] = selectedAnswer
-    setUserAnswers(updatedAnswers)
-  }
-
-  const handleNextQuestion = () => {
-    if (currentQuestionIndex < quizeContext.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1)
-    } else {
-      // 퀴즈 종료
-      setQuizCompleted(true)
-      calculateScore()
-    }
-  }
-
-  const calculateScore = () => {
-    let correctAnswers = 0
-    quizeContext.forEach((quizItem, index) => {
-      if (quizItem.answer === userAnswers[index]) {
-        correctAnswers++
-      }
-    })
-    setScore(correctAnswers)
-  }
-
-  const handleResetQuiz = () => {
-    setCurrentQuestionIndex(0)
-    setUserAnswers(Array(quizeContext.length).fill(null))
-    setQuizCompleted(false)
-    setScore(0)
-  }
+  const [shuffledQuiz, setShuffledQuiz] = useState<QuizItem[]>([])
 
   useEffect(() => {
-    if (!quizCompleted && currentQuestionIndex < quizeContext.length) {
-      // 현재 문제에 대한 답변이 있으면 자동으로 다음 문제로 넘어가도록 (선택 사항)
-      if (userAnswers[currentQuestionIndex]) {
-        setTimeout(handleNextQuestion, 500) // 0.5초 후 자동 진행 (선택 사항)
+    const shuffleArray = <T,>(array: T[]): T[] => {
+      const shuffled = [...array]
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
       }
+      return shuffled
     }
-  }, [currentQuestionIndex, userAnswers, quizCompleted])
+    setShuffledQuiz(shuffleArray(quizData.quizContext))
+  }, [])
 
+  const {
+    currentQuestionIndex,
+    userAnswers,
+    quizCompleted,
+    score,
+    handleSelectAnswer,
+    handleNextQuestion,
+    handleResetQuiz,
+    setQuizCompleted,
+    calculateScore
+  } = useQuiz(shuffledQuiz)
+
+  if (shuffledQuiz.length === 0) {
+    return <div className="container mx-auto p-4 text-center">로딩 중...</div>
+  }
 
   return (
     <>
@@ -63,28 +47,28 @@ const QuizMain: NextPage = () => {
         <h1 className="text-3xl font-bold text-center mb-8">{ quizData.quizTitle }</h1>
         {!quizCompleted ? (
           <>
-            {quizeContext.length > 0 && (
+            {shuffledQuiz.length > 0 && (
               <QuizQuestion
-                quizItem={quizeContext[currentQuestionIndex]}
+                quizItem={shuffledQuiz[currentQuestionIndex]}
                 onSelectAnswer={handleSelectAnswer}
               />
             )}
             <div className="flex justify-between">
-              <p>문제 {currentQuestionIndex + 1} / {quizeContext.length}</p>
-              {currentQuestionIndex < quizeContext.length - 1 && (
+              <p>문제 {currentQuestionIndex + 1} / {shuffledQuiz.length}</p>
+              {currentQuestionIndex < shuffledQuiz.length - 1 && (
                 <button
                   className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded"
                   onClick={handleNextQuestion}
-                  disabled={!userAnswers[currentQuestionIndex]} // 답변이 있어야 활성화 (선택 사항)
+                  disabled={!userAnswers[currentQuestionIndex]}
                 >
                   다음 문제
                 </button>
               )}
-              {currentQuestionIndex === quizeContext.length - 1 && (
+              {currentQuestionIndex === shuffledQuiz.length - 1 && (
                 <button
                   className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded"
                   onClick={() => { setQuizCompleted(true); calculateScore() }}
-                  disabled={!userAnswers[currentQuestionIndex]} // 답변이 있어야 활성화 (선택 사항)
+                  disabled={!userAnswers[currentQuestionIndex]}
                 >
                   결과 보기
                 </button>
@@ -92,7 +76,7 @@ const QuizMain: NextPage = () => {
             </div>
           </>
         ) : (
-          <QuizResult score={score} totalQuestions={quizeContext.length} onResetQuiz={handleResetQuiz} />
+          <QuizResult score={score} totalQuestions={shuffledQuiz.length} onResetQuiz={handleResetQuiz} />
         )}
       </div>
     </>
