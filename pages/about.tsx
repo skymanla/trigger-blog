@@ -1,5 +1,4 @@
 import { PageSEO } from "@/components/common/SEO"
-import siteMetadata from "@/data/siteMetadata"
 
 const About = (): JSX.Element => {
     return (

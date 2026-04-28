@@ -1,10 +1,9 @@
-import type { GetServerSideProps, NextPage, GetStaticProps } from 'next'
+import type { NextPage, GetStaticProps } from "next"
 import React from "react"
 import Link from 'next/link'
-import BlogPostCard from "@/components/blog/BlogPostCard"
 import { PageSEO } from "@/components/common/SEO"
 import { getLatestPosts } from "@/lib/blog-api"
-import { PostType } from "@/interfaces/post"
+import { PostType } from "@/types/post"
 import FeaturedPostHero from "@/components/blog/FeaturedPostHero"
 import FeaturedPostSidebar from "@/components/blog/FeaturedPostSidebar"
 
@@ -58,7 +57,7 @@ const Home: NextPage<IndexProps> = ({ posts }: IndexProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    let posts = getLatestPosts(['date', 'description', 'slug', 'title', 'image'])
+    let posts = getLatestPosts()
     posts = posts.map((post) => {
         return {
             ...post,

@@ -1,22 +1,13 @@
 import { format, parseISO } from 'date-fns'
-import fs from 'fs'
-import matter from 'gray-matter'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import path from 'path'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeCodeTitles from 'rehype-code-titles'
-import rehypePrism from 'rehype-prism-plus'
-import rehypeSlug from 'rehype-slug'
-import remarkGfm from 'remark-gfm'
 
-import { postFilePaths, POSTS_PATH } from "../../lib/mdx-util"
-import { MetaProps } from "../../interfaces/layout"
-import { PostType } from "../../interfaces/post"
+import { getPostSlugs, getPostSource } from "../../lib/blog-api"
+import { MetaProps } from "../../types/layout"
+import { PostType } from "../../types/post"
 import { PageSEO } from "../../components/common/SEO"
 import siteMetadata from "../../data/siteMetadata"
 
@@ -42,7 +33,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 
     return (
         <>
-            <PageSEO title={customMeta.title} description={customMeta.description || ''} />
+            <PageSEO title={customMeta.title} description={customMeta.description} />
             <article>
                 <h1 className="mb-3 text-gray-900 dark:text-white">
                     {frontMatter.title}
@@ -59,48 +50,18 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    // @ts-ignore
-    const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`)
-    const source = fs.readFileSync(postFilePath)
-
-    const { content, data } = matter(source)
-
-    const mdxSource = await serialize(content, {
-        // Optionally pass remark/rehype plugins
-        mdxOptions: {
-            development: false,
-            remarkPlugins: [remarkGfm],
-            rehypePlugins: [
-                rehypeSlug,
-                rehypeCodeTitles,
-                rehypePrism,
-                [
-                    rehypeAutolinkHeadings,
-                    {
-                        properties: {
-                            className: ['anchor'],
-                        },
-                    },
-                ],
-            ],
-            format: 'mdx',
-        },
-        scope: data,
-    })
-
+    const { source, frontMatter } = await getPostSource(params?.slug as string)
     return {
         props: {
-            source: mdxSource,
-            frontMatter: data,
+            source,
+            frontMatter,
         },
     }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const paths = postFilePaths
-        // Remove file extensions for page paths
+    const paths = getPostSlugs()
         .map((path) => path.replace(/\.mdx?$/, ''))
-        // Map the path into the static paths object required by Next.js
         .map((slug) => ({ params: { slug } }))
     return {
         paths,

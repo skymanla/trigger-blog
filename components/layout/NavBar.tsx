@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import headerNavLinks from "@/interfaces/headerNaviLinks"
+import headerNavLinks from "@/config/headerNavLinks"
 import Link from "next/link"
 import ThemeSwitch from "../common/ThemeSwitch"
 import siteMetadata from "@/data/siteMetadata"

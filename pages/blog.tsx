@@ -5,7 +5,7 @@ import { PageSEO } from '@/components/common/SEO'
 import BlogPostCard from '@/components/blog/BlogPostCard'
 import { getAllPosts } from '@/lib/blog-api'
 import { GetStaticProps } from 'next'
-import { PostType, CATEGORIES, CATEGORY_LABELS, Category } from '@/interfaces/post'
+import { PostType, CATEGORIES, CATEGORY_LABELS, Category } from '@/types/post'
 import { format, parseISO } from 'date-fns'
 import Fuse from 'fuse.js'
 
@@ -154,7 +154,7 @@ const Blog = ({ posts }: BlogProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const posts = getAllPosts(['date', 'description', 'slug', 'title', 'category', 'tags'])
+    const posts = getAllPosts()
 
     return {
         props: { posts },

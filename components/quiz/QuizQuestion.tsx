@@ -1,6 +1,6 @@
 // components/QuizQuestion.tsx
 import React from 'react'
-import { QuizItem } from '@/interfaces/quiz'
+import { QuizItem } from '@/types/quiz'
 
 interface QuizQuestionProps {
   quizItem: QuizItem

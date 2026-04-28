@@ -1,9 +1,9 @@
-// pages/index.tsx
+
 import React, { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
 import QuizQuestion from '@/components/quiz/QuizQuestion'
 import QuizResult from '@/components/quiz/QuizResult'
-import { QuizItem } from '@/interfaces/quiz'
+import { QuizItem } from '@/types/quiz'
 import quizData from '@/data/quiz-data.json'
 import { PageSEO } from "@/components/common/SEO"
 import siteMetadata from "@/data/siteMetadata"
@@ -13,7 +13,7 @@ const QuizMain: NextPage = () => {
   const [shuffledQuiz, setShuffledQuiz] = useState<QuizItem[]>([])
 
   useEffect(() => {
-    const shuffleArray = (array: any[]) => {
+    const shuffleArray = <T,>(array: T[]): T[] => {
       const shuffled = [...array]
       for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

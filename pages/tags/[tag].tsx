@@ -2,10 +2,10 @@ import Link from 'next/link'
 import React from 'react'
 import Head from 'next/head'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { TagSEO } from '@/components/common/SEO'
+import { PageSEO } from '@/components/common/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllPosts, getAllTags, getPostsByTag } from '@/lib/blog-api'
-import { PostType } from '@/interfaces/post'
+import { PostType } from '@/types/post'
 import BlogPostCard from '@/components/blog/BlogPostCard'
 import { format, parseISO } from 'date-fns'
 
@@ -26,7 +26,7 @@ export default function TagPage({ tag, posts, noindex }: TagPageProps) {
                     <meta name="robots" content="noindex, follow" />
                 </Head>
             )}
-            <TagSEO title={`${title} — ${siteMetadata.title}`} description={description} />
+            <PageSEO title={`${title} — ${siteMetadata.title}`} description={description} />
 
             <div className="pb-12">
                 {/* 브레드크럼 */}
@@ -64,7 +64,7 @@ export default function TagPage({ tag, posts, noindex }: TagPageProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const posts = getAllPosts(['tags'])
+    const posts = getAllPosts()
     const tags = Array.from(new Set(posts.flatMap((p) => p.tags ?? [])))
 
     return {
