@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { PostType } from '@/interfaces/post'
+import { PostType } from '@/types/post'
 
 type Props = {
   post: PostType

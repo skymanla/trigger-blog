@@ -3,7 +3,7 @@ import { ThemeProvider } from 'next-themes'
 import '@/styles/tailwind.css'
 import type { AppProps } from 'next/app'
 import Layout from '@/components/Layout'
-import siteMetadata from "@/interfaces/siteMetaData"
+import siteMetadata from "@/config/siteMetadata"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

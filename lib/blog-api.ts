@@ -9,7 +9,7 @@ import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
-import { PostType } from '../interfaces/post'
+import { PostType } from '../types/post'
 
 export const POSTS_PATH = join(process.cwd(), 'posts')
 

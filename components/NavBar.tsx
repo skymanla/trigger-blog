@@ -1,8 +1,8 @@
 import React from "react"
-import headerNavLinks from "@/interfaces/headerNaviLinks"
+import headerNavLinks from "@/config/headerNavLinks"
 import Link from "next/link"
 import ThemeSwitch from "./ThemeSwitch"
-import siteMetadata from "@/interfaces/siteMetaData"
+import siteMetadata from "@/config/siteMetadata"
 import MobileNav from './MobileNav'
 
 const Navbar = () => {

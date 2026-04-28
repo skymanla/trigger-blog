@@ -1,4 +1,4 @@
-import siteMetadata from "@/interfaces/siteMetaData"
+import siteMetadata from "@/config/siteMetadata"
 import Link from "next/link"
 
 export default function Footer() {

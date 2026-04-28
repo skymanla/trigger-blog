@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import siteMetadata from '@/interfaces/siteMetaData'
+import siteMetadata from '@/config/siteMetadata'
 import GoogleAdsense from "./GoogleAdsense"
 
 type CommonSEOProps = {

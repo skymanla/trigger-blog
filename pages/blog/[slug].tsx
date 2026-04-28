@@ -6,10 +6,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { getPostSlugs, getPostSource } from "../../lib/blog-api"
-import { MetaProps } from "../../interfaces/layout"
-import { PostType } from "../../interfaces/post"
+import { MetaProps } from "../../types/layout"
+import { PostType } from "../../types/post"
 import { PageSEO } from "../../components/SEO"
-import siteMetadata from "../../interfaces/siteMetaData"
+import siteMetadata from "../../config/siteMetadata"
 
 const components = {
     Head,

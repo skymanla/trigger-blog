@@ -3,7 +3,7 @@ import React from "react"
 import Link from 'next/link'
 import { PageSEO } from "@/components/SEO"
 import { getLatestPosts } from "@/lib/blog-api"
-import { PostType } from "@/interfaces/post"
+import { PostType } from "@/types/post"
 import FeaturedPostHero from "@/components/FeaturedPostHero"
 import FeaturedPostSidebar from "@/components/FeaturedPostSidebar"
 

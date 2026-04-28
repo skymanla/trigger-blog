@@ -4,7 +4,7 @@ import QuizQuestion from '@/components/QuizQuestion'
 import QuizResult from '@/components/QuizResult'
 import quizData from '@/data/quiz-data.json'
 import { PageSEO } from "@/components/SEO"
-import siteMetadata from "@/interfaces/siteMetaData"
+import siteMetadata from "@/config/siteMetadata"
 
 const QuizMain: NextPage = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
