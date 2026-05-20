@@ -184,7 +184,7 @@ export default function BlogChatBot() {
                   보안 가드레일이 동작 중인 AI 테크 어시스턴트 인스턴스가 생성되었습니다. 블로그 아키텍처 및 코딩 요령을 하단 셸을 통해 문의하십시오.
                 </div>
                 <div className="space-y-2">
-                  <p className="text-[10px] text-cyan-400 font-bold uppercase tracking-wider pl-1">// AVAILABLE COMMANDS:</p>
+                  <p className="text-[10px] text-cyan-400 font-bold uppercase tracking-wider pl-1">{"// AVAILABLE COMMANDS:"}</p>
                   <div className="flex flex-col space-y-2">
                     {SUGGESTIONS.map((s, idx) => (
                       <button
@@ -192,7 +192,7 @@ export default function BlogChatBot() {
                         onClick={() => handleSend(s)}
                         className="text-left w-full bg-slate-900/60 hover:bg-slate-800/80 text-xs text-slate-300 border border-slate-800 hover:border-cyan-500/30 py-2 px-3 rounded transition-all duration-200 shadow-sm"
                       >
-                        $ query --type "{s}"
+                        {`$ query --type "${s}"`}
                       </button>
                     ))}
                   </div>
