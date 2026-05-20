@@ -29,6 +29,11 @@ const MOCK_ANSWERS: { [key: string]: string } = {
 
 const DEFAULT_MOCK = "Hello! Trigger AI Assistant에 접속하셨습니다. 기술 블로그 읽기, 코드 분석, IT 토픽 요약을 지원하기 위해 설계된 전용 챗봇입니다. 현재 서버가 오프라인이므로 시뮬레이션 데이터베이스 기반으로 정적 요약을 출력합니다. 서버 가동 시 가드레일이 검증한 Gemma 4 모델의 실시간 응답을 수신할 수 있습니다.";
 
+const COMMON_API_BASE_URL = (
+  process.env.NEXT_PUBLIC_COMMON_API_BASE_URL || "http://localhost:8080"
+).replace(/\/$/, "");
+const CHAT_COMPLETIONS_URL = `${COMMON_API_BASE_URL}/api/sites/TRIGGER/chat/completions`;
+
 export default function BlogChatBot() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -73,15 +78,13 @@ export default function BlogChatBot() {
     setIsLoading(true);
 
     try {
-      // 1단계: Pipelines (Llama Guard 3) 클라이언트 직접 통신 시도
-      const response = await fetch("http://localhost:9099/api/chat/completions", {
+      // 공통 API가 Pipelines/Ollama 호출과 가드레일 토큰을 서버 사이드에서 관리한다.
+      const response = await fetch(CHAT_COMPLETIONS_URL, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Authorization": "Bearer pipelines_secret_key"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          model: "gemma2:2b",
           messages: [
             { role: "system", content: SYSTEM_PROMPT },
             ...updatedMessages.map(m => ({
