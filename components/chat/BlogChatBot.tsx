@@ -33,12 +33,14 @@ const COMMON_API_BASE_URL = (
   process.env.NEXT_PUBLIC_COMMON_API_BASE_URL || "http://localhost:8080"
 ).replace(/\/$/, "");
 const CHAT_COMPLETIONS_URL = `${COMMON_API_BASE_URL}/api/sites/TRIGGER/chat/completions`;
+const CHAT_SESSION_STORAGE_KEY = "trigger_chat_session_id";
 
 export default function BlogChatBot() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [chatSessionId, setChatSessionId] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // 로컬스토리지 대화 기록 관리
@@ -51,6 +53,7 @@ export default function BlogChatBot() {
         console.error("Failed to parse Trigger chat history", e);
       }
     }
+    setChatSessionId(localStorage.getItem(CHAT_SESSION_STORAGE_KEY));
   }, []);
 
   const saveMessages = (newMsgs: Message[]) => {
@@ -85,6 +88,7 @@ export default function BlogChatBot() {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
+          sessionId: chatSessionId,
           messages: [
             { role: "system", content: SYSTEM_PROMPT },
             ...updatedMessages.map(m => ({
@@ -100,7 +104,12 @@ export default function BlogChatBot() {
       }
 
       const data = await response.json();
-      const botResponseText = data.choices[0].message.content;
+      if (data.sessionId) {
+        setChatSessionId(data.sessionId);
+        localStorage.setItem(CHAT_SESSION_STORAGE_KEY, data.sessionId);
+      }
+      const botResponseText =
+        data.content || data.response?.answer || data.choices?.[0]?.message?.content;
 
       const botMsg: Message = {
         id: Math.random().toString(36).substring(7),
@@ -140,7 +149,9 @@ export default function BlogChatBot() {
   const handleClear = () => {
     if (window.confirm("개발 대화 세션을 초기화하고 메인 셸로 복귀하겠습니까?")) {
       setMessages([]);
+      setChatSessionId(null);
       localStorage.removeItem("trigger_chat_history");
+      localStorage.removeItem(CHAT_SESSION_STORAGE_KEY);
     }
   };
 
