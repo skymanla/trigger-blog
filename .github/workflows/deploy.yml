@@ -2,14 +2,17 @@ name: deploy
 on:
   push:
     branches: ["main"]
+permissions: {}
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
 
       - name: execute remote ssh & deploy frontend server
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1.2.5
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
@@ -17,10 +20,10 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             whoami
-            cd www/trigger-blog            
+            cd www/trigger-blog
             git pull origin main
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            npm i && npm run build
+            npm ci && npm run build
             rm -rf node_modules
             git add . && git stash && git stash clear
