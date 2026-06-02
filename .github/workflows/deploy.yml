@@ -18,12 +18,8 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
+          command_timeout: 20m
+          # 서버 authorized_keys 의 forced-command 가 /usr/local/bin/deploy-trigger 를 실행한다.
+          # 아래 script 는 서버에서 무시되고 $SSH_ORIGINAL_COMMAND 로 로깅만 된다(최소 유지).
           script: |
-            whoami
-            cd www/trigger-blog
-            git pull origin main
-            export NVM_DIR=~/.nvm
-            source ~/.nvm/nvm.sh
-            npm ci && npm run build
-            rm -rf node_modules
-            git add . && git stash && git stash clear
+            echo "deploy: trigger-blog -> server forced-command (deploy-trigger)"
