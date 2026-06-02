@@ -40,7 +40,7 @@ const MobileNav = () => {
             </button>
             <div
                 className={`fixed top-0 left-0 z-[100] h-screen w-screen transform bg-white transition-all duration-300 ease-in-out dark:bg-slate-950 ${
-                    navShow ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+                    navShow ? 'translate-x-0 opacity-100 visible pointer-events-auto' : 'translate-x-full opacity-0 invisible pointer-events-none'
                 }`}
             >
                 <div className="flex justify-between items-center p-4 border-b border-slate-100 dark:border-slate-800">

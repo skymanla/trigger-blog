@@ -23,14 +23,14 @@ const FeaturedPostHero = ({ post }: Props) => {
         <div className="h-full w-full bg-slate-800" />
       )}
 
-      <div className="absolute bottom-0 left-0 z-20 w-full p-8 md:p-12">
-        <span className="mb-4 inline-flex items-center rounded-full bg-primary-500/10 px-3 py-1 font-mono text-[10px] font-bold tracking-wider text-primary-400 backdrop-blur-md border border-primary-500/20 uppercase">
+      <div className="absolute bottom-0 left-0 z-20 w-full p-6 sm:p-8 md:p-12">
+        <span className="mb-2 sm:mb-4 inline-flex items-center rounded-full bg-primary-500/10 px-3 py-1 font-mono text-[10px] font-bold tracking-wider text-primary-400 backdrop-blur-md border border-primary-500/20 uppercase">
           Featured Post
         </span>
-        <h2 className="mb-4 font-display text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl tracking-tight">
+        <h2 className="mb-2 sm:mb-4 font-display text-xl sm:text-2xl md:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight">
           {post.title}
         </h2>
-        <p className="line-clamp-2 mb-8 max-w-2xl font-sans text-sm text-slate-300 md:text-lg opacity-80">
+        <p className="line-clamp-2 mb-4 sm:mb-8 max-w-2xl font-sans text-xs sm:text-sm md:text-lg text-slate-300 opacity-80">
           {post.description}
         </p>
         <div className="inline-flex items-center gap-2 font-mono text-xs font-bold text-primary-400 group-hover:text-primary-300 transition-colors">
