@@ -159,7 +159,7 @@ export default function BlogChatBot() {
     <div className="fixed bottom-6 right-6 z-50 font-mono text-slate-300">
       {/* 챗봇 모달창 */}
       {isOpen && (
-        <div className="absolute bottom-16 right-0 w-[420px] h-[550px] bg-slate-900/90 backdrop-blur-md rounded-2xl shadow-2xl border border-slate-700/80 flex flex-col overflow-hidden transition-all duration-300 transform scale-100 origin-bottom-right">
+        <div className="fixed bottom-24 right-6 left-6 sm:left-auto sm:right-6 sm:w-[420px] h-[calc(100vh-140px)] sm:h-[550px] max-h-[600px] bg-slate-900/90 backdrop-blur-md rounded-2xl shadow-2xl border border-slate-700/80 flex flex-col overflow-hidden transition-all duration-300 transform scale-100 origin-bottom-right">
           {/* 헤더 */}
           <div className="bg-slate-950 px-5 py-4 flex items-center justify-between border-b border-slate-800 shadow-md">
             <div className="flex items-center space-x-3">
