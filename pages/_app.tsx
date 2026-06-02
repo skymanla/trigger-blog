@@ -6,8 +6,6 @@ import Layout from '@/components/layout/Layout'
 import siteMetadata from "@/data/siteMetadata"
 import BlogChatBot from '@/components/chat/BlogChatBot'
 
-console.log(1) // deploy smoke test (확인 후 제거)
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute='class' defaultTheme={siteMetadata.theme}>
