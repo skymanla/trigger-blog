@@ -156,133 +156,137 @@ export default function BlogChatBot() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 font-mono text-slate-300">
-      {/* 챗봇 모달창 */}
-      {isOpen && (
-        <div className="fixed bottom-24 right-6 left-6 sm:left-auto sm:right-6 sm:w-[420px] h-[calc(100vh-140px)] sm:h-[550px] max-h-[600px] bg-slate-900/90 backdrop-blur-md rounded-2xl shadow-2xl border border-slate-700/80 flex flex-col overflow-hidden transition-all duration-300 transform scale-100 origin-bottom-right">
-          {/* 헤더 */}
-          <div className="bg-slate-950 px-5 py-4 flex items-center justify-between border-b border-slate-800 shadow-md">
-            <div className="flex items-center space-x-3">
-              <div className="w-6 h-6 rounded border border-cyan-500/50 flex items-center justify-center font-bold text-xs text-cyan-400 bg-cyan-950/30 animate-pulse">
-                &gt;_
-              </div>
-              <div>
-                <h3 className="font-bold text-xs uppercase tracking-widest text-slate-100">Trigger Terminal</h3>
-                <p className="text-[9px] text-cyan-400 font-mono">SYSTEM ACTIVE // SECURE PORT</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-3 text-xs">
-              <button 
-                onClick={handleClear} 
-                className="text-slate-500 hover:text-cyan-400 transition-colors"
-                title="Reset session"
-              >
-                [RESET]
-              </button>
-              <button 
-                onClick={() => setIsOpen(false)} 
-                className="text-slate-500 hover:text-red-400 transition-colors font-bold text-sm"
-              >
-                ✕
-              </button>
-            </div>
-          </div>
-
-          {/* 대화 영역 */}
-          <div className="flex-1 p-5 overflow-y-auto space-y-4 bg-slate-950/40">
-            {messages.length === 0 ? (
-              <div className="space-y-5">
-                <div className="bg-slate-950/80 rounded-lg p-4 border border-slate-800 text-xs leading-relaxed text-slate-400 shadow-inner">
-                  <span className="text-cyan-400">root@trigger-blog:~$</span> ./init_chatbot --guardrail
-                  <br /><br />
-                  보안 가드레일이 동작 중인 AI 테크 어시스턴트 인스턴스가 생성되었습니다. 블로그 아키텍처 및 코딩 요령을 하단 셸을 통해 문의하십시오.
-                </div>
-                <div className="space-y-2">
-                  <p className="text-[10px] text-cyan-400 font-bold uppercase tracking-wider pl-1">{"// AVAILABLE COMMANDS:"}</p>
-                  <div className="flex flex-col space-y-2">
-                    {SUGGESTIONS.map((s, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => handleSend(s)}
-                        className="text-left w-full bg-slate-900/60 hover:bg-slate-800/80 text-xs text-slate-300 border border-slate-800 hover:border-cyan-500/30 py-2 px-3 rounded transition-all duration-200 shadow-sm"
-                      >
-                        {`$ query --type "${s}"`}
-                      </button>
-                    ))}
+    <div className="pointer-events-none fixed inset-0 z-50 flex justify-center">
+      <div className="relative w-full max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 h-full">
+        <div className="pointer-events-auto absolute bottom-6 right-4 sm:right-6 xl:right-0 font-mono text-slate-300">
+          {/* 챗봇 모달창 */}
+          {isOpen && (
+            <div className="fixed sm:absolute bottom-24 sm:bottom-16 left-6 right-6 sm:left-auto sm:right-0 w-[calc(100vw-48px)] sm:w-[420px] h-[calc(100vh-140px)] sm:h-[550px] max-h-[600px] bg-slate-900/90 backdrop-blur-md rounded-2xl shadow-2xl border border-slate-700/80 flex flex-col overflow-hidden transition-all duration-300 transform scale-100 origin-bottom-right">
+              {/* 헤더 */}
+              <div className="bg-slate-950 px-5 py-4 flex items-center justify-between border-b border-slate-800 shadow-md">
+                <div className="flex items-center space-x-3">
+                  <div className="w-6 h-6 rounded border border-cyan-500/50 flex items-center justify-center font-bold text-xs text-cyan-400 bg-cyan-950/30 animate-pulse">
+                    &gt;_
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-xs uppercase tracking-widest text-slate-100">Trigger Terminal</h3>
+                    <p className="text-[9px] text-cyan-400 font-mono">SYSTEM ACTIVE // SECURE PORT</p>
                   </div>
                 </div>
-              </div>
-            ) : (
-              messages.map((m) => (
-                <div
-                  key={m.id}
-                  className={`flex ${m.sender === "user" ? "justify-end" : "justify-start"}`}
-                >
-                  <div
-                    className={`max-w-[90%] rounded-lg px-4 py-3 text-xs leading-relaxed shadow-md whitespace-pre-line ${
-                      m.sender === "user"
-                        ? "bg-cyan-950/50 text-cyan-100 border border-cyan-500/40 rounded-tr-none"
-                        : "bg-slate-900 text-slate-200 border border-slate-800 rounded-tl-none"
-                    }`}
+                <div className="flex items-center space-x-3 text-xs">
+                  <button 
+                    onClick={handleClear} 
+                    className="text-slate-500 hover:text-cyan-400 transition-colors"
+                    title="Reset session"
                   >
-                    {m.text}
-                  </div>
-                </div>
-              ))
-            )}
-
-            {/* 로딩 바 */}
-            {isLoading && (
-              <div className="flex justify-start">
-                <div className="bg-slate-900 border border-slate-800 text-cyan-400 rounded-lg rounded-tl-none px-4 py-2.5 shadow-sm flex items-center space-x-1.5 font-bold">
-                  <span>SYSTEM COMPUTING</span>
-                  <span className="animate-pulse">...</span>
+                    [RESET]
+                  </button>
+                  <button 
+                    onClick={() => setIsOpen(false)} 
+                    className="text-slate-500 hover:text-red-400 transition-colors font-bold text-sm"
+                  >
+                    ✕
+                  </button>
                 </div>
               </div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
 
-          {/* 입력 폼 */}
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleSend(input);
-            }}
-            className="p-3 bg-slate-950 border-t border-slate-800/80 flex items-center space-x-2"
+              {/* 대화 영역 */}
+              <div className="flex-1 p-5 overflow-y-auto space-y-4 bg-slate-950/40">
+                {messages.length === 0 ? (
+                  <div className="space-y-5">
+                    <div className="bg-slate-950/80 rounded-lg p-4 border border-slate-800 text-xs leading-relaxed text-slate-400 shadow-inner">
+                      <span className="text-cyan-400">root@trigger-blog:~$</span> ./init_chatbot --guardrail
+                      <br /><br />
+                      보안 가드레일이 동작 중인 AI 테크 어시스턴트 인스턴스가 생성되었습니다. 블로그 아키텍처 및 코딩 요령을 하단 셸을 통해 문의하십시오.
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-[10px] text-cyan-400 font-bold uppercase tracking-wider pl-1">{"// AVAILABLE COMMANDS:"}</p>
+                      <div className="flex flex-col space-y-2">
+                        {SUGGESTIONS.map((s, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => handleSend(s)}
+                            className="text-left w-full bg-slate-900/60 hover:bg-slate-800/80 text-xs text-slate-300 border border-slate-800 hover:border-cyan-500/30 py-2 px-3 rounded transition-all duration-200 shadow-sm"
+                          >
+                            {`$ query --type "${s}"`}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  messages.map((m) => (
+                    <div
+                      key={m.id}
+                      className={`flex ${m.sender === "user" ? "justify-end" : "justify-start"}`}
+                    >
+                      <div
+                        className={`max-w-[90%] rounded-lg px-4 py-3 text-xs leading-relaxed shadow-md whitespace-pre-line ${
+                          m.sender === "user"
+                            ? "bg-cyan-950/50 text-cyan-100 border border-cyan-500/40 rounded-tr-none"
+                            : "bg-slate-900 text-slate-200 border border-slate-800 rounded-tl-none"
+                        }`}
+                      >
+                        {m.text}
+                      </div>
+                    </div>
+                  ))
+                )}
+
+                {/* 로딩 바 */}
+                {isLoading && (
+                  <div className="flex justify-start">
+                    <div className="bg-slate-900 border border-slate-800 text-cyan-400 rounded-lg rounded-tl-none px-4 py-2.5 shadow-sm flex items-center space-x-1.5 font-bold">
+                      <span>SYSTEM COMPUTING</span>
+                      <span className="animate-pulse">...</span>
+                    </div>
+                  </div>
+                )}
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* 입력 폼 */}
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleSend(input);
+                }}
+                className="p-3 bg-slate-950 border-t border-slate-800/80 flex items-center space-x-2"
+              >
+                <span className="text-cyan-400 font-bold text-xs pl-1">$</span>
+                <input
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder="Enter tech query..."
+                  className="flex-1 border border-slate-800 rounded px-3 py-2 text-xs focus:outline-none focus:border-cyan-500/50 text-slate-100 bg-slate-950"
+                  disabled={isLoading}
+                />
+                <button
+                  type="submit"
+                  className="bg-slate-900 hover:bg-cyan-950/40 hover:text-cyan-400 text-slate-400 border border-slate-800 hover:border-cyan-500/30 p-2 rounded transition-colors shadow-sm disabled:opacity-50"
+                  disabled={isLoading || !input.trim()}
+                >
+                  EXEC
+                </button>
+              </form>
+            </div>
+          )}
+
+          {/* 플로팅 토글 */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-14 h-14 bg-slate-950 hover:bg-slate-900 text-cyan-400 border border-slate-800 hover:border-cyan-400 rounded-full flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none"
+            aria-label="상담 챗봇 열기"
           >
-            <span className="text-cyan-400 font-bold text-xs pl-1">$</span>
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Enter tech query..."
-              className="flex-1 border border-slate-800 rounded px-3 py-2 text-xs focus:outline-none focus:border-cyan-500/50 text-slate-100 bg-slate-950"
-              disabled={isLoading}
-            />
-            <button
-              type="submit"
-              className="bg-slate-900 hover:bg-cyan-950/40 hover:text-cyan-400 text-slate-400 border border-slate-800 hover:border-cyan-500/30 p-2 rounded transition-colors shadow-sm disabled:opacity-50"
-              disabled={isLoading || !input.trim()}
-            >
-              EXEC
-            </button>
-          </form>
+            {isOpen ? (
+              <span className="text-xs font-bold font-mono">SYS_X</span>
+            ) : (
+              <span className="text-lg font-mono">&gt;_</span>
+            )}
+          </button>
         </div>
-      )}
-
-      {/* 플로팅 토글 */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-slate-950 hover:bg-slate-900 text-cyan-400 border border-slate-800 hover:border-cyan-400 rounded-full flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none"
-        aria-label="상담 챗봇 열기"
-      >
-        {isOpen ? (
-          <span className="text-xs font-bold font-mono">SYS_X</span>
-        ) : (
-          <span className="text-lg font-mono">&gt;_</span>
-        )}
-      </button>
+      </div>
     </div>
   );
 }
