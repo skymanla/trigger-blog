@@ -21,7 +21,7 @@ const QuizMain: NextPage = () => {
       }
       return shuffled
     }
-    setShuffledQuiz(shuffleArray(quizData.quizContext))
+    setShuffledQuiz(shuffleArray(quizData.quizContext).slice(0, 5))
   }, [])
 
   const {
