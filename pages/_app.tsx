@@ -4,7 +4,7 @@ import '@/styles/tailwind.css'
 import type { AppProps } from 'next/app'
 import Layout from '@/components/layout/Layout'
 import siteMetadata from "@/data/siteMetadata"
-import BlogChatBot from '@/components/chat/BlogChatBot'
+// import BlogChatBot from '@/components/chat/BlogChatBot'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Layout>
         <Component {...pageProps} />
-        <BlogChatBot />
+        {/* <BlogChatBot /> */}
       </Layout>
     </ThemeProvider>
   )
