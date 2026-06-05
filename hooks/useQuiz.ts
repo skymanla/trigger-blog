@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
+import { QuizItem } from '@/types/quiz'
 
-export const useQuiz = (quizeContext: any[]) => {
+export const useQuiz = (quizeContext: QuizItem[]) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [userAnswers, setUserAnswers] = useState<string[]>(Array(quizeContext.length).fill(null))
   const [quizCompleted, setQuizCompleted] = useState(false)
