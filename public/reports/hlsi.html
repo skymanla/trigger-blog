@@ -1,0 +1,1746 @@
+<!doctype html>
+<html lang="ko" class="nojs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className='hasjs'</script>
+<title>한생연 방학특강 학년별 완전분석 (2020–2026)</title>
+<meta name="description" content="한생연 여름·겨울 방학특강 게시글 9건을 학년(연령)별로 조사하고, 겨울↔여름·연도별 유사 과목군을 적대적 검증으로 묶은 리포트">
+<meta property="og:type" content="article">
+<meta property="og:title" content="한생연 방학특강 학년별 완전분석 (2020–2026)">
+<meta property="og:description" content="여름·겨울 방학특강 9건을 학년별로 조사 + 유사 과목군 적대적 검증 리포트">
+<meta property="og:image" content="https://trigger.kr/images/hlsi-thumb.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://trigger.kr/reports/hlsi.html">
+<meta property="og:site_name" content="TRIGGER.KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="한생연 방학특강 학년별 완전분석 (2020–2026)">
+<meta name="twitter:description" content="여름·겨울 방학특강 9건 학년별 조사 + 유사 과목군 리포트">
+<meta name="twitter:image" content="https://trigger.kr/images/hlsi-thumb.jpg">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f6f7fb; --surface:#ffffff; --ink:#1f2330; --muted:#5b6172;
+  --line:#e6e8ef; --brand:#3b54d6; --brand2:#0e9aa1; --accent:#eef1ff;
+  --warn:#b54708; --good:#0e7a3a; --shadow:0 1px 3px rgba(20,25,50,.06),0 8px 24px rgba(20,25,50,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:15.5px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:-.2px}
+.brand .dot{width:11px;height:11px;border-radius:3px;background:linear-gradient(135deg,var(--brand),var(--brand2))}
+.tabs{display:flex;gap:6px;margin-left:auto;background:#eef0f6;padding:4px;border-radius:12px}
+.tab{border:0;background:transparent;color:var(--muted);font:inherit;font-weight:700;font-size:13.5px;
+  padding:8px 14px;border-radius:9px;cursor:pointer;white-space:nowrap;transition:.15s}
+.tab .sub{font-weight:600;opacity:.7;font-size:12px}
+.tab[aria-selected="true"]{background:var(--surface);color:var(--brand);box-shadow:var(--shadow)}
+
+/* mobile hamburger (삼단바) — hidden on desktop */
+.menu-btn{display:none;align-items:center;justify-content:center;border:1px solid var(--line);
+  background:var(--surface);color:var(--ink);font-size:18px;line-height:1;width:40px;height:40px;
+  border-radius:10px;cursor:pointer;flex:0 0 auto;transition:.15s}
+.menu-btn:hover{background:var(--accent);color:var(--brand)}
+.backdrop{position:fixed;inset:0;background:rgba(20,25,50,.42);z-index:40;opacity:0;visibility:hidden;transition:.2s}
+.backdrop.show{opacity:1;visibility:visible}
+
+/* layout */
+.layout{max-width:1180px;margin:24px auto;padding:0 20px;display:grid;grid-template-columns:264px 1fr;gap:28px;align-items:start}
+.sidebar{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow:auto;
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow)}
+.sidebar h4{margin:2px 6px 10px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.toc-item{display:block;padding:5px 10px;border-radius:8px;color:var(--muted);font-size:13.2px;
+  line-height:1.45;border-left:2px solid transparent}
+.toc-item:hover{background:var(--accent);text-decoration:none;color:var(--ink)}
+.toc-item.lvl3{padding-left:22px;font-size:12.6px}
+.toc-item.active{color:var(--brand);background:var(--accent);border-left-color:var(--brand);font-weight:700}
+
+/* article */
+.article{background:var(--surface);border:1px solid var(--line);border-radius:16px;
+  padding:38px 46px;box-shadow:var(--shadow);min-width:0}
+/* progressive enhancement: content visible WITHOUT JS (e.g. KakaoTalk in-app viewer) */
+.panel{display:block}
+.hasjs .panel{display:none}
+.hasjs .panel.active{display:block;animation:fade .25s ease}
+/* no-JS fallback: show both reports stacked, hide controls that need JS */
+.nojs .tabs,.nojs .menu-btn,.nojs .backdrop,.nojs .sidebar .drawer-close{display:none}
+.nojs #toc-sub{display:block!important}
+.nojs #panel-sub{border-top:3px solid var(--line);margin-top:34px;padding-top:6px}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+.article h1{font-size:27px;line-height:1.3;margin:0 0 6px;letter-spacing:-.4px}
+.article h2{font-size:21px;margin:60px 0 16px;padding-top:26px;border-top:1px solid var(--line);letter-spacing:-.3px}
+.article h2:first-of-type{border-top:0;padding-top:6px;margin-top:8px}
+.article h3{font-size:16.5px;margin:40px 0 12px;color:#262b3a}
+.article h4{font-size:14.5px;margin:28px 0 8px;color:var(--muted)}
+.anchor{margin-left:8px;color:var(--line);font-weight:400;opacity:0;transition:.15s}
+h2:hover .anchor,h3:hover .anchor{opacity:1;color:#c3c8d6}
+.article p{margin:10px 0}
+.article ul,.article ol{margin:10px 0;padding-left:22px}
+.article li{margin:4px 0}
+.article strong{color:#11162a}
+.article hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+.article code{background:#eff1f6;padding:1.5px 6px;border-radius:6px;font-size:.86em;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace}
+
+/* blockquote = note */
+.article blockquote{margin:12px 0;padding:11px 16px;background:linear-gradient(0deg,#fbfcff,#fbfcff),var(--accent);
+  border:1px solid var(--line);border-left:3px solid var(--brand2);border-radius:10px;color:#41475a;font-size:14px}
+.article blockquote p{margin:5px 0}
+
+/* tables */
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:13.6px;background:var(--surface)}
+thead th{background:#f1f3fa;color:#2a3043;text-align:left;font-weight:700;white-space:nowrap}
+th,td{padding:9px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even){background:#fafbfe}
+tbody tr:hover{background:#f3f6ff}
+td:first-child,th:first-child{white-space:nowrap}
+
+.footer{max-width:1180px;margin:10px auto 50px;padding:0 20px;color:var(--muted);font-size:12.5px;text-align:center}
+
+/* no-JS back-to-top button (fixed, always visible) */
+.to-top{position:fixed;right:18px;bottom:18px;z-index:35;width:46px;height:46px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font-size:21px;line-height:1;
+  box-shadow:0 6px 18px rgba(20,25,50,.28);transition:transform .15s,box-shadow .15s}
+.to-top:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(20,25,50,.34);text-decoration:none}
+.to-top:active{transform:translateY(0)}
+@media (max-width:920px){.to-top{right:14px;bottom:14px;width:44px;height:44px;font-size:20px}}
+
+@media (max-width:920px){
+  .menu-btn{display:inline-flex}
+  .layout{grid-template-columns:1fr}
+  .article{padding:24px 18px}
+  .tabs{order:3;width:100%;margin-left:0}
+  .brand{font-size:15px}
+  /* TOC becomes a slide-in drawer (삼단바) */
+  .sidebar{position:fixed;top:0;left:0;height:100dvh;height:100vh;width:82%;max-width:330px;
+    max-height:none;border-radius:0 16px 16px 0;z-index:50;overflow:auto;
+    box-shadow:0 10px 40px rgba(20,25,50,.25);transform:translateX(-103%);
+    transition:transform .26s cubic-bezier(.4,0,.2,1)}
+  .sidebar.open{transform:none}
+  /* without JS the drawer can't open, so render it inline instead */
+  .nojs .sidebar{position:static;transform:none;width:auto;max-width:none;height:auto;
+    border-radius:14px;box-shadow:var(--shadow);z-index:auto}
+  .sidebar .drawer-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+  .sidebar .drawer-close{display:inline-flex;border:0;background:transparent;font-size:22px;
+    line-height:1;color:var(--muted);cursor:pointer;padding:4px 6px;border-radius:8px}
+  .sidebar .drawer-close:hover{background:var(--accent)}
+}
+@media (min-width:921px){ .drawer-close{display:none} }
+</style>
+</head>
+<body>
+<span id="top"></span>
+<div class="topbar">
+  <div class="topbar-in">
+    <button class="menu-btn" id="menuBtn" aria-label="목차 열기" aria-expanded="false">☰</button>
+    <div class="brand"><span class="dot"></span> 한생연 방학특강 리포트</div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" data-tab="main" aria-selected="true">📊 학년별 리포트 <span class="sub">· 메인</span></button>
+      <button class="tab" role="tab" data-tab="sub">🔗 유사 과목군 묶음 <span class="sub">· 서브</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="drawer-head">
+      <h4 style="margin:2px 6px">목차</h4>
+      <button class="drawer-close" id="drawerClose" aria-label="목차 닫기">×</button>
+    </div>
+    <nav id="toc-main"><a class="toc-item lvl2" href="#m-1" data-target="m-1">1. 조사 대상 게시글 (특강 검색 결과)</a>
+<a class="toc-item lvl2" href="#m-2" data-target="m-2">2. 한눈에 보는 핵심 요약</a>
+<a class="toc-item lvl3" href="#m-3" data-target="m-3">2-1. 학년(연령) 구간 체계 — 여름 vs 겨울이 다름</a>
+<a class="toc-item lvl3" href="#m-4" data-target="m-4">2-2. 학년이 올라갈수록 수업시간·수강료가 증가 (2026 여름 기준)</a>
+<a class="toc-item lvl3" href="#m-5" data-target="m-5">2-3. 공통 운영 방식</a>
+<a class="toc-item lvl3" href="#m-6" data-target="m-6">2-4. 수강료 변화 추이(연령대별, 원)</a>
+<a class="toc-item lvl2" href="#m-7" data-target="m-7">3. 학년별 상세 (최신 2026·2025 중심 + 연도 비교)</a>
+<a class="toc-item lvl3" href="#m-8" data-target="m-8">3-1. 유아 (만 57세 / 67세)</a>
+<a class="toc-item lvl3" href="#m-9" data-target="m-9">3-2. 초등 저학년 (초12 / 예비 초등1·23)</a>
+<a class="toc-item lvl3" href="#m-10" data-target="m-10">3-3. 초등 중학년 (초34 / 초35 / 예비 초등23·46)</a>
+<a class="toc-item lvl3" href="#m-11" data-target="m-11">3-4. 초등 고학년·중등 (초5~6 / 초5이상 / 중학생)</a>
+<a class="toc-item lvl2" href="#m-12" data-target="m-12">4. 연도별(게시글별) 상세 강좌 — 세부 주제 포함</a>
+<a class="toc-item lvl3" href="#m-13" data-target="m-13">4-1. 2026 여름방학 특강 (idx=339, 2026.07~08)</a>
+<a class="toc-item lvl3" href="#m-14" data-target="m-14">4-2. 2026 겨울방학특강 (idx=326, 25.12~26.02)</a>
+<a class="toc-item lvl3" href="#m-15" data-target="m-15">4-3. 2025 여름방학특강 (idx=313, 2025.07~08) — 가장 세분화(5구간)</a>
+<a class="toc-item lvl3" href="#m-16" data-target="m-16">4-4. 2024년 겨울방학 특강 (idx=271, 23.12~24.02) — 한생연 30주년 / &quot;경제 불황으로 특강비 인하&quot;</a>
+<a class="toc-item lvl3" href="#m-17" data-target="m-17">4-5. 2023 여름특강 (idx=257, 2023.07~08)</a>
+<a class="toc-item lvl3" href="#m-18" data-target="m-18">4-6. 2021 여름방학 특강 (idx=210, 2021.07~08)</a>
+<a class="toc-item lvl3" href="#m-19" data-target="m-19">4-7. 2021년 겨울방학 특강 + 신학기 평일 특화 (idx=197, 20.12~21.02)</a>
+<a class="toc-item lvl2" href="#m-20" data-target="m-20">5. 변화·트렌드 분석</a>
+<a class="toc-item lvl2" href="#m-21" data-target="m-21">6. 부록</a>
+<a class="toc-item lvl3" href="#m-22" data-target="m-22">6-1. idx=306 — 수학·과학능력 개발 겨울방학 특강 (2024.12) : 설명회 안내문</a>
+<a class="toc-item lvl3" href="#m-23" data-target="m-23">6-2. idx=173 — 2020 여름특강 : 지역관 링크형 포스터</a>
+<a class="toc-item lvl3" href="#m-24" data-target="m-24">6-3. 공통 이벤트·혜택 (시기별)</a>
+<a class="toc-item lvl3" href="#m-25" data-target="m-25">6-4. 접수처 (최신 기준)</a>
+<a class="toc-item lvl3" href="#m-26" data-target="m-26">판독 신뢰도 메모</a></nav>
+    <nav id="toc-sub" style="display:none"><a class="toc-item lvl2" href="#s-1" data-target="s-1">1. 겨울 &#39;예비 X학년&#39; ↔ 여름 &#39;X학년&#39; 대응 과목군</a>
+<a class="toc-item lvl3" href="#s-2" data-target="s-2">1-1. 생물 분류·관찰 계열 (동물·식물·곤충·미생물)</a>
+<a class="toc-item lvl3" href="#s-3" data-target="s-3">1-2. 동화 속 과학 계열 (스토리텔링형)</a>
+<a class="toc-item lvl3" href="#s-4" data-target="s-4">1-3. 직업/탐정 체험 — 어린이 탐정 (과학수사형)</a>
+<a class="toc-item lvl3" href="#s-5" data-target="s-5">1-4. 놀이/창작 과학 계열 (놀이로 배우는 과학)</a>
+<a class="toc-item lvl3" href="#s-6" data-target="s-6">1-5. 화학 (혁명·반응·분자) 계열 — 고학년</a>
+<a class="toc-item lvl2" href="#s-7" data-target="s-7">2. 연도별 반복 과목군 (시즌 무관, 해마다 비슷하게 재등장)</a>
+<a class="toc-item lvl3" href="#s-8" data-target="s-8">2-1. 여행/교통수단 과학 계열 (유아 여름)</a>
+<a class="toc-item lvl3" href="#s-9" data-target="s-9">2-2. 현미경·확대 관찰 계열 (렌즈·미시세계)</a>
+<a class="toc-item lvl3" href="#s-10" data-target="s-10">2-3. 물리 놀이/원리 계열 (힘·전기·자석·운동)</a>
+<a class="toc-item lvl3" href="#s-11" data-target="s-11">2-4. 물리 (전기·힘·열·빛) 계열 — 중학년</a>
+<a class="toc-item lvl3" href="#s-12" data-target="s-12">2-5. 교과서 연계 실험 계열 (초등 교과 맞춤)</a>
+<a class="toc-item lvl3" href="#s-13" data-target="s-13">2-6. 과학자 탐구방법론 계열 (관찰·측정·탐구)</a>
+<a class="toc-item lvl3" href="#s-14" data-target="s-14">2-7. 실험기구 기본기 계열 (단일 검증 멤버)</a>
+<a class="toc-item lvl3" href="#s-15" data-target="s-15">2-8. 환경·에너지 계열 (중학년 여름)</a>
+<a class="toc-item lvl3" href="#s-16" data-target="s-16">2-9. 의과학·인체 계열 (중학년·고학년, 코로나기~현재)</a>
+<a class="toc-item lvl2" href="#s-17" data-target="s-17">3. 범학년으로 이어지는 대표 과목 계열 (학년 사다리)</a>
+<a class="toc-item lvl3" href="#s-18" data-target="s-18">3-1. 과학수사·탐정 (CSI/포렌식)</a>
+<a class="toc-item lvl3" href="#s-19" data-target="s-19">3-2. DNA·세포 (유전·분자생물)</a>
+<a class="toc-item lvl3" href="#s-20" data-target="s-20">3-3. 파동에너지</a>
+<a class="toc-item lvl3" href="#s-21" data-target="s-21">3-4. 화학 결합·분해 (더하기/빼기 화학반응)</a>
+<a class="toc-item lvl3" href="#s-22" data-target="s-22">3-5. 현미경·렌즈 확대 관찰</a>
+<a class="toc-item lvl3" href="#s-23" data-target="s-23">3-6. 오감 (감각 생명과학)</a>
+<a class="toc-item lvl3" href="#s-24" data-target="s-24">3-7. 의과학·우리몸·닥터 (인체/응급/의료)</a>
+<a class="toc-item lvl3" href="#s-25" data-target="s-25">3-8. 첨단·바이오 (생명공학)</a>
+<a class="toc-item lvl2" href="#s-26" data-target="s-26">4. 적대적 검증에서 기각/축소된 묶음 (이름만 비슷, 내용 다름)</a>
+<a class="toc-item lvl3" href="#s-27" data-target="s-27">4-1. 묶음 전체 기각(reject)</a>
+<a class="toc-item lvl3" href="#s-28" data-target="s-28">4-2. trim으로 제외된 개별 강좌</a>
+<a class="toc-item lvl3" href="#s-29" data-target="s-29">검증 메모</a></nav>
+  </aside>
+  <main class="article">
+    <section id="panel-main" class="panel active"><h1>한생연(HLSI) 방학 특강 — 학년별 조사 리포트</h1>
+<blockquote>
+<p>출처: 한생연 과학교육 사이트 공지사항( <a href="https://hlsi.co.kr">https://hlsi.co.kr</a> ) &quot;특강&quot; 검색 결과
+조사 방법: Playwright(헤드리스 Chromium)로 게시글·본문 이미지 수집 → 콘텐츠 이미지를 분할·확대하여 시각 판독(하이브리드)
+조사일: 2026-06-16
+비고: 게시글 본문은 모두 &quot;이미지로 제작된 안내문&quot;이라, 표 형태의 상세 정보를 이미지 판독으로 추출했습니다. 작은 글씨/일러스트에 가려진 일부 칸은 <code>[판독불가]</code>로 표기했습니다.</p>
+</blockquote>
+<hr>
+<h2 id="m-1">1. 조사 대상 게시글 (특강 검색 결과)<a class="anchor" href="#m-1" aria-label="anchor">#</a></h2>
+<p>&quot;특강&quot; 검색으로 나온 글 중 <strong>방학 특강 9건</strong>을 조사했습니다.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>idx</th>
+<th>게시글 제목</th>
+<th>시기</th>
+<th align="center">학년 상세표</th>
+<th align="center">학년 구간 수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>339</td>
+<td>2026 한생연 여름방학 특강</td>
+<td>2026.07~08</td>
+<td align="center">✅ 있음</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>326</td>
+<td>2026 한생연 겨울방학특강</td>
+<td>25.12~26.02</td>
+<td align="center">✅ 있음</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>313</td>
+<td>2025 한생연 여름방학특강</td>
+<td>2025.07~08</td>
+<td align="center">✅ 있음</td>
+<td align="center"><strong>5</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>306</td>
+<td>수학·과학능력 개발 겨울방학 특강</td>
+<td>2024.12(설명회)</td>
+<td align="center">❌ (설명회 안내문)</td>
+<td align="center">–</td>
+</tr>
+<tr>
+<td>5</td>
+<td>271</td>
+<td>2024년 겨울방학 특강</td>
+<td>23.12~24.02</td>
+<td align="center">✅ 있음</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td>6</td>
+<td>257</td>
+<td>2023 한생연 여름특강 방학 특별 프로그램</td>
+<td>2023.07~08</td>
+<td align="center">✅ 있음</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td>7</td>
+<td>210</td>
+<td>2021 여름방학 특강</td>
+<td>2021.07~08</td>
+<td align="center">✅ 있음</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>197</td>
+<td>2021년 겨울방학 특강 및 신학기 평일 특화프로그램</td>
+<td>20.12~21.02</td>
+<td align="center">✅ 있음</td>
+<td align="center">3(+평일특화)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>173</td>
+<td>2020 여름특강</td>
+<td>2020.07~08</td>
+<td align="center">❌ (지역관 링크형 포스터)</td>
+<td align="center">–</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>같은 검색 결과에 있던 <strong>idx=169 &quot;한생연 학부모님들께 드립니다&quot;</strong> 는 방학 특강 프로그램 글이 아니어서 제외했습니다.</li>
+<li><strong>idx=306</strong>(설명회)·<strong>idx=173</strong>(2020)은 학년별 상세 표가 게시글 이미지에 없어 별도 처리(§6)했습니다.</li>
+</ul>
+<hr>
+<h2 id="m-2">2. 한눈에 보는 핵심 요약<a class="anchor" href="#m-2" aria-label="anchor">#</a></h2>
+<h3 id="m-3">2-1. 학년(연령) 구간 체계 — 여름 vs 겨울이 다름<a class="anchor" href="#m-3" aria-label="anchor">#</a></h3>
+<p>한생연 특강은 <strong>연령/학년 구간별로 정원·수업시간·수강료·강좌가 모두 다릅니다.</strong> 다만 <strong>여름과 겨울의 구간 명칭 체계가 다릅니다.</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>구분</th>
+<th>여름방학 구간 체계</th>
+<th>겨울방학 구간 체계</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025~2026 최신</td>
+<td>유아(만5<del>6/6</del>7세) · 초등1<del>2 · 초등3</del>4(or 3<del>5) · 초등5</del>6(or 5이상) · (중학생)</td>
+<td>6<del>7세 · <strong>예비 초등1</strong> · **예비 초등2</del>3** · <strong>예비 초등4이상(or 4~6)</strong></td>
+</tr>
+<tr>
+<td>의미</td>
+<td>현재 학년 기준</td>
+<td>&quot;예비&quot; = 다음 학년 진학 대비(겨울→신학년)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>핵심: <strong>겨울방학은 &quot;예비 ○학년&quot;</strong> 명칭으로 다음 학기를 준비하는 컨셉, <strong>여름방학은 현재 학년 기준</strong>으로 편성됩니다.</p>
+</blockquote>
+<h3 id="m-4">2-2. 학년이 올라갈수록 수업시간·수강료가 증가 (2026 여름 기준)<a class="anchor" href="#m-4" aria-label="anchor">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>학년 구간</th>
+<th align="center">정원</th>
+<th align="center">1회 수업시간</th>
+<th align="center">수강료(실습비)</th>
+<th>대표 강좌 키워드</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>유아 6~7세</td>
+<td align="center">10명</td>
+<td align="center">50분 ×4</td>
+<td align="center">124,000원</td>
+<td>발명·놀이화학·생존과학</td>
+</tr>
+<tr>
+<td>초등 1~2</td>
+<td align="center">10명</td>
+<td align="center">55분 ×4</td>
+<td align="center">128,000원</td>
+<td>과학원리·우리몸·반려동물</td>
+</tr>
+<tr>
+<td>초등 3~5</td>
+<td align="center">10명</td>
+<td align="center">60분 ×4</td>
+<td align="center">132,000원</td>
+<td>물리·분자(화학)·생존전략</td>
+</tr>
+<tr>
+<td>초등 5이상</td>
+<td align="center">10명</td>
+<td align="center">65분 ×4</td>
+<td align="center">136,000원</td>
+<td>화학반응·첨단(생명)과학</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>정원은 전 구간 <strong>10명</strong>, 수업은 <strong>하루 1주제씩 4일(4일코스)</strong> 또는 <strong>하루 2주제씩 2일(2일코스)</strong> 로 운영. 1강좌 = 4개 주제로 구성.</p>
+</blockquote>
+<h3 id="m-5">2-3. 공통 운영 방식<a class="anchor" href="#m-5" aria-label="anchor">#</a></h3>
+<ul>
+<li><strong>6개 직영 교육관(과학관)</strong> 에서 동시 진행: 종로(융합교육과학관)·목동(생명과학박물관)·잠실(인간과로봇과학관)·강남(실험누리과학관)·반포(휴먼탐구과학관)·분당(마이크로과학관). 시기에 따라 <strong>서대문(3H키움과학관)</strong>, <strong>홍천 자연속과학체험관</strong> 추가.</li>
+<li>접수: <strong>전화·방문 접수만 가능</strong> (대표전화 1566-5071 / 각 센터 직통).</li>
+<li>고학년·중등 일부 강좌는 <strong>반포·서대문 교육관 미진행</strong>.</li>
+<li>비대면 학생을 위한 <strong>라이브 온라인 &quot;라온&quot;</strong>(과학·과학영어·융합수학·과학논술) 별도 운영(원거리/지방 학생 대상).</li>
+</ul>
+<h3 id="m-6">2-4. 수강료 변화 추이(연령대별, 원)<a class="anchor" href="#m-6" aria-label="anchor">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연령대</th>
+<th align="right">&#39;21겨울</th>
+<th align="right">&#39;21여름</th>
+<th align="right">&#39;23여름</th>
+<th align="right">&#39;24겨울</th>
+<th align="right">&#39;25여름</th>
+<th align="right">&#39;26겨울</th>
+<th align="right">&#39;26여름</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>유아</td>
+<td align="right">104,000</td>
+<td align="right">114,000</td>
+<td align="right">119,000</td>
+<td align="right">117,000</td>
+<td align="right">122,000</td>
+<td align="right">124,000</td>
+<td align="right">124,000</td>
+</tr>
+<tr>
+<td>초1~2(예비초1)</td>
+<td align="right">124,000</td>
+<td align="right">128,000</td>
+<td align="right">138,000</td>
+<td align="right">124,000</td>
+<td align="right">126,000</td>
+<td align="right">128,000</td>
+<td align="right">128,000</td>
+</tr>
+<tr>
+<td>초3~5(중학년)</td>
+<td align="right">134,000</td>
+<td align="right">138,000</td>
+<td align="right">138,000</td>
+<td align="right">128,000~129,000</td>
+<td align="right">130,000</td>
+<td align="right">132,000</td>
+<td align="right">132,000</td>
+</tr>
+<tr>
+<td>초5이상(고학년)</td>
+<td align="right">154,000*</td>
+<td align="right">154,000*</td>
+<td align="right">–</td>
+<td align="right">136,000</td>
+<td align="right">134,000</td>
+<td align="right">136,000</td>
+<td align="right">136,000</td>
+</tr>
+<tr>
+<td>중학생</td>
+<td align="right">–</td>
+<td align="right">(초5~중 포함)</td>
+<td align="right">–</td>
+<td align="right">–</td>
+<td align="right">138,000</td>
+<td align="right">–</td>
+<td align="right">–</td>
+</tr>
+</tbody></table></div>
+<p>* 2021년은 &quot;초5~중&quot; 통합 구간(154,000원). 2024년 한때 &quot;내외 경제 불황으로 특강비 인하&quot;를 이벤트로 내세워 중·고학년 가격이 낮아진 시기가 있습니다.</p>
+<hr>
+<h2 id="m-7">3. 학년별 상세 (최신 2026·2025 중심 + 연도 비교)<a class="anchor" href="#m-7" aria-label="anchor">#</a></h2>
+<blockquote>
+<p>강좌명 아래는 <strong>각 강좌의 4개 주제(핵심 실험)</strong> 입니다. 분량상 대표 주제 위주로 정리했고, 전체 세부 실험은 §4(연도별 상세)에서 확인할 수 있습니다.</p>
+</blockquote>
+<h3 id="m-8">3-1. 유아 (만 5<del>7세 / 6</del>7세)<a class="anchor" href="#m-8" aria-label="anchor">#</a></h3>
+<p><strong>■ 2026 여름방학 — 유아 6~7세</strong> (정원 10명, 50분×4, 124,000원)</p>
+<ul>
+<li><strong>나는야 발명왕</strong> — Wible 발명품 속 과학</li>
+<li><strong>놀이 화학자</strong> — 놀이로 배우는 화학</li>
+<li><strong>지구에서 살아남기</strong> — 지구에서 살아남기 위한 4가지 과학 능력</li>
+</ul>
+<p><strong>■ 2026 겨울방학 — 6~7세</strong> (정원 10명, 50분×4, 124,000원, *서대문 미진행)</p>
+<ul>
+<li><strong>어린이 과학자</strong> — 실험도구 사용/확대 관찰/습도 측정/물질의 상태변화</li>
+<li><strong>어린이 탐정</strong> — 마찰전기·혈액반응·중력·지문(렌즈)으로 흔적 찾기(과학수사)</li>
+<li><strong>꿈 잡(JOB)기 체험단</strong> — 소방관·의사·동물관리사·지질학자 직업 체험</li>
+</ul>
+<p><strong>■ 2025 여름방학 — 유아 만5~6세</strong> (정원 10명, 50분×4, 122,000원)</p>
+<ul>
+<li><strong>동화와 과학</strong> — 지혜로운 까마귀(부피)/오즈의 마법사(대류)/아낌없이 주는 나무(나이테)/당나귀와 소금(흡수)</li>
+<li><strong>여행 과학</strong> — 자동차·배·비행기·기차의 작동 원리</li>
+<li><strong>우리 몸 탐구</strong> — 뼈·피부·후각·뇌</li>
+</ul>
+<p><strong>■ 2024 겨울방학 — 6~7세</strong> (정원 10명, 50분, 117,000원)</p>
+<ul>
+<li><strong>어린이탐정</strong>(흔적 찾기 과학수사) · <strong>동화속과학</strong>(동화 속 과학원리) · <strong>나홀로 응급처치</strong>(어린이 구급대)</li>
+</ul>
+<p><strong>■ 2023 여름 — 유아 5~7세</strong> (정원 10명, 50분, 119,000원)</p>
+<ul>
+<li><strong>여행과학</strong> · <strong>공룡탐험</strong> · <strong>창작놀이터</strong> · <strong>변신화학</strong> · <strong>Summer Go!</strong>(여름 과학)</li>
+</ul>
+<p><strong>■ 2021 — 유아 5~7세</strong> (정원 8명; 여름 114,000 / 겨울 104,000)</p>
+<ul>
+<li>여름: 궁금우주·캠핑과학·우리몸Q&amp;A·음식속화학·놀이과학</li>
+<li>겨울: 집콕놀이과학·물리세상·꼬마과학 마술사·화학으로 우리집 건강하게·우리 몸 튼튼 여행</li>
+</ul>
+<blockquote>
+<p><strong>유아 트렌드</strong>: 동화·놀이·직업체험 등 <strong>스토리텔링형</strong>이 일관됨. 정원은 2021년 8명 → 2023년 이후 <strong>10명</strong>으로 확대, 수업시간 50분 고정, 수강료 점진 상승(104,000→124,000).</p>
+</blockquote>
+<hr>
+<h3 id="m-9">3-2. 초등 저학년 (초1<del>2 / 예비 초등1·2</del>3)<a class="anchor" href="#m-9" aria-label="anchor">#</a></h3>
+<p><strong>■ 2026 여름방학 — 초등 1~2</strong> (정원 10명, 55분×4, 128,000원)</p>
+<ul>
+<li><strong>과학 원리 탐험대</strong>(오감 자극) — 물질의 상태변화·온도계 원리·탄성력·빛의 성질</li>
+<li><strong>신기한 우리몸 탐구</strong> — 성장과 몸의 작동</li>
+<li><strong>나의 소중한 친구</strong> — 반려동물·반려식물·반려로봇 체험</li>
+</ul>
+<p><strong>■ 2026 겨울방학 — 예비 초등1</strong> (정원 10명, 55분×4, 128,000원, *서대문 미진행)</p>
+<ul>
+<li><strong>오감특강</strong> — 후각·촉각·시각·청각으로 느끼는 생명과학</li>
+<li><strong>물리 명탐정</strong> — 입체현상·로봇·운동경기·자기부상열차의 원리</li>
+<li><strong>작은 세상 여행</strong> — 렌즈·모세혈관·해부현미경·광학현미경</li>
+</ul>
+<p><strong>■ 2026 겨울방학 — 예비 초등2~3</strong> (정원 10명, 60분×4, 132,000원, *서대문 미진행)</p>
+<ul>
+<li><strong>생물의 신비</strong>(척추/미생물/식물/곤충) · <strong>화학 오락실</strong>(빛·전기·이산화탄소·착시) · <strong>한생연 과학 헌터스</strong>(과학수사·균형·자석보물·전기)</li>
+</ul>
+<p><strong>■ 2025 여름방학 — 초등 1~2</strong> (정원 10명, 55분×4, 126,000원)</p>
+<ul>
+<li><strong>생물 비밀 연구소</strong>(동물·식물·곤충·미생물 분류) · <strong>인사이드 과학</strong>(실험기구 기본기) · <strong>오감 자극 화학</strong>(확산·점성·파동·맛)</li>
+</ul>
+<p><strong>■ 2024 겨울방학 — 예비 초등1</strong> (정원 10명, 50분, 124,000원)</p>
+<ul>
+<li><strong>우주탐험대</strong> · <strong>현미경탐구</strong> · <strong>물리비밀의방</strong></li>
+</ul>
+<p><strong>■ 2024 겨울방학 — 예비 초등2~3</strong> (정원 10명, 60분, 128,000원)</p>
+<ul>
+<li><strong>겨울속생물탐험</strong> · <strong>체인지켐(Change Chem)</strong> · <strong>멀리가는과학</strong></li>
+</ul>
+<p><strong>■ 2023 여름 — 초1~2</strong> (정원 10명, 60분, 138,000원)</p>
+<ul>
+<li><strong>기초과학</strong> · <strong>사계절화학</strong> · <strong>초등과학실험(4학년 1학기 교과)</strong> · <strong>과학원리쏙쏙</strong> · <strong>물리놀이터</strong></li>
+</ul>
+<p><strong>■ 2021 — 초1~2</strong> (정원 8명; 여름 128,000 / 겨울 124,000)</p>
+<ul>
+<li>여름: 물리놀이터·이로운생물·나홀로화학·생명탐험·지구챌린지</li>
+<li>겨울: Fun Fun Science·동화속 과학이야기·건강한 신체/정신·오감 속 과학·우주여행 꿈나무</li>
+</ul>
+<blockquote>
+<p><strong>초저 트렌드</strong>: 생물 분류·오감·실험 기초·반려동물 등 <strong>관찰·체험 중심</strong>. 수업시간 55<del>60분, 겨울은 &quot;예비 초등1 / 예비 초등2</del>3&quot;로 2단계 세분.</p>
+</blockquote>
+<hr>
+<h3 id="m-10">3-3. 초등 중학년 (초3<del>4 / 초3</del>5 / 예비 초등2<del>3·4</del>6)<a class="anchor" href="#m-10" aria-label="anchor">#</a></h3>
+<p><strong>■ 2026 여름방학 — 초등 3~5</strong> (정원 10명, 60분×4, 132,000원)</p>
+<ul>
+<li><strong>물리 오락실</strong> — 신기한 현상 가득한 물리 실험 놀이터</li>
+<li><strong>분자 탐구 프로젝트</strong> — 화학의 시작, 분자의 모든 것</li>
+<li><strong>생존의 과학</strong> — 다양한 생물들의 생존 전략 탐구</li>
+</ul>
+<p><strong>■ 2025 여름방학 — 초등 3~4</strong> (정원 10명, 60분×4, 130,000원; *5학년 참가 가능)</p>
+<ul>
+<li><strong>환경의 외침과 대책</strong> — 산성비·산불·싱크홀·그린에너지</li>
+<li><strong>물리적 사고와 실험</strong> — 전기·힘·열·빛의 활용</li>
+<li><strong>사이언스 Lab</strong> — 렌즈/DNA·세포/인체기관/식물 과학</li>
+</ul>
+<p><strong>■ 2026 겨울방학 — 예비 초등4 이상</strong> (정원 10명, 65분×4, 136,000원, *서대문·반포 미진행)</p>
+<ul>
+<li><strong>교과서 체험 화학</strong>(5~6학년 교과: 열·용해·산염기·기체) · <strong>과학 키우기</strong>(측정·관찰·탐구·창의력) · <strong>의과학 기초</strong>(실험동물·내부장기·바이탈사인·의료체험)</li>
+</ul>
+<p><strong>■ 2024 겨울방학 — 예비 초등4~6</strong> (정원 10명, 60분, 129,000원)</p>
+<ul>
+<li><strong>위대한 물리학자</strong>(갈릴레이·뉴턴·패러데이·줄) · <strong>초등교과서 실험</strong>(개정 교과 맞춤) · <strong>과학자키우기</strong>(관찰·측정·탐구)</li>
+</ul>
+<p><strong>■ 2023 여름 — 초3~5</strong> (정원 10명, 60분, 138,000원)</p>
+<ul>
+<li><strong>화학혁명</strong>(역사 속 화학) · <strong>생명과학연구</strong>(동물·식물·인체·미생물) · <strong>3색바이오혁명</strong>(레드/그린/화이트 바이오) · <strong>하늘이야기</strong>(기상·천체) · <strong>에너지연구</strong></li>
+</ul>
+<p><strong>■ 2021 — 초3~5</strong> (정원 8명; 여름 138,000 / 겨울 134,000)</p>
+<ul>
+<li>여름: 물리마스터·한생연CSI·Making Science·Brain Science·Upgrade Science</li>
+<li>겨울: 내 몸을 스스로 지키자·과학상식 속 실험·화학으로 본 바이러스·닥터 한생연·과학자의 탐구법</li>
+</ul>
+<blockquote>
+<p><strong>초중 트렌드</strong>: <strong>교과 연계(교과서 실험) + 시사/환경/바이오</strong> 가 핵심. 최근(2025~2026)은 환경문제·AI/그린에너지·의과학 등 <strong>실생활·진로 연계</strong>가 강화됨.</p>
+</blockquote>
+<hr>
+<h3 id="m-11">3-4. 초등 고학년·중등 (초5~6 / 초5이상 / 중학생)<a class="anchor" href="#m-11" aria-label="anchor">#</a></h3>
+<p><strong>■ 2026 여름방학 — 초등 5이상</strong> (정원 10명, 65분×4, 136,000원, *반포 미진행, 2+1 제외)</p>
+<ul>
+<li><strong>플러스 마이너스 화학반응</strong> — 화학 더하기(결합·합성)/빼기(분리·분해) 4파트</li>
+<li><strong>첨단과학 실험실</strong> — 항생제와 세균·바이러스 / 생체모방기술 / 과학수사 / 유전공학(DNA)</li>
+</ul>
+<p><strong>■ 2025 여름방학 — 초등 5~6</strong> (정원 10명, 65분×4, 134,000원; *중학생 참가 가능, 서대문·반포 미진행)</p>
+<ul>
+<li><strong>첨단과학 실험 특강</strong> — 전기·센서 / AI·로봇(자율주행·라인트레이서) / 첨단소재 / 스마트팜</li>
+</ul>
+<p><strong>■ 2025 여름방학 — 중학생</strong> (정원 10명, 70분×4, 138,000원; *초6 참가 가능, 서대문·반포 미진행)</p>
+<ul>
+<li><strong>심화 실험 특강</strong> — 세포와 DNA(플라스미드 분리) / 화학분석가(중화·산화환원·크로마토그래피) / 파동(간섭·클라드니) / 화학공학자(전기·빛·열에너지)</li>
+</ul>
+<p><strong>■ 2021 여름 — 초5~중</strong> (정원 4명, 70분×4, 154,000원; 2+1 제외)</p>
+<ul>
+<li><strong>더하기 빼기 화학반응</strong> · <strong>세포와 DNA 집중탐구</strong> · <strong>파동에너지의 기초와 응용</strong></li>
+</ul>
+<blockquote>
+<p><strong>고학년·중등 트렌드</strong>: <strong>화학반응·DNA/세포·파동·첨단(AI·로봇·바이오)</strong> 의 심화 실험. 2021년엔 &quot;초5<del>중&quot; 한 묶음(정원 4명, 154,000원)이었으나, **2025년부터 초5</del>6 / 중학생을 분리**(65분/70분, 134,000/138,000원)하여 난이도를 세분화. 고학년 강좌는 <strong>2+1 무료 이벤트 제외</strong> 대상.</p>
+</blockquote>
+<hr>
+<h2 id="m-12">4. 연도별(게시글별) 상세 강좌 — 세부 주제 포함<a class="anchor" href="#m-12" aria-label="anchor">#</a></h2>
+<blockquote>
+<p>각 강좌는 4개 주제(핵심 실험)로 구성됩니다. 아래는 판독한 세부 주제입니다.</p>
+</blockquote>
+<h3 id="m-13">4-1. 2026 여름방학 특강 (idx=339, 2026.07~08)<a class="anchor" href="#m-13" aria-label="anchor">#</a></h3>
+<ul>
+<li><strong>유아 6~7세</strong> (10명/50분×4/124,000): 나는야 발명왕(발명품 속 과학) · 놀이 화학자 · 지구에서 살아남기(4가지 생존 과학)</li>
+<li><strong>초등 1~2</strong> (10명/55분×4/128,000): 과학 원리 탐험대[변신하는 과학(상태변화)·온도로 그리는 자화상(온도계)·통통 튀는 힘(탄성력)·마법처럼 사라지는 빛] · 신기한 우리몸 탐구 · 나의 소중한 친구(반려동물·식물·로봇)</li>
+<li><strong>초등 3~5</strong> (10명/60분×4/132,000): 물리 오락실 · 분자 탐구 프로젝트(분자/화학) · 생존의 과학(생물 생존전략)</li>
+<li><strong>초등 5이상</strong> (10명/65분×4/136,000, 반포 미진행): 플러스 마이너스 화학반응[더하기:결합·합성 / 빼기:분리·분해] · 첨단과학 실험실[항생제·세균/바이러스, 생체모방, 과학수사, 유전공학(DNA)]</li>
+<li>일정: 7/23<del>24, 7/28</del>31, 8/4<del>7, 8/11</del>14, 8/18~19 (2일·4일 코스)</li>
+</ul>
+<h3 id="m-14">4-2. 2026 겨울방학특강 (idx=326, 25.12~26.02)<a class="anchor" href="#m-14" aria-label="anchor">#</a></h3>
+<ul>
+<li><strong>6~7세</strong> (10명/50분×4/124,000): 어린이 과학자 · 어린이 탐정 · 꿈 잡기 체험단(소방관/의사/동물관리사/지질학자)</li>
+<li><strong>예비 초등1</strong> (10명/55분×4/128,000): 오감특강(후·촉·시·청각 생명과학) · 물리 명탐정(입체·로봇·운동경기·자기부상) · 작은 세상 여행(현미경)</li>
+<li><strong>예비 초등2~3</strong> (10명/60분×4/132,000): 생물의 신비(척추/미생물/식물/곤충) · 화학 오락실(빛·전기·CO₂·착시) · 한생연 과학 헌터스(과학수사·균형·자석·전기)</li>
+<li><strong>예비 초등4 이상</strong> (10명/65분×4/136,000, 서대문·반포 미진행): 교과서 체험 화학(열·용해·산염기·기체) · 과학 키우기(측정·관찰·탐구·창의) · 의과학 기초(실험동물·내부장기·바이탈사인·의료체험)</li>
+<li>일정: 12/25<del>26, 12/30</del>31, 1/6<del>9, 1/13</del>16, 1/20<del>23, 1/27</del>30, 2/10<del>13, 2/24</del>27 등 (2일·4일 코스)</li>
+</ul>
+<h3 id="m-15">4-3. 2025 여름방학특강 (idx=313, 2025.07~08) — <strong>가장 세분화(5구간)</strong><a class="anchor" href="#m-15" aria-label="anchor">#</a></h3>
+<ul>
+<li><strong>유아 만5~6세</strong> (10명/50분×4/122,000): 동화와 과학 · 여행 과학 · 우리 몸 탐구</li>
+<li><strong>초등 1~2</strong> (10명/55분×4/126,000): 생물 비밀 연구소 · 인사이드 과학(실험기구) · 오감 자극 화학</li>
+<li><strong>초등 3~4</strong> (10명/60분×4/130,000, 5학년 가능): 환경의 외침과 대책 · 물리적 사고와 실험 · 사이언스 Lab(렌즈/DNA·세포/인체/식물)</li>
+<li><strong>초등 5~6</strong> (10명/65분×4/134,000, 중학생 가능, 서대문·반포 미진행): 첨단과학 실험 특강(전기·센서 / AI·로봇 / 첨단소재 / 스마트팜)</li>
+<li><strong>중학생</strong> (10명/70분×4/138,000, 초6 가능, 서대문·반포 미진행): 심화 실험 특강(세포·DNA / 화학분석 / 파동 / 화학공학)</li>
+<li>일정: 7/24<del>25, 7/29</del>8/1, 8/5<del>8, 8/12</del>15, 8/19~20</li>
+</ul>
+<h3 id="m-16">4-4. 2024년 겨울방학 특강 (idx=271, 23.12~24.02) — 한생연 30주년 / &quot;경제 불황으로 특강비 인하&quot;<a class="anchor" href="#m-16" aria-label="anchor">#</a></h3>
+<ul>
+<li><strong>6~7세</strong> (10명/50분/117,000): 어린이탐정 · 동화속과학 · 나홀로 응급처치</li>
+<li><strong>예비 초등1</strong> (10명/50분/124,000): 우주탐험대 · 현미경탐구 · 물리비밀의방</li>
+<li><strong>예비 초등2~3</strong> (10명/60분/128,000): 겨울속생물탐험 · 체인지켐 · 멀리가는과학</li>
+<li><strong>예비 초등4~6</strong> (10명/60분/129,000): 위대한 물리학자 · 초등교과서 실험(개정 교과) · 과학자키우기</li>
+<li>일정: 12/26<del>29, 1/2</del>5, 1/16<del>19, 1/23</del>26, 2/20~23 등</li>
+</ul>
+<h3 id="m-17">4-5. 2023 여름특강 (idx=257, 2023.07~08)<a class="anchor" href="#m-17" aria-label="anchor">#</a></h3>
+<ul>
+<li><strong>유아 5~7세</strong> (10명/50분/119,000): 여행과학 · 공룡탐험 · 창작놀이터 · 변신화학 · Summer Go!</li>
+<li><strong>초1~2</strong> (10명/60분/138,000): 기초과학 · 사계절화학 · 초등과학실험(4-1 교과) · 과학원리쏙쏙 · 물리놀이터</li>
+<li><strong>초3~5</strong> (10명/60분/138,000): 화학혁명 · 생명과학연구 · 3색바이오혁명 · 하늘이야기 · 에너지연구</li>
+<li>일정: 7/20<del>30, 8/1</del>18 (2일코스=2주제씩 2일 / 4일코스=1주제씩 4일)</li>
+</ul>
+<h3 id="m-18">4-6. 2021 여름방학 특강 (idx=210, 2021.07~08)<a class="anchor" href="#m-18" aria-label="anchor">#</a></h3>
+<ul>
+<li><strong>유아 5~7세</strong> (8명/50분/114,000): 궁금우주 · 캠핑과학 · 우리몸Q&amp;A · 음식속화학 · 놀이과학</li>
+<li><strong>초1~2</strong> (8명/60분/128,000): 물리놀이터 · 이로운생물 · 나홀로화학 · 생명탐험 · 지구챌린지</li>
+<li><strong>초3~5</strong> (8명/60분/138,000): 물리마스터 · 한생연CSI · Making Science · Brain Science · Upgrade Science</li>
+<li><strong>초5~중</strong> (4명/70분/154,000): 더하기 빼기 화학반응 · 세포와 DNA 집중탐구 · 파동에너지의 기초와 응용</li>
+<li><strong>라이브 온라인 과학단</strong>(초2~4): 복합과학 82,000 / 과학집중 87,000, 월 4회 각 60분</li>
+<li>일정: 7/20~8/20</li>
+</ul>
+<h3 id="m-19">4-7. 2021년 겨울방학 특강 + 신학기 평일 특화 (idx=197, 20.12~21.02)<a class="anchor" href="#m-19" aria-label="anchor">#</a></h3>
+<ul>
+<li><strong>유아 5~7세</strong> (8명/50분/104,000): 집콕놀이과학 · 물리세상 · 꼬마과학 마술사 · 화학으로 우리집 건강하게 · 우리 몸 튼튼 여행</li>
+<li><strong>초1~2</strong> (8명/60분/124,000): Fun Fun Science · 동화속 과학이야기 · 건강한 신체/정신 · 오감 속 과학 · 우주여행 꿈나무</li>
+<li><strong>초3~5</strong> (8명/60분/134,000): 내 몸을 스스로 지키자 · 과학상식 속 실험 · 화학으로 본 바이러스 · 닥터 한생연 · 과학자의 탐구법</li>
+<li><strong>신학기 평일 특화 프로그램</strong>(2021.3~6 평일):<ul>
+<li>매주 특강반(월 4회): 유아·초1<del>2·초3</del>5 / 직업체험실험반: 초5<del>6·중·고 / 교과서이론실험반: 초3</del>6(학년별)</li>
+<li>라이브 온라인 &quot;라온&quot;(초2<del>3): 월 4회 60분, 화</del>금 오후 3시·4시 30분</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="m-20">5. 변화·트렌드 분석<a class="anchor" href="#m-20" aria-label="anchor">#</a></h2>
+<ol>
+<li><p><strong>학년 세분화 심화</strong>: 초기(2021)에는 고학년이 &quot;초5<del>중&quot; 한 묶음(정원 4명)이었으나, **2025년부터 초5</del>6과 중학생을 분리**(각 65분/70분)하여 난도별로 세분. 겨울방학은 &quot;예비 ○학년&quot; 체계로 신학년 대비를 명확히 함.</p>
+</li>
+<li><p><strong>정원 확대</strong>: 2021년 <strong>8명(고학년 4명)</strong> → 2023년 이후 전 구간 <strong>10명</strong>.</p>
+</li>
+<li><p><strong>수강료 상승 + 일시 인하</strong>: 유아 104,000(’21겨울)→124,000(’26)으로 점진 상승. 단 <strong>2024 겨울엔 &quot;경제 불황 특강비 인하&quot;</strong> 이벤트로 중·고학년 가격을 낮춘 사례.</p>
+</li>
+<li><p><strong>커리큘럼 키워드 변화</strong>:</p>
+<ul>
+<li>2020~2021: <strong>코로나19 대응</strong>(방역 안내가 포스터 전면), 바이러스·면역·건강 주제 다수.</li>
+<li>2023~2024: <strong>바이오(3색 바이오)·교과 연계·과학수사·의과학</strong> 강화.</li>
+<li>2025~2026: <strong>AI·로봇·자율주행·스마트팜·첨단소재·환경/그린에너지</strong> 등 미래기술·진로 연계가 핵심으로 부상.</li>
+</ul>
+</li>
+<li><p><strong>운영 방식 변화</strong>: 2020년 글은 <strong>&quot;지역관 배너 클릭&quot; 링크형</strong>(상세표가 게시글에 없음) → 2023년 이후 <strong>통합 상세표 내장형</strong>으로 정보 제공 방식이 개선됨. 비대면 <strong>라이브 온라인 &quot;라온&quot;</strong> 도입(원거리 학생 대상).</p>
+</li>
+<li><p><strong>공통 학습 설계</strong>: 전 시기 일관되게 <strong>1강좌=4주제</strong>, <strong>2일코스(2주제/일)·4일코스(1주제/일)</strong> 의 회차 로테이션 구조, <strong>교재·과학KIT 포함</strong>.</p>
+</li>
+</ol>
+<hr>
+<h2 id="m-21">6. 부록<a class="anchor" href="#m-21" aria-label="anchor">#</a></h2>
+<h3 id="m-22">6-1. idx=306 — 수학·과학능력 개발 겨울방학 특강 (2024.12) : 설명회 안내문<a class="anchor" href="#m-22" aria-label="anchor">#</a></h3>
+<ul>
+<li>학년별 커리큘럼 표가 <strong>아님</strong>. 한생연 + 서울대 출신 AI전문가(정대욱 박사) 공동개발 <strong>AI 수학·과학 코스웨어 &quot;설명회&quot;</strong> 홍보 포스터.</li>
+<li>설명회 일정: 12/21(토) 11시 분당·16시 서대문 / 12/22(일) 11시 목동·14시 강남·17시 종로.</li>
+<li>참석·등록 선물: 초·중 진로탐색 검사 무료, 초·중·고 수학 레벨테스트 무료, 방학특강·데이캠프 할인권(2회 각 30%), 형제·사촌 양도(20%) 등.</li>
+</ul>
+<h3 id="m-23">6-2. idx=173 — 2020 여름특강 : 지역관 링크형 포스터<a class="anchor" href="#m-23" aria-label="anchor">#</a></h3>
+<ul>
+<li>학년별 상세표가 게시글 이미지에 없음. <strong>&quot;해당 지역 교육센터 배너 클릭&quot;</strong> 으로 지역관별 시간표·접수 안내.</li>
+<li>코로나19 대응(체온체크·손소독·시설소독·마스크) 강조, <strong>방학특강 2+1 이벤트</strong>(2강좌 접수 시 1강좌 무료, 캠프 5% 할인).</li>
+</ul>
+<h3 id="m-24">6-3. 공통 이벤트·혜택 (시기별)<a class="anchor" href="#m-24" aria-label="anchor">#</a></h3>
+<ul>
+<li><strong>2+1 이벤트</strong>: 특강 2강좌 접수 시 추가 1강좌 무료(고학년/중등 특강은 보통 제외).</li>
+<li>특강 참여 학생 <strong>캠프 5% 할인</strong>, 정규프로그램 등록 시 <strong>실험복 무료</strong>(최근), 동시신청·데이캠프 연계 혜택 등.</li>
+</ul>
+<h3 id="m-25">6-4. 접수처 (최신 기준)<a class="anchor" href="#m-25" aria-label="anchor">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>교육관</th>
+<th>지역</th>
+<th>대표 직통</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>융합교육과학관</td>
+<td>종로</td>
+<td>02-762-5070</td>
+</tr>
+<tr>
+<td>생명과학박물관</td>
+<td>목동</td>
+<td>02-2654-8887</td>
+</tr>
+<tr>
+<td>인간과로봇과학관</td>
+<td>잠실</td>
+<td>02-423-5123</td>
+</tr>
+<tr>
+<td>휴먼탐구과학관</td>
+<td>반포</td>
+<td>02-6929-4929</td>
+</tr>
+<tr>
+<td>실험누리과학관</td>
+<td>강남</td>
+<td>02-552-3166</td>
+</tr>
+<tr>
+<td>마이크로과학관</td>
+<td>분당</td>
+<td>031-711-0154</td>
+</tr>
+<tr>
+<td>3H키움과학관</td>
+<td>서대문</td>
+<td>02-6951-0091</td>
+</tr>
+<tr>
+<td>자연속과학체험관</td>
+<td>홍천</td>
+<td>02-762-5070</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>대표전화 <strong>1566-5071</strong> (월요일 휴무), 전화·방문 접수만 가능.</li>
+<li>환불: 시기별 상이(특강 시작 5<del>7일 전 전액환불, 임박 시 10</del>20% 수수료 차감, 당일 환불 불가).</li>
+</ul>
+<hr>
+<h3 id="m-26">판독 신뢰도 메모<a class="anchor" href="#m-26" aria-label="anchor">#</a></h3>
+<ul>
+<li>게시글 9건의 본문 이미지를 모두 분할·확대 판독했습니다. 강좌명·정원·수업시간·수강료·일정 등 <strong>핵심 정보는 명확히 판독</strong>되었습니다.</li>
+<li>일부 <strong>작은 부재료명/세부 문구</strong>, 그리고 시간표에서 <strong>일러스트(현미경·올빼미 그림 등)에 가려진 칸</strong>은 추측하지 않고 원자료 그대로 두었습니다(<code>[판독불가]</code>).</li>
+</ul>
+</section>
+    <section id="panel-sub" class="panel"><h1>한생연 방학특강 — 유사 과목군 묶음 (겨울↔여름 / 연도별 / 범학년)</h1>
+<blockquote>
+<p><strong>작성 방법(멀티에이전트 워크플로 + 적대적 검토)</strong></p>
+<ol>
+<li><strong>Cluster</strong>: 학년대별 4개 + 범학년 테마 1개, 총 5개 에이전트가 학년별 리포트를 읽고 유사 과목군 <strong>41개</strong>를 제안.</li>
+<li><strong>Verify(적대적)</strong>: 41개 묶음마다 회의적 검토자가 &quot;실제 과학 주제·실험 내용이 같은가 vs 강좌명/단어만 비슷한가&quot;를 반박 검증 → <strong>keep 5 + trim 21 = 26개 채택, 9개 통째 기각</strong>.</li>
+<li><strong>Synthesize</strong>: 검증 통과 묶음을 병합·정리.</li>
+</ol>
+<p><strong>읽는 법</strong> — §1 겨울 &#39;예비X학년&#39;↔여름 &#39;X학년&#39; 대응 / §2 연도별 반복 / §3 학년을 가로지르는 대표 계열(유아→중등 사다리) / §4 적대적 검증에서 걸러낸 가짜 묶음.
+<strong>표기</strong> — 근거의 <code>(L###)</code>는 원본 리포트(<code>한생연_방학특강_학년별_리포트.md</code>)의 라인 번호. &quot;세부 주제 미기재(name-only)&quot;는 포스터에 강좌명만 있고 4개 세부 주제가 인쇄되지 않아 <strong>연결 강도가 약한</strong> 항목.
+<strong>유의</strong> — §1-3·§1-4 등 일부는 엄밀히는 &#39;겨울↔여름 학년대응&#39;이 아니라 &#39;동일 시즌 연도 계승&#39; 또는 &#39;주제가 양 시즌에 공통&#39;인 경우이며, 각 묶음 note에 그 성격을 명시했다.</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>적대적 검증을 통과(keep/trim)한 묶음만 수록. trim 묶음은 제외(removed_members)된 강좌를 뺐고, 같은 계열로 중복 제안된 묶음은 하나로 병합했다. 근거는 강좌명·세부 주제 키워드(괄호)와 리포트 라인으로 표기한다.</p>
+</blockquote>
+<hr>
+<h2 id="s-1">1. 겨울 &#39;예비 X학년&#39; ↔ 여름 &#39;X학년&#39; 대응 과목군<a class="anchor" href="#s-1" aria-label="anchor">#</a></h2>
+<blockquote>
+<p>cross_season 주장이 리포트 내용으로 실제 뒷받침된(cross_season_valid=true) 묶음만 수록. 겨울(예비)과 여름을 한 표에서 대비한다.</p>
+</blockquote>
+<h3 id="s-2">1-1. 생물 분류·관찰 계열 (동물·식물·곤충·미생물)<a class="anchor" href="#s-2" aria-label="anchor">#</a></h3>
+<p>공통 테마: 동물·식물·곤충·미생물의 4분류를 관찰·분류하는 강좌. 겨울 &#39;예비초2<del>3&#39;의 4분류 키워드가 여름 &#39;초1</del>2&#39;와 거의 일대일로 대응.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025</td>
+<td>여름</td>
+<td>초1~2</td>
+<td>생물 비밀 연구소</td>
+<td>동물·식물·곤충·미생물 분류 (L127)</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>겨울</td>
+<td>예비초2~3</td>
+<td>생물의 신비</td>
+<td>척추·미생물·식물·곤충 (L124/208)</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>겨울</td>
+<td>예비초2~3</td>
+<td>겨울속생물탐험</td>
+<td>생물 슬롯·테마 평행(세부 주제 미기재) (L133/223)</td>
+</tr>
+</tbody></table></div>
+<h3 id="s-3">1-2. 동화 속 과학 계열 (스토리텔링형)<a class="anchor" href="#s-3" aria-label="anchor">#</a></h3>
+<p>공통 테마: 전래·명작 동화 이야기 속 과학 원리(부피·대류·나이테·흡수 등)를 풀어내는 유아 스토리텔링형 강좌. 겨울(예비격 6~7세)과 여름이 같은 &#39;동화 속 과학원리&#39; 포맷.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025</td>
+<td>여름</td>
+<td>유아 만5~6세</td>
+<td>동화와 과학</td>
+<td>지혜로운 까마귀(부피)·오즈의 마법사(대류)·아낌없이 주는 나무(나이테)·당나귀와 소금(흡수) (L93)</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>겨울</td>
+<td>6~7세</td>
+<td>동화속과학</td>
+<td>동화 속 과학원리 — 강좌명·컨셉 동일(세부 주제 미기재) (L98/221)</td>
+</tr>
+</tbody></table></div>
+<h3 id="s-4">1-3. 직업/탐정 체험 — 어린이 탐정 (과학수사형)<a class="anchor" href="#s-4" aria-label="anchor">#</a></h3>
+<p>공통 테마: 지문·혈액반응·마찰전기·중력으로 흔적을 찾는 과학수사(탐정) 체험. 겨울 유아(6~7세) 강좌가 연도별로 동일 컨셉 반복(둘 다 겨울이라 시즌 라벨 대응이라기보다 동일 시즌 연도 계승).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026</td>
+<td>겨울</td>
+<td>6~7세</td>
+<td>어린이 탐정</td>
+<td>마찰전기·혈액반응·중력·지문(렌즈)으로 흔적 찾기 (L89)</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>겨울</td>
+<td>6~7세</td>
+<td>어린이탐정</td>
+<td>흔적 찾기 과학수사 (L98/221)</td>
+</tr>
+</tbody></table></div>
+<h3 id="s-5">1-4. 놀이/창작 과학 계열 (놀이로 배우는 과학)<a class="anchor" href="#s-5" aria-label="anchor">#</a></h3>
+<p>공통 테마: 놀이를 통해 과학을 체험하는 유아 활동 중심 강좌. 같은 해 유아 5~7세에서 여름 &#39;놀이과학&#39; ↔ 겨울 &#39;집콕놀이과학&#39;(코로나기 &#39;집콕&#39; 접두어)으로 명칭상 강하게 대응.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2021</td>
+<td>여름</td>
+<td>유아 5~7세</td>
+<td>놀이과학</td>
+<td>놀이로 배우는 과학 (L104/234, 세부 주제 미기재)</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>겨울</td>
+<td>유아 5~7세</td>
+<td>집콕놀이과학</td>
+<td>&#39;놀이과학&#39;+집콕(재택) 변형 (L105/242, 세부 주제 미기재)</td>
+</tr>
+</tbody></table></div>
+<h3 id="s-6">1-5. 화학 (혁명·반응·분자) 계열 — 고학년<a class="anchor" href="#s-6" aria-label="anchor">#</a></h3>
+<p>공통 테마: 분자·반응·산염기 등 화학 반응/물질변화. 겨울 &#39;예비초4이상&#39;의 교과 화학(산염기·용해)이 여름 초3~5의 화학 강좌와 반응·물질 주제로 대응.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026</td>
+<td>여름</td>
+<td>초3~5</td>
+<td>분자 탐구 프로젝트</td>
+<td>화학의 시작, 분자 (L150/201)</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>여름</td>
+<td>초3~5</td>
+<td>화학혁명</td>
+<td>역사 속 화학 (L164/230)</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>겨울</td>
+<td>예비초4 이상</td>
+<td>교과서 체험 화학</td>
+<td>열·용해·산염기·기체 (L159/209)</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2 id="s-7">2. 연도별 반복 과목군 (시즌 무관, 해마다 비슷하게 재등장)<a class="anchor" href="#s-7" aria-label="anchor">#</a></h2>
+<blockquote>
+<p>cross_year 묶음. 학년이 올라가며 난도가 깊어지는 흐름을 note로 덧붙였다.</p>
+</blockquote>
+<h3 id="s-8">2-1. 여행/교통수단 과학 계열 (유아 여름)<a class="anchor" href="#s-8" aria-label="anchor">#</a></h3>
+<p>공통 테마: 자동차·배·비행기·기차 등 교통수단 작동 원리. 유아 여름 강좌로 강좌명 그대로 연도 반복.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025</td>
+<td>여름</td>
+<td>유아 만5~6세</td>
+<td>여행 과학</td>
+<td>자동차·배·비행기·기차의 작동 원리 (L94)</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>여름</td>
+<td>유아 5~7세</td>
+<td>여행과학</td>
+<td>강좌명 동일(세부 주제 미기재) (L101/228)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>note: 동일 유아·여름 슬롯에서 강좌명이 사실상 그대로 반복. 난도 변화보다는 유아 단골 테마의 매년 재편성.</p>
+</blockquote>
+<h3 id="s-9">2-2. 현미경·확대 관찰 계열 (렌즈·미시세계)<a class="anchor" href="#s-9" aria-label="anchor">#</a></h3>
+<p>공통 테마: 렌즈·해부현미경·광학현미경으로 미시세계를 확대 관찰. 겨울 예비초1에서 연도 반복.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026</td>
+<td>겨울</td>
+<td>예비초1</td>
+<td>작은 세상 여행</td>
+<td>렌즈·모세혈관·해부현미경·광학현미경 (L121)</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>겨울</td>
+<td>예비초1</td>
+<td>현미경탐구</td>
+<td>강좌명 자체가 현미경 탐구(세부 주제 미기재) (L130/222)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>note: 2024 &#39;현미경탐구&#39;(이름-only)→2026 &#39;작은 세상 여행&#39;(렌즈→해부현미경→광학현미경까지 단계 상승)으로 같은 예비초1 슬롯에서 관찰 도구가 정교해지는 흐름.</p>
+</blockquote>
+<h3 id="s-10">2-3. 물리 놀이/원리 계열 (힘·전기·자석·운동)<a class="anchor" href="#s-10" aria-label="anchor">#</a></h3>
+<p>공통 테마: 탄성력·자석·운동·전기 등 물리 현상을 놀이형 실험으로 체험. 여름 &#39;물리놀이터&#39;와 겨울 예비초1 물리 입문이 저학년 물리로 반복.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026</td>
+<td>겨울</td>
+<td>예비초1</td>
+<td>물리 명탐정</td>
+<td>입체현상·로봇·운동경기·자기부상열차 원리 (L120)</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>겨울</td>
+<td>예비초1</td>
+<td>물리비밀의방</td>
+<td>강좌명에 물리 명시(세부 주제 미기재) (L130/222)</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>여름</td>
+<td>초1~2</td>
+<td>물리놀이터</td>
+<td>놀이형 물리 실험 (L136/229)</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>여름</td>
+<td>초1~2</td>
+<td>물리놀이터</td>
+<td>동일 강좌명 연도 반복 (L139/235)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>note: 여름 &#39;물리놀이터&#39;(2021·2023 동일명)와 겨울 예비초1 물리 입문이 평행. 같은 저학년대에서 놀이→원리 명시(명탐정/비밀의방)로 표현만 변주.</p>
+</blockquote>
+<h3 id="s-11">2-4. 물리 (전기·힘·열·빛) 계열 — 중학년<a class="anchor" href="#s-11" aria-label="anchor">#</a></h3>
+<p>공통 테마: 전기·힘·열·빛 등 핵심 물리 4개념을 실험으로 다루는 물리 강좌. 여름 초3<del>5/초3</del>4에서 매년 반복.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026</td>
+<td>여름</td>
+<td>초3~5</td>
+<td>물리 오락실</td>
+<td>신기한 현상 가득한 물리 실험 놀이터 (L149)</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>여름</td>
+<td>초3~4</td>
+<td>물리적 사고와 실험</td>
+<td>전기·힘·열·빛의 활용 (L155)</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>여름</td>
+<td>초3~5</td>
+<td>물리마스터</td>
+<td>물리 실험 계열(세부 주제 미기재) (L168)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>note: 2.3(저학년 놀이형)→2.4(중학년 개념형)으로 물리가 학년 상승에 따라 &#39;놀이&#39;에서 &#39;전기·힘·열·빛&#39; 개념 실험으로 심화.</p>
+</blockquote>
+<h3 id="s-12">2-5. 교과서 연계 실험 계열 (초등 교과 맞춤)<a class="anchor" href="#s-12" aria-label="anchor">#</a></h3>
+<p>공통 테마: 초등 개정 교과(5~6학년 화학 등)를 직접 실험으로 재현. 겨울 예비초4 이상에서 신학년 교과 대비로 반복.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026</td>
+<td>겨울</td>
+<td>예비초4 이상</td>
+<td>교과서 체험 화학</td>
+<td>5~6학년 교과: 열·용해·산염기·기체 (L159/209)</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>겨울</td>
+<td>예비초4~6</td>
+<td>초등교과서 실험</td>
+<td>개정 교과 맞춤 (L162/224)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>note: 둘 다 겨울·고학년대(예비초4+)·신학년 교과 대비라는 동일 기능. 2024 일반 &#39;교과서 실험&#39;→2026 &#39;교과서 체험 화학&#39;으로 교과 단원이 화학 실험으로 구체화.</p>
+</blockquote>
+<h3 id="s-13">2-6. 과학자 탐구방법론 계열 (관찰·측정·탐구)<a class="anchor" href="#s-13" aria-label="anchor">#</a></h3>
+<p>공통 테마: 관찰·측정·탐구·창의 등 과학 방법론 자체를 익히는 강좌. 겨울 고학년대에서 사실상 동일 강좌가 연도 반복(과학자키우기→과학 키우기).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026</td>
+<td>겨울</td>
+<td>예비초4 이상</td>
+<td>과학 키우기</td>
+<td>측정·관찰·탐구·창의력 (L159/209)</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>겨울</td>
+<td>예비초4~6</td>
+<td>과학자키우기</td>
+<td>관찰·측정·탐구 (L162/224)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>note: 강좌명·키워드가 거의 동일한 같은 겨울 슬롯의 연속 강좌.</p>
+</blockquote>
+<h3 id="s-14">2-7. 실험기구 기본기 계열 (단일 검증 멤버)<a class="anchor" href="#s-14" aria-label="anchor">#</a></h3>
+<p>공통 테마: 실험기구 사용법·측정 입문.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025</td>
+<td>여름</td>
+<td>초1~2</td>
+<td>인사이드 과학</td>
+<td>실험기구 기본기(기구 사용/측정) (L127/214)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>note: 묶음 제안 중 내용이 실증된 멤버는 이 1개뿐(2023 &#39;기초과학&#39;·&#39;과학원리쏙쏙&#39;은 세부 주제 미기재로 제외). 반복 계열로 단정하기엔 근거 약함 — 참고용.</p>
+</blockquote>
+<h3 id="s-15">2-8. 환경·에너지 계열 (중학년 여름)<a class="anchor" href="#s-15" aria-label="anchor">#</a></h3>
+<p>공통 테마: 환경문제·에너지를 다루는 시사 연계 강좌(그린에너지 축).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025</td>
+<td>여름</td>
+<td>초3~4</td>
+<td>환경의 외침과 대책</td>
+<td>산성비·산불·싱크홀·그린에너지 (L154/215)</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>여름</td>
+<td>초3~5</td>
+<td>에너지연구</td>
+<td>에너지 주제(&#39;그린에너지&#39;와 키워드 중첩, 세부 실험 미기재) (L165/230)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>note: &#39;그린에너지&#39;(2025)와 &#39;에너지&#39;(2023)가 에너지 축으로 연결. 다만 2023 멤버는 세부 실험 미확인이라 연결 강도는 약함.</p>
+</blockquote>
+<h3 id="s-16">2-9. 의과학·인체 계열 (중학년·고학년, 코로나기~현재)<a class="anchor" href="#s-16" aria-label="anchor">#</a></h3>
+<p>공통 테마: 내부장기·바이탈사인·의료체험 등 의과학/우리몸. 2021 코로나기 건강·의료 강좌와 2026 의과학 기초가 인체·의료 테마로 반복(시즌 라벨은 겨울 위주).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>연도</th>
+<th>시즌</th>
+<th>학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026</td>
+<td>겨울</td>
+<td>예비초4 이상</td>
+<td>의과학 기초</td>
+<td>실험동물·내부장기·바이탈사인·의료체험 (L159/209)</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>겨울</td>
+<td>초3~5</td>
+<td>닥터 한생연</td>
+<td>의과학/의료 체험(세부 주제 미기재) (L169/244)</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>겨울</td>
+<td>초3~5</td>
+<td>내 몸을 스스로 지키자</td>
+<td>건강·면역·우리몸 지키기(코로나기) (L169/244)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>note: 2021 코로나기 건강/면역 컨셉이 2026에는 &#39;내부장기·바이탈사인&#39;의 임상 의과학으로 심화. (당초 &#39;겨울↔여름&#39; 대응 주장은 라벨 오류로 기각 — §4 참조.)</p>
+</blockquote>
+<hr>
+<h2 id="s-17">3. 범학년으로 이어지는 대표 과목 계열 (학년 사다리)<a class="anchor" href="#s-17" aria-label="anchor">#</a></h2>
+<blockquote>
+<p>학년을 가로질러 반복되는 계열을 유아→중등 사다리로. 검증을 통과한 멤버만 배치.</p>
+</blockquote>
+<h3 id="s-18">3-1. 과학수사·탐정 (CSI/포렌식)<a class="anchor" href="#s-18" aria-label="anchor">#</a></h3>
+<p>지문·혈액반응·흔적 추적의 과학수사 기법이 학년이 오를수록 깊어진다.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>단계</th>
+<th>연도/시즌/학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>유아</td>
+<td>2026 겨울 6~7세</td>
+<td>어린이 탐정</td>
+<td>마찰전기·혈액반응·중력·지문(렌즈)으로 흔적 찾기 (L89)</td>
+</tr>
+<tr>
+<td>유아</td>
+<td>2024 겨울 6~7세</td>
+<td>어린이탐정</td>
+<td>흔적 찾기 과학수사 (L98/221)</td>
+</tr>
+<tr>
+<td>초저</td>
+<td>2026 겨울 예비초2~3</td>
+<td>한생연 과학 헌터스</td>
+<td>과학수사·균형·자석보물·전기(4파트 중 과학수사) (L124/208)</td>
+</tr>
+<tr>
+<td>고학년</td>
+<td>2026 여름 초5이상</td>
+<td>첨단과학 실험실 (과학수사 파트)</td>
+<td>4파트 중 과학수사가 유전공학(DNA)과 한 강좌 (L179/202)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>사다리: 유아 &#39;흔적 찾기&#39; 놀이 → 저학년 융합형 헌터스 → 고학년에선 포렌식이 DNA 분석과 결합. (※ &#39;물리 명탐정&#39;·&#39;한생연CSI&#39;는 검증에서 제외 — §4.)</p>
+</blockquote>
+<h3 id="s-19">3-2. DNA·세포 (유전·분자생물)<a class="anchor" href="#s-19" aria-label="anchor">#</a></h3>
+<p>세포·DNA를 핵심 소재로 한 분자생물학/유전공학 실험.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>단계</th>
+<th>연도/시즌/학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>고학년</td>
+<td>2021 여름 초5~중</td>
+<td>세포와 DNA 집중탐구</td>
+<td>세포·DNA 집중 (L188/237)</td>
+</tr>
+<tr>
+<td>중등</td>
+<td>2025 여름 중학생</td>
+<td>심화 실험 특강 — 세포와 DNA</td>
+<td>플라스미드 분리 (L185/217)</td>
+</tr>
+<tr>
+<td>고학년</td>
+<td>2026 여름 초5이상</td>
+<td>첨단과학 실험실 — 유전공학(DNA)</td>
+<td>유전공학(DNA) 파트 (L179/202)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>사다리: 세포·DNA 집중탐구(2021) → 플라스미드 분리(2025 중등 심화) → 유전공학 응용(2026). (※ 2025 초3~4 &#39;사이언스 Lab&#39; DNA 파트는 입문 관찰 수준이라 제외 — §4.)</p>
+</blockquote>
+<h3 id="s-20">3-3. 파동에너지<a class="anchor" href="#s-20" aria-label="anchor">#</a></h3>
+<p>파동(소리·진동)을 다루는 물리 심화 — 고학년·중등에서 반복.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>단계</th>
+<th>연도/시즌/학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>고학년</td>
+<td>2021 여름 초5~중</td>
+<td>파동에너지의 기초와 응용</td>
+<td>강좌명에 &#39;파동에너지&#39; 명시(세부 주제 미기재) (L188/237)</td>
+</tr>
+<tr>
+<td>중등</td>
+<td>2025 여름 중학생</td>
+<td>심화 실험 특강 — 파동</td>
+<td>간섭·클라드니 (L185/217)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>사다리: &#39;기초+응용&#39;(2021) → 간섭·클라드니 정량 실험(2025 중등). 단 &#39;파동&#39; 주제 공유 수준의 연결이며, 2021의 간섭/클라드니 직접 근거는 없음(이름-기반 추론). (※ 2025 초1~2 &#39;오감 자극 화학&#39;의 파동 파트는 감각 입문 수준이라 제외 — §4.)</p>
+</blockquote>
+<h3 id="s-21">3-4. 화학 결합·분해 (더하기/빼기 화학반응)<a class="anchor" href="#s-21" aria-label="anchor">#</a></h3>
+<p>화학반응을 &#39;더하기(결합·합성)/빼기(분리·분해)&#39;로 양분하는 동일 컨셉이 연도를 넘어 재현.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>단계</th>
+<th>연도/시즌/학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>고학년</td>
+<td>2021 여름 초5~중</td>
+<td>더하기 빼기 화학반응</td>
+<td>강좌명 자체가 더하기/빼기 프레임 (L188/237)</td>
+</tr>
+<tr>
+<td>고학년</td>
+<td>2026 여름 초5이상</td>
+<td>플러스 마이너스 화학반응</td>
+<td>더하기:결합·합성 / 빼기:분리·분해 4파트 (L178/202)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>사다리: 2021 명칭·구조를 2026이 외래어 동의어(플러스/마이너스)로 거의 그대로 재현. 동일 고학년 화학 심화 계열. (※ &#39;체인지켐&#39;·중등 &#39;화학분석가&#39; 파트는 결합/분해 프레임 아님으로 제외 — §4.)</p>
+</blockquote>
+<h3 id="s-22">3-5. 현미경·렌즈 확대 관찰<a class="anchor" href="#s-22" aria-label="anchor">#</a></h3>
+<p>렌즈·현미경으로 미시세계를 관찰하는 계열(유아 확대관찰 → 예비초1 현미경).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>단계</th>
+<th>연도/시즌/학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>유아</td>
+<td>2026 겨울 6~7세</td>
+<td>어린이 과학자 (확대 관찰 파트)</td>
+<td>4주제 중 &#39;확대 관찰&#39;(경계선) (L88/206)</td>
+</tr>
+<tr>
+<td>초저</td>
+<td>2024 겨울 예비초1</td>
+<td>현미경탐구</td>
+<td>강좌명=현미경(세부 주제 미기재) (L130/222)</td>
+</tr>
+<tr>
+<td>초저</td>
+<td>2026 겨울 예비초1</td>
+<td>작은 세상 여행</td>
+<td>렌즈·모세혈관·해부현미경·광학현미경 (L121)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>사다리: 유아 입문 확대관찰 → 예비초1 현미경탐구 → 작은 세상 여행(광학현미경까지). (§2-2와 동일 계열의 범학년 확장.)</p>
+</blockquote>
+<h3 id="s-23">3-6. 오감 (감각 생명과학)<a class="anchor" href="#s-23" aria-label="anchor">#</a></h3>
+<p>오감(후·촉·시·청·미각)으로 생명과학·물질을 체험하는 저학년 단골 테마.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>단계</th>
+<th>연도/시즌/학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>초저</td>
+<td>2026 겨울 예비초1</td>
+<td>오감특강</td>
+<td>후각·촉각·시각·청각으로 느끼는 생명과학 (L119/207)</td>
+</tr>
+<tr>
+<td>초저</td>
+<td>2025 여름 초1~2</td>
+<td>오감 자극 화학</td>
+<td>확산·점성·파동·맛(미각 일부) (L127/214)</td>
+</tr>
+<tr>
+<td>초저</td>
+<td>2021 겨울 초1~2</td>
+<td>오감 속 과학</td>
+<td>강좌명에 &#39;오감&#39; 명시(세부 주제 미기재) (L140/243)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>사다리: &#39;오감&#39; 네이밍이 시즌·연도를 넘어 반복되는 저학년 실재 패턴. 다만 내용은 생명과학(예비초1)~화학(여름)으로 변주. (※ 2026 &#39;과학 원리 탐험대&#39;는 실체가 물리 강좌라 제외 — §4.)</p>
+</blockquote>
+<h3 id="s-24">3-7. 의과학·우리몸·닥터 (인체/응급/의료)<a class="anchor" href="#s-24" aria-label="anchor">#</a></h3>
+<p>우리 몸 구조·작동과 응급처치·의료 체험이 유아→고학년으로 심화.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>단계</th>
+<th>연도/시즌/학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>유아</td>
+<td>2021 여름 유아 5~7세</td>
+<td>우리몸Q&amp;A</td>
+<td>유아 인체 입문(세부 주제 미기재) (L104/234)</td>
+</tr>
+<tr>
+<td>유아</td>
+<td>2025 여름 유아 만5~6세</td>
+<td>우리 몸 탐구</td>
+<td>뼈·피부·후각·뇌 (L95/213)</td>
+</tr>
+<tr>
+<td>유아</td>
+<td>2024 겨울 6~7세</td>
+<td>나홀로 응급처치</td>
+<td>어린이 구급대(응급처치) (L98/221)</td>
+</tr>
+<tr>
+<td>초저</td>
+<td>2026 여름 초1~2</td>
+<td>신기한 우리몸 탐구</td>
+<td>성장과 몸의 작동 (L115/200)</td>
+</tr>
+<tr>
+<td>중학년</td>
+<td>2021 겨울 초3~5</td>
+<td>닥터 한생연 / 내 몸을 스스로 지키자</td>
+<td>의료 체험 + 건강·면역(코로나기) (L169/244)</td>
+</tr>
+<tr>
+<td>고학년</td>
+<td>2026 겨울 예비초4 이상</td>
+<td>의과학 기초</td>
+<td>실험동물·내부장기·바이탈사인·의료체험 (L159/209)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>사다리: 유아 &#39;몸 탐구&#39; → 저학년 &#39;몸의 작동&#39; → 고학년 임상 의과학(내부장기·바이탈사인). (이 family는 &#39;겨울↔여름 학년대응&#39;이 아니라 &#39;인체·의료 주제가 양 시즌에 공통&#39;이어서 묶임.)</p>
+</blockquote>
+<h3 id="s-25">3-8. 첨단·바이오 (생명공학)<a class="anchor" href="#s-25" aria-label="anchor">#</a></h3>
+<p>첨단/바이오 미래기술을 다루는 고학년 계열(바이오 주제 축).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>단계</th>
+<th>연도/시즌/학년</th>
+<th>강좌명</th>
+<th>근거(세부 주제)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>중학년</td>
+<td>2023 여름 초3~5</td>
+<td>3색바이오혁명</td>
+<td>레드/그린/화이트 바이오 (L165/230)</td>
+</tr>
+<tr>
+<td>고학년</td>
+<td>2026 여름 초5이상</td>
+<td>첨단과학 실험실</td>
+<td>항생제·세균/바이러스·생체모방·과학수사·유전공학(DNA) (L179/202)</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>사다리: 2023 바이오 산업 분류 입문 → 2026 유전공학·생체모방 등 응용 바이오. (※ 2025 &#39;첨단과학 실험 특강&#39;은 AI·로봇·스마트팜 공학 트랙이라 바이오 계열에서 제외 — §4.)</p>
+</blockquote>
+<hr>
+<h2 id="s-26">4. 적대적 검증에서 기각/축소된 묶음 (이름만 비슷, 내용 다름)<a class="anchor" href="#s-26" aria-label="anchor">#</a></h2>
+<blockquote>
+<p>reject된 묶음 전체와, trim으로 제외된 개별 강좌 및 사유.</p>
+</blockquote>
+<h3 id="s-27">4-1. 묶음 전체 기각(reject)<a class="anchor" href="#s-27" aria-label="anchor">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>묶음(제안 family)</th>
+<th>기각 사유</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>응급처치/생존·안전 과학</td>
+<td>&#39;생존/살아남기/캠핑&#39; 단어만 공유. &#39;나홀로 응급처치&#39;(구급)·&#39;지구에서 살아남기&#39;(4가지 과학 능력)·&#39;캠핑과학&#39;은 실험 내용이 모두 다름. 게다가 &#39;캠핑과학&#39;은 2023 여름이 아니라 2021 여름(L234)에만 존재 — 연도 라벨 오류.</td>
+</tr>
+<tr>
+<td>화학(놀이/변신/생활) — 유아</td>
+<td>&#39;놀이화학자·변신화학·음식속화학·화학으로 우리집 건강하게&#39;가 &#39;화학&#39;이라는 도메인 단어만 공유. 매년 명칭이 바뀌는 신규 강좌들이며 시즌 변형 근거 0.</td>
+</tr>
+<tr>
+<td>우주/천체 탐험 — 유아</td>
+<td>&#39;궁금우주&#39;(천체)와 &#39;공룡탐험&#39;(고생물)은 &#39;탐험&#39; 단어만 겹침. 공룡 제외 시 우주 강좌가 &#39;궁금우주&#39; 1개뿐이라 묶음 붕괴.</td>
+</tr>
+<tr>
+<td>화학 놀이(확산·색·CO₂) — 저학년</td>
+<td>&#39;화학 오락실&#39;(빛·전기·CO₂·착시=물리/지각)·&#39;오감 자극 화학&#39;(오감 군 교차)·체인지켐/사계절화학/나홀로화학(세부 주제 미문서화). &#39;Chem&#39; 단어 매칭에 불과.</td>
+</tr>
+<tr>
+<td>3색바이오 / 바이러스·면역 바이오</td>
+<td>&#39;3색바이오혁명&#39;(산업 바이오 분류)과 &#39;화학으로 본 바이러스&#39;(코로나기 감염·소독)는 시기·키워드 클러스터가 다름(L260~261).</td>
+</tr>
+<tr>
+<td>첨단과학(AI·로봇·바이오 잡탕)</td>
+<td>2025 &#39;첨단과학 실험 특강&#39;(전기·AI·로봇·스마트팜=공학) vs 2026 &#39;첨단과학 실험실&#39;(항생제·생체모방·유전공학=바이오). 4개 주제 중 단 하나도 안 겹침 — 라벨만 동일.</td>
+</tr>
+<tr>
+<td>화학분석·화학공학 (중등)</td>
+<td>중등 &#39;화학분석가/화학공학자&#39;(중화·산화환원·크로마토그래피·에너지)와 &#39;플러스 마이너스 화학반응&#39;(결합/분해)은 시그니처 주제가 상호 부재. &#39;화학 심화&#39; 단어 수준 유사.</td>
+</tr>
+<tr>
+<td>의과학·실험동물 (겨울↔여름)</td>
+<td>&#39;의과학 기초&#39;(실험동물·장기·바이탈=해부/임상)와 &#39;첨단실험실 항생제·세균&#39;(미생물/감염병)은 공유 실험 0. &#39;의생명&#39; 상위 단어 연상.</td>
+</tr>
+<tr>
+<td>직업·진로 체험 (꿈/JOB)</td>
+<td>2021 &#39;직업체험실험반&#39;(평일 특화·초5<del>중·고)과 2026 &#39;꿈 잡(JOB)기 체험단&#39;(겨울 방학특강·6</del>7세 유아)은 프로그램 종류·대상·시기 전부 다름. 직업 강좌가 이 둘뿐이라 &#39;컨셉 반복&#39; 주장도 데이터로 반박됨.</td>
+</tr>
+</tbody></table></div>
+<h3 id="s-28">4-2. trim으로 제외된 개별 강좌<a class="anchor" href="#s-28" aria-label="anchor">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>제외된 강좌 (연도/시즌/학년)</th>
+<th>속했던 묶음</th>
+<th>제외 사유</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>꼬마과학 마술사 (2021 겨울 유아)</td>
+<td>동화 속 과학</td>
+<td>&#39;마술사&#39;=magic-trick으로 동화(전래/명작) 내용 없음. 같은 회차에 진짜 &#39;동화속 과학이야기&#39;가 별도 존재.</td>
+</tr>
+<tr>
+<td>동화속 과학이야기 (2021 겨울 초1~2)</td>
+<td>동화 속 과학(범학년)</td>
+<td>내용 0(강좌명만)+학년대가 저학년이라 유아 멤버와 계층 다름.</td>
+</tr>
+<tr>
+<td>우리 몸 튼튼 여행 (2021 겨울 유아)</td>
+<td>여행/교통수단·우리몸</td>
+<td>&#39;여행&#39; 명칭만, 실제는 신체/건강. 교통수단과 무관.</td>
+</tr>
+<tr>
+<td>우리몸Q&amp;A (2021 여름 유아)</td>
+<td>우리 몸/감각(유아)</td>
+<td>세부 주제 미기재(name-only). (단, §3-7 인체 계열에는 keep 묶음으로 포함됨.)</td>
+</tr>
+<tr>
+<td>꿈 잡(JOB)기 체험단 (2026 겨울 유아)</td>
+<td>직업/탐정 체험</td>
+<td>직업체험형으로 지문·혈흔·마찰전기 등 탐정/포렌식 실험 없음.</td>
+</tr>
+<tr>
+<td>창작놀이터 (2023 여름 유아)</td>
+<td>놀이/창작 과학</td>
+<td>중심어가 &#39;창작(만들기)&#39;·연도 상이, 공유는 &#39;놀이&#39; 한 단어.</td>
+</tr>
+<tr>
+<td>과학 원리 탐험대 (2026 여름 초1~2)</td>
+<td>오감 / 물리 놀이</td>
+<td>부제만 &#39;오감 자극&#39;, 실체는 상태변화·온도계·탄성력·빛=물리 강좌.</td>
+</tr>
+<tr>
+<td>오감 속 과학 (2021 겨울 초1~2)</td>
+<td>오감(초저 묶음 일부)</td>
+<td>세부 주제 미기재로 내용 검증 불가(단 §3-6 범학년 오감엔 keep).</td>
+</tr>
+<tr>
+<td>이로운생물 / 생명탐험 (2021 여름 초1~2)</td>
+<td>생물 분류·관찰</td>
+<td>세부 주제 없음 + &#39;이로운(유용성)&#39;은 분류·관찰 개념과 다름. 같은 슬롯 이중 포섭.</td>
+</tr>
+<tr>
+<td>화학 오락실 / 체인지켐 (2026·2024 겨울 예비초2~3)</td>
+<td>화학(혁명·반응)</td>
+<td>화학 오락실=빛·전기·착시(물리/지각), 체인지켐=세부 주제 0(이름 추정).</td>
+</tr>
+<tr>
+<td>위대한 물리학자 (2024 겨울 예비초4~6)</td>
+<td>물리(전기·힘·열·빛)</td>
+<td>갈릴레이·뉴턴·패러데이·줄 = 인물(전기)사 중심으로 개념 실험형과 구성 축 다름.</td>
+</tr>
+<tr>
+<td>사이언스 Lab (2025 여름 초3~4)</td>
+<td>생명과학 / DNA·세포 / 현미경</td>
+<td>렌즈/DNA·세포/인체/식물 종합 입문 샘플러. 분자 수준 실험·현미경 코어와 난도·정체성 다름.</td>
+</tr>
+<tr>
+<td>하늘이야기 (2023 여름 초3~5)</td>
+<td>환경·에너지</td>
+<td>명시적 &#39;기상·천체&#39;(지구과학/천문)로 환경재해·에너지와 공유 실험 없음.</td>
+</tr>
+<tr>
+<td>Brain Science (2021 여름 초3~5)</td>
+<td>의과학·우리몸</td>
+<td>뇌/신경과학 중심으로 내부장기·바이탈사인과 주제 축 다름(brain→우리몸 연상).</td>
+</tr>
+<tr>
+<td>한생연CSI (2021 여름 초3~5)</td>
+<td>과학수사·탐정</td>
+<td>세부 4주제 미판독(name-only), 계열 어원일 뿐 콘텐츠 근거 부재.</td>
+</tr>
+<tr>
+<td>물리 명탐정 (2026 겨울 예비초1)</td>
+<td>과학수사·탐정</td>
+<td>입체현상·로봇·자기부상=100% 물리. &#39;명탐정&#39; 네이밍 말장난, 과학수사 요소 전무.</td>
+</tr>
+<tr>
+<td>과학자의 탐구법 (2021 겨울 초3~5)</td>
+<td>탐구방법론</td>
+<td>이름만 탐구법, 세부 주제 미판독 + 겨울 강좌라 cross_season 근거 안 됨.</td>
+</tr>
+<tr>
+<td>한생연 과학 헌터스 (2026 겨울 예비초2~3)</td>
+<td>탐구방법론</td>
+<td>과학수사·균형·자석·전기 잡탕으로 &#39;관찰·측정·탐구&#39; 방법론 강좌 아님(과학수사 계열엔 별도 keep).</td>
+</tr>
+<tr>
+<td>기초과학 / 과학원리쏙쏙 (2023 여름 초1~2)</td>
+<td>실험기구 기본기</td>
+<td>세부 주제·실험기구 키워드 전혀 없음(이름 유사 추측).</td>
+</tr>
+<tr>
+<td>초등과학실험(4-1 교과) (2023 여름 초1~2)</td>
+<td>교과서 연계 실험</td>
+<td>여름·저학년대(초1<del>2)에 4학년 교과를 참조만, 5</del>6학년 겨울 교과와 시즌·학년·목표 다름.</td>
+</tr>
+<tr>
+<td>첨단과학 실험 특강 (2025 여름 초5~6)</td>
+<td>첨단·바이오 / 학년대 연결</td>
+<td>전기·AI·로봇·스마트팜=공학 트랙으로 바이오(항생제·DNA)와 0% 중첩.</td>
+</tr>
+<tr>
+<td>화학분석가 파트 (2025 여름 중등)</td>
+<td>화학 결합·분해</td>
+<td>중화·산화환원=반응 종류, 크로마토그래피=분리 분석. 더하기/빼기 은유 아님.</td>
+</tr>
+<tr>
+<td>오감 자극 화학(파동 파트) (2025 여름 초1~2)</td>
+<td>파동에너지(범학년)</td>
+<td>강좌 정체성은 화학(오감), &#39;파동&#39;은 청각 자극 1개 소주제. 간섭/클라드니 물리 내용 없음.</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h3 id="s-29">검증 메모<a class="anchor" href="#s-29" aria-label="anchor">#</a></h3>
+<ul>
+<li>제안된 41개 묶음 중 keep 5 + trim 21 = 26개 묶음을 채택했고, reject 9개 및 trim 제외 강좌들을 떨어냈다.</li>
+<li>같은 계열 중복 제안(동화·오감·파동·현미경·DNA·세포·화학 결합/분해·의과학·과학수사·교과서 연계·첨단바이오)은 §3 범학년 사다리로 병합해 단일화했다.</li>
+<li>&#39;겨울 예비X ↔ 여름 X&#39;의 진짜 학년대응(cross_season_valid)이 내용으로 입증된 것은 §1의 생물 분류·동화·고학년 화학 정도이며, 다수 의과학/오감/과학수사 계열은 &#39;주제가 양 시즌에 공통&#39;일 뿐 학년대응 구조는 아님(시즌 라벨 오류로 §4에서 해당 주장 기각).</li>
+</ul>
+</section>
+  </main>
+</div>
+
+<div class="backdrop" id="backdrop"></div>
+<div class="footer">한생연(HLSI) 공지사항 "특강" 게시글 9건 조사 · Playwright + 이미지 판독 + 멀티에이전트 적대적 검증으로 생성 · 단일 파일 HTML</div>
+<a href="#top" class="to-top" aria-label="맨 위로" title="맨 위로">↑</a>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var panels={main:document.getElementById('panel-main'),sub:document.getElementById('panel-sub')};
+  var tocs={main:document.getElementById('toc-main'),sub:document.getElementById('toc-sub')};
+
+  // mobile drawer (삼단바)
+  var sidebar=document.getElementById('sidebar');
+  var backdrop=document.getElementById('backdrop');
+  var menuBtn=document.getElementById('menuBtn');
+  function drawer(open){
+    sidebar.classList.toggle('open',open);
+    backdrop.classList.toggle('show',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    document.body.style.overflow=open?'hidden':'';
+  }
+  menuBtn.addEventListener('click',function(){drawer(!sidebar.classList.contains('open'))});
+  backdrop.addEventListener('click',function(){drawer(false)});
+  document.getElementById('drawerClose').addEventListener('click',function(){drawer(false)});
+  sidebar.addEventListener('click',function(e){if(e.target.closest('.toc-item'))drawer(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')drawer(false)});
+
+  function show(name){
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.tab===name)});
+    for(var k in panels){panels[k].classList.toggle('active',k===name)}
+    for(var j in tocs){tocs[j].style.display=(j===name)?'block':'none'}
+    drawer(false);
+    window.scrollTo({top:0,behavior:'instant'in window?'instant':'auto'});
+    location.hash='view='+name;
+    setTimeout(updateActive,30);
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.tab)})});
+
+  // active TOC highlight on scroll (within visible panel)
+  function updateActive(){
+    var active=document.querySelector('.panel.active');
+    if(!active)return;
+    var heads=[].slice.call(active.querySelectorAll('h2[id],h3[id]'));
+    var pos=window.scrollY+120,cur=null;
+    heads.forEach(function(h){if(h.offsetTop<=pos)cur=h.id});
+    var visToc=active.id==='panel-main'?tocs.main:tocs.sub;
+    visToc.querySelectorAll('.toc-item').forEach(function(a){
+      a.classList.toggle('active',a.dataset.target===cur);
+    });
+  }
+  window.addEventListener('scroll',updateActive,{passive:true});
+
+  // initial view from hash
+  var m=(location.hash.match(/view=(main|sub)/)||[])[1];
+  show(m||'main');
+})();
+</script>
+</body>
+</html>
