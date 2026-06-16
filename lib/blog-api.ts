@@ -10,6 +10,7 @@ import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
 import { PostType } from '../types/post'
+import { getTableOfContents, TocItem } from './toc'
 
 export const POSTS_PATH = join(process.cwd(), 'posts')
 
@@ -55,11 +56,14 @@ export function getPostsByTag(tag: string): PostType[] {
 export async function getPostSource(slug: string): Promise<{
     source: MDXRemoteSerializeResult
     frontMatter: PostType
+    toc: TocItem[]
 }> {
     const realSlug = slug.replace(/\.mdx$/, '')
     const fullPath = join(POSTS_PATH, `${realSlug}.mdx`)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { content, data } = matter(fileContents)
+
+    const toc = getTableOfContents(content)
 
     const source = await serialize(content, {
         mdxOptions: {
@@ -83,5 +87,5 @@ export async function getPostSource(slug: string): Promise<{
         scope: data,
     })
 
-    return { source, frontMatter: { ...(data as Omit<PostType, 'slug'>), slug: realSlug } }
+    return { source, frontMatter: { ...(data as Omit<PostType, 'slug'>), slug: realSlug }, toc }
 }
