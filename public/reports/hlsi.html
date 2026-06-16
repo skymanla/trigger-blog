@@ -1723,6 +1723,15 @@ td:first-child,th:first-child{white-space:nowrap}
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.tab)})});
 
+  // 맨 위로 가기 버튼 클릭 시 부드러운 스크롤 처리
+  var toTopBtn = document.querySelector('.to-top');
+  if(toTopBtn){
+    toTopBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  }
+
   // active TOC highlight on scroll (within visible panel)
   function updateActive(){
     var active=document.querySelector('.panel.active');
