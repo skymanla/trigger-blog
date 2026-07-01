@@ -15,6 +15,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-W653TFG3');`,
             }}
           />
+          {/* eslint-disable-next-line @next/next/next-script-for-ga */}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-2Q963XC41Z" />
+          {/* eslint-disable-next-line @next/next/next-script-for-ga */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-2Q963XC41Z');`,
+            }}
+          />
           <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png" />
           <link rel="icon" type="image/svg+xml" href="/static/favicons/favicon.svg" />
           <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />
