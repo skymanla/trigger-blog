@@ -4,8 +4,7 @@ import Link from 'next/link'
 import { PageSEO } from "@/components/common/SEO"
 import { getLatestPosts } from "@/lib/blog-api"
 import { PostType } from "@/types/post"
-import FeaturedPostHero from "@/components/blog/FeaturedPostHero"
-import FeaturedPostSidebar from "@/components/blog/FeaturedPostSidebar"
+import SpaceBlogLobby from "@/components/space/SpaceBlogLobby"
 
 type IndexProps = {
     posts: PostType[]
@@ -16,21 +15,10 @@ const Home: NextPage<IndexProps> = ({ posts }: IndexProps) => {
         <>
             <PageSEO title="Trigger" description="일상을 TRIGGER" />
 
-            {/* Featured Posts Grid */}
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:h-[500px]">
-                {/* Main Hero Post */}
-                <div className="md:col-span-8 h-[400px] md:h-full">
-                    {posts[0] && <FeaturedPostHero post={posts[0]} />}
-                </div>
-
-                {/* Secondary Posts */}
-                <div className="md:col-span-4 h-full">
-                     <FeaturedPostSidebar posts={posts.slice(1, 3)} />
-                </div>
-            </div>
+            <SpaceBlogLobby posts={posts} />
 
             {/* Bottom Call to Action */}
-            <div className="mt-24 flex flex-col items-center justify-center rounded-3xl bg-slate-50 py-16 px-8 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+            <div className="mt-24 flex flex-col items-center justify-center border-t border-slate-200 px-8 py-16 dark:border-slate-800">
                 <h3 className="mb-2 font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white text-center">더 많은 이야기가 궁금하신가요?</h3>
                 <p className="mb-10 text-slate-500 dark:text-slate-400 text-center max-w-md">
                     기술 블로그의 다양한 포스트를 통해 일상의 변화를 만드는 트리거를 찾아보세요.

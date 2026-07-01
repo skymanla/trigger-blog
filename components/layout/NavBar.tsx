@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import headerNavLinks from "@/config/headerNavLinks"
 import Link from "next/link"
 import ThemeSwitch from "../common/ThemeSwitch"
