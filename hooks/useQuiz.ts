@@ -1,52 +1,60 @@
-import { useState, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { QuizItem } from '@/types/quiz'
 
-export const useQuiz = (quizeContext: QuizItem[]) => {
+export const useQuiz = (quizContext: QuizItem[]) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
-  const [userAnswers, setUserAnswers] = useState<string[]>(Array(quizeContext.length).fill(null))
+  const [userAnswers, setUserAnswers] = useState<string[]>(Array<string>(quizContext.length).fill(''))
   const [quizCompleted, setQuizCompleted] = useState(false)
   const [score, setScore] = useState(0)
 
-  const handleSelectAnswer = (selectedAnswer: string) => {
-    const updatedAnswers = [...userAnswers]
-    updatedAnswers[currentQuestionIndex] = selectedAnswer
-    setUserAnswers(updatedAnswers)
-  }
-
-  const handleNextQuestion = () => {
-    if (currentQuestionIndex < quizeContext.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1)
-    } else {
-      setQuizCompleted(true)
-      calculateScore()
-    }
-  }
-
-  const calculateScore = () => {
-    let correctAnswers = 0
-    quizeContext.forEach((quizItem, index) => {
-      if (quizItem.answer === userAnswers[index]) {
-        correctAnswers++
-      }
-    })
-    setScore(correctAnswers)
-  }
-
-  const handleResetQuiz = () => {
+  useEffect(() => {
     setCurrentQuestionIndex(0)
-    setUserAnswers(Array(quizeContext.length).fill(null))
+    setUserAnswers(Array<string>(quizContext.length).fill(''))
     setQuizCompleted(false)
     setScore(0)
-  }
+  }, [quizContext])
+
+  const handleSelectAnswer = useCallback((selectedAnswer: string) => {
+    setUserAnswers((answers) => {
+      const updatedAnswers = [...answers]
+      updatedAnswers[currentQuestionIndex] = selectedAnswer
+      return updatedAnswers
+    })
+  }, [currentQuestionIndex])
+
+  const calculateScore = useCallback(() => {
+    const correctAnswers = quizContext.reduce((total, quizItem, index) => {
+      return quizItem.answer === userAnswers[index] ? total + 1 : total
+    }, 0)
+
+    setScore(correctAnswers)
+  }, [quizContext, userAnswers])
+
+  const handleNextQuestion = useCallback(() => {
+    if (currentQuestionIndex < quizContext.length - 1) {
+      setCurrentQuestionIndex((index) => Math.min(index + 1, quizContext.length - 1))
+      return
+    }
+
+    setQuizCompleted(true)
+    calculateScore()
+  }, [calculateScore, currentQuestionIndex, quizContext.length])
+
+  const handleResetQuiz = useCallback(() => {
+    setCurrentQuestionIndex(0)
+    setUserAnswers(Array<string>(quizContext.length).fill(''))
+    setQuizCompleted(false)
+    setScore(0)
+  }, [quizContext.length])
 
   useEffect(() => {
-    if (!quizCompleted && currentQuestionIndex < quizeContext.length) {
+    if (!quizCompleted && currentQuestionIndex < quizContext.length) {
       if (userAnswers[currentQuestionIndex]) {
         const timer = setTimeout(handleNextQuestion, 500)
         return () => clearTimeout(timer)
       }
     }
-  }, [currentQuestionIndex, userAnswers, quizCompleted])
+  }, [currentQuestionIndex, handleNextQuestion, quizCompleted, quizContext.length, userAnswers])
 
   return {
     currentQuestionIndex,

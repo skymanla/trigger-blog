@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Trigger Blog favicon</title>
+  <desc id="desc">A compact Trigger blog mark with a code-inspired Tr monogram and trigger signal.</desc>
+  <defs>
+    <linearGradient id="bg" x1="96" y1="48" x2="424" y2="464" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.52" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="trigger" x1="132" y1="122" x2="402" y2="390" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="0.55" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.18 0 0 0 0 0.82 0 0 0 0 0.94 0 0 0 .9 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <path d="M98 258c34-70 88-105 160-105 78 0 133 41 166 124" fill="none" stroke="#1f2937" stroke-width="28" stroke-linecap="round"/>
+  <path d="M118 267c30-60 77-90 140-90 69 0 118 36 146 107" fill="none" stroke="url(#trigger)" stroke-width="18" stroke-linecap="round" filter="url(#glow)"/>
+  <circle cx="258" cy="214" r="56" fill="#e5faff"/>
+  <path d="M201 214c0-33 26-60 59-60 22 0 42 12 52 31-11-7-24-10-39-10-38 0-70 27-77 63a61 61 0 0 1 5-24Z" fill="#94a3b8"/>
+  <path d="M169 305h183c15 0 27 12 27 27v25H258l-19 54h-62l17-54h-25c-15 0-27-12-27-27s12-25 27-25Z" fill="#22d3ee"/>
+  <path d="M379 357h-68l-19 54h46c13 0 25-8 30-20l18-42c2-5-2-10-7-10v18Z" fill="#f59e0b"/>
+  <path d="M153 319h192" fill="none" stroke="#ecfeff" stroke-width="18" stroke-linecap="round"/>
+  <path d="M153 319h72" fill="none" stroke="#07111f" stroke-width="18" stroke-linecap="round" opacity=".82"/>
+  <text x="256" y="288" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="118" font-weight="800" letter-spacing="-8">Tr</text>
+  <path d="M118 124 86 156l32 32M394 124l32 32-32 32" fill="none" stroke="#67e8f9" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+</svg>

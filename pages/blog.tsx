@@ -5,7 +5,7 @@ import { PageSEO } from '@/components/common/SEO'
 import BlogPostCard from '@/components/blog/BlogPostCard'
 import { getAllPosts } from '@/lib/blog-api'
 import { GetStaticProps } from 'next'
-import { PostType, CATEGORIES, CATEGORY_LABELS, Category } from '@/types/post'
+import { PostType, CATEGORIES, CATEGORY_LABELS } from '@/types/post'
 import { format, parseISO } from 'date-fns'
 import Fuse from 'fuse.js'
 

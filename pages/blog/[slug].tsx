@@ -4,6 +4,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ComponentPropsWithoutRef } from 'react'
 
 import { getPostSlugs, getPostSource } from "../../lib/blog-api"
 import { MetaProps } from "../../types/layout"
@@ -18,7 +19,7 @@ const components = {
     Head,
     Image,
     Link,
-    table: (props: any) => (
+    table: (props: ComponentPropsWithoutRef<'table'>) => (
         <div className="not-prose my-6 overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700">
             <table className="md-table w-full border-collapse text-[13.5px] leading-relaxed" {...props} />
         </div>
