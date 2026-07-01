@@ -7,9 +7,9 @@ const siteMetadata = {
     theme: 'system', // system, dark or light
     siteUrl: 'https://trigger.kr',
     siteRepo: 'https://github.com/skymanla/trigger-blog',
-    siteLogo: '/static/images/logo.png',
-    image: '/static/images/avatar.png',
-    socialBanner: '/static/images/twitter-card.png',
+    siteLogo: '/logo.png',
+    image: '/logo.png',
+    socialBanner: '/logo.png',
     email: 'skymanla@naver.com',
     github: 'https://github.com/skymanla',
     twitter: 'https://twitter.com/Twitter',

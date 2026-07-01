@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import React from 'react'
-import Head from 'next/head'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { PageSEO } from '@/components/common/SEO'
 import siteMetadata from '@/data/siteMetadata'
@@ -21,12 +20,7 @@ export default function TagPage({ tag, posts, noindex }: TagPageProps) {
 
     return (
         <>
-            {noindex && (
-                <Head>
-                    <meta name="robots" content="noindex, follow" />
-                </Head>
-            )}
-            <PageSEO title={`${title} — ${siteMetadata.title}`} description={description} />
+            <PageSEO title={`${title} — ${siteMetadata.title}`} description={description} noindex={noindex} />
 
             <div className="pb-12">
                 {/* 브레드크럼 */}

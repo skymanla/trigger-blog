@@ -7,10 +7,8 @@ import Link from 'next/link'
 import { ComponentPropsWithoutRef } from 'react'
 
 import { getPostSlugs, getPostSource } from "../../lib/blog-api"
-import { MetaProps } from "../../types/layout"
 import { PostType } from "../../types/post"
-import { PageSEO } from "../../components/common/SEO"
-import siteMetadata from "../../data/siteMetadata"
+import { PostSEO } from "../../components/common/SEO"
 import TableOfContents from "../../components/blog/TableOfContents"
 import BackToTop from "../../components/common/BackToTop"
 import { TocItem } from "../../lib/toc"
@@ -35,17 +33,16 @@ type PostPageProps = {
 const PostPage = ({ source, frontMatter, toc }: PostPageProps): JSX.Element => {
     const hasToc = Array.isArray(toc) && toc.length > 2
 
-    const customMeta: MetaProps = {
-        title: `${frontMatter.title} - ${siteMetadata.description}`,
-        description: frontMatter.description,
-        image: `${frontMatter.image}`,
-        date: frontMatter.date,
-        type: 'article',
-    }
-
     return (
         <>
-            <PageSEO title={customMeta.title} description={customMeta.description} />
+            <PostSEO
+                title={frontMatter.title}
+                description={frontMatter.description}
+                slug={frontMatter.slug}
+                date={frontMatter.date}
+                image={frontMatter.image}
+                tags={frontMatter.tags}
+            />
             <div className="xl:flex xl:gap-10">
                 <article className="min-w-0 xl:flex-1">
                     <h1 className="mb-3 text-gray-900 dark:text-white">
