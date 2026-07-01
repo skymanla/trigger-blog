@@ -34,10 +34,11 @@
 **반드시** [docs/blog-writing-guide.md](docs/blog-writing-guide.md)를 읽고 그 규칙(슬러그·frontmatter·톤·금지사항)을 따른다. 이 문서가 모든 에이전트의 단일 출처(single source of truth)다.
 
 진입점:
-- Claude Code: [.claude/skills/write-post/SKILL.md](.claude/skills/write-post/SKILL.md)
-- Antigravity / OpenAI Codex / Cursor 등: 이 파일
+- 모든 에이전트: 이 파일과 [docs/blog-writing-guide.md](docs/blog-writing-guide.md)
 
-규칙이 바뀌면 [docs/blog-writing-guide.md](docs/blog-writing-guide.md)만 수정하고 진입점들은 그대로 둔다.
+규칙이 바뀌면 [docs/blog-writing-guide.md](docs/blog-writing-guide.md)만 수정한다.
+
+참고: `.agents/`, `.codex/`, `.claude/skills/` 같은 에이전트별 로컬 스킬 파일은 공개 레포에 커밋하지 않는다.
 
 ### 페르소나 적용 (작업 유형별 분기)
 
