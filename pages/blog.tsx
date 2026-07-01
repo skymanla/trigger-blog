@@ -60,7 +60,10 @@ const Blog = ({ posts }: BlogProps) => {
 
     return (
         <>
-            <PageSEO title="블로그 메인" description={siteMetadata.description} />
+            <PageSEO
+                title={`Trigger 개발 블로그 | ${siteMetadata.headerTitle}`}
+                description={siteMetadata.description}
+            />
             <div className="pb-12">
                 <h1 className="mb-4 font-display text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl">
                     Articles
